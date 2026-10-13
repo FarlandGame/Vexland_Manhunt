@@ -1,0 +1,7 @@
+*.jar
+inspection/
+logs/
+*.properties
+*.bak
+playerdata/
+world*/
