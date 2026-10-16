@@ -8,14 +8,16 @@ Vexland_Manhunt reúne configuração de partidas, papéis das equipes, persegui
 
 ## Downloads e compatibilidade
 
-| Versão do plugin | Download | Ambiente de destino |
-| --- | --- | --- |
-| **1.9.11** — compilação atual fornecida | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Paper **1.21.11**, Java **21** |
-| **1.6.4** — compilação anterior | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Paper **1.21.11**, Java **21** |
+| Arquivo / versão | Download | Finalidade |
+|---|---|---|
+| **1.13.1 — atual** | [VexLandManhunt-1.13.1.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/VexLandManhunt-1.13.1.jar) | Plugin Manhunt de Bardiya e Ali |
+| **GrimAC 2.3.73 — obrigatório** | [grimac-bukkit-2.3.73.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/grimac-bukkit-2.3.73.jar) | Dependência anticheat separada, de terceiros |
+| 1.9.11 — arquivada | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Compilação anterior do Manhunt |
+| 1.6.4 — arquivada | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Compilação mais antiga do Manhunt |
 
-**1.6.4 e 1.9.11 são números de versão do plugin.** As duas compilações fornecidas declaram a API do Minecraft `1.21.11` e arquivos de classe Java 21. São plugins de servidor para Minecraft Java Edition. Os [requisitos de Java do Paper por versão](https://docs.papermc.io/paper/getting-started/) também indicam Java 21 para Paper 1.21.11. Os descritores fornecidos não declaram dependências de outros plugins.
+**Plataforma: Paper 1.21.11, Java 21.** Os números 1.6.4, 1.9.11 e 1.13.1 são versões do plugin, não versões compatíveis do Minecraft. Na 1.13.1, GrimAC é uma dependência obrigatória e a ponte exige a API 2.3.73. Baixe **os dois JARs atuais**. São plugins de servidor; os jogadores não os instalam na pasta de mods do cliente.
 
-Estas são **compilações originais para servidor pessoal, com acesso administrativo elevado específico dos criadores**, preservadas exatamente como fornecidas. O guia abaixo cobre os controles públicos do Manhunt.
+Estas são as compilações originais de servidor pessoal, com acesso administrativo elevado específico dos criadores, preservadas exatamente como fornecidas. Este manual cobre os controles públicos do Manhunt.
 
 ## A experiência Manhunt
 
@@ -30,168 +32,138 @@ Estas são **compilações originais para servidor pessoal, com acesso administr
 - **Guias traduzidos:** livros para Corredores, Caçadores e administradores explicam objetivos, uso do rastreador, mortes, configuração e comandos. A versão 1.9.11 oferece aos jogadores um guia conforme seu papel por `/mhhelp`.
 - **Integração com Paper Anti-Xray:** os controles do menu configuram a proteção do Paper por mundo; as alterações exigem reiniciar o servidor para entrar em vigor.
 
-## O que há de novo na 1.9.11?
+## O que há de novo na 1.13.1?
 
-Estas mudanças foram identificadas comparando as duas compilações fornecidas, incluindo metadados, recursos de mensagens e classes compiladas.
+Em comparação com a compilação 1.9.11 fornecida:
 
-| Adição ou mudança | Comportamento na 1.9.11 |
-| --- | --- |
-| **Smart Hunter Kit V3** | Os kits adaptativos de renascimento consideram equipamentos dos Corredores, equipes e contexto da partida. O sistema procura manter os kits dos Caçadores abaixo da média dos equipamentos dos Corredores e pode ser ativado/desativado por `/mhkit` ou pela GUI. |
-| **Spawn automático no Overworld** | Move o spawn do mundo para perto de um Corredor elegível no Overworld em um intervalo escolhido: desligado, 5, 10, 15, 20 ou 30 minutos. O sistema escolhe um ponto seguro na superfície e ignora casos inadequados. |
-| **Pausa e retomada** | `/mhpause` congela a jogabilidade e os temporizadores da partida, o rastreamento e a movimentação do spawn; `/mhresume` continua. O tempo pausado é descontado do tempo ativo da partida. |
-| **Recuperação após reinício/falha** | Uma camada de recuperação restaura estado da partida, papéis, alvos dos rastreadores, progresso, temporizadores de recompensas/mortes e estado de reconexão usando snapshots principais/de reserva, salvamentos periódicos e salvamentos ao desligar. |
-| **Configurações de reconexão dos Corredores** | Uma janela configurável substitui a janela anterior fixa de 60 minutos. Padrão inicial: 15 minutos, com 10 segundos de proteção ao retornar. O tempo com o servidor desligado é excluído; a expiração pode transformar o Corredor em Caçador ou encerrar a partida. |
-| **Administração ampliada** | Altere papéis durante uma partida ao vivo preservando o último Corredor; ações sobre jogadores selecionados, teletransporte/congelamento de equipes, ressincronização do estado de execução e atalhos facilitam o gerenciamento. |
-| **Restauração de configurações com confirmação** | Dois cliques em oito segundos aplicam Smart Kit ON, spawn automático a cada 15 minutos e reconexão de 15 minutos. Isso difere do padrão de spawn automático OFF de uma instalação nova. |
-| **VexAC 3.0** | Verificações de movimento, combate, AutoClick, velocidade/repulsão e construção; controles de grupos/geral, registro de evidências, alertas aos administradores e exceções por ambiente/lag. |
-| **Ultra Deep Debug v4** | `/mhdebug` fornece diagnósticos de máquina de estados, GUI, kits sintéticos/estresse, placeholders de idioma, ciclo de recuperação e integridade. |
-| **Indicadores ampliados** | Mais detalhes de progressão, indicadores da vida do dragão, resultados de MVP/dano/distância e informações de ping no TAB. |
-| **Mudanças nos comandos** | Adiciona `/mhkit`, `/mhspawn`, `/mhpause`, `/mhresume` e `/mhdebug`; remove `/mhnone`; adapta `/mhhelp` para jogador/administrador e adiciona aliases de `/trash`. |
-| **Mais mensagens traduzidas** | Os recursos de tradução passam de 446 chaves de mensagem por idioma para 683. |
-
-As verificações incluídas no VexAC cobrem Fly, Speed, Timer, Phase, Step, NoSlow, GroundSpoof, Reach, KillAura, AimAssist, golpes através de paredes, BadPackets, padrões de tempo do AutoClick, repulsão alterada, Scaffold, Tower, FastPlace, Nuker e alcance de blocos. A interface usa um rótulo de apenas monitoramento, mas o código compilado também contém caminhos de expulsão; confirme o comportamento real de moderação em um servidor de teste antes de confiar nesse rótulo. A compilação anterior contém controles legados Anti AutoClick e Anti Fly.
+- **Espectadores fantasmas:** função separada, atribuição por administrador, voo protegido, jogadores ocultos, estado salvo/restaurado e menu paginado de teleporte para participantes.
+- **Central de controle redesenhada:** menus por categoria, seleção explícita entre quatro funções, seletor de alvos por nome, duração de reconexão, predefinições Classic/Fast/Hardcore/Custom e telas próprias de confirmação com 30 segundos.
+- **Integração com GrimAC:** o GrimAC 2.3.73 obrigatório substitui o caminho ativo de inicialização do VexAC. A interface oferece controle geral, cinco grupos de verificações, alertas e modos de monitoramento/aplicação. Paper Anti-Xray continua independente.
+- **Novo planejador Smart Hunter Kit:** adapta equipamentos e suprimentos aos equipamentos/encantamentos dos Runner, ao Runner mais próximo, aos tamanhos dos times, à distância, dimensão e terreno. Preserva equipamentos melhores já existentes, evita ferramentas duplicadas e limita a reposição de consumíveis com histórico de 30 segundos. Isso não garante uma diferença fixa de equipamento nem equilíbrio medido.
+- **Recuperação validada:** snapshots selados com SHA-256, verificações de esquema/estado e uso de backup válido como alternativa; snapshots inválidos ou de formato mais novo são preservados sem sobrescrita. O estado dos espectadores tem persistência própria.
+- **Mensagens ampliadas:** as chaves traduzidas passam de 683 para 762 por tradução incluída, ainda nos mesmos dez idiomas do jogo. Dois comandos públicos novos são registrados: `/mspectator <player>` e `/mhspectate`.
+- **Alternativa ao redefinir:** se não houver uma superfície segura perto do spawn do Overworld, a redefinição poderá pular esse teleporte em vez de forçá-lo.
 
 ## Configuração e uso completos com `/mhgui`
 
-### 1. Instale uma compilação no servidor
+Pare o servidor e guarde backup dos mundos e dos dados dos plugins. Coloque os dois JARs atuais em `plugins/`, mantendo apenas um JAR Manhunt e um JAR GrimAC nessa pasta. Preserve as configurações/dados existentes em `plugins/VexLandManhunt/` ao atualizar. Inicie completamente o servidor Paper 1.21.11 / Java 21; faça uma reinicialização completa ao substituir compilações. GrimAC precisa carregar corretamente. O nome interno do plugin continua `VexLandManhunt`.
 
-Pare seu servidor **Paper 1.21.11 / Java 21**. Coloque um dos JARs baixados no diretório `plugins/`. Mantenha apenas uma compilação do VexLandManhunt instalada por vez. Inicie o servidor com um reinício completo após substituir a compilação. O nome interno do plugin continua sendo `VexLandManhunt`; o nome público do projeto é `Vexland_Manhunt`.
+Este guia descreve a versão **1.13.1** do plugin com rótulos em inglês. Os rótulos seguem o idioma global do servidor. As linhas são contadas de cima para baixo e as colunas da esquerda para a direita. Use um clique esquerdo normal, salvo indicação de ação especial. Este guia vem de inspeção estática; nenhum servidor Minecraft foi executado.
 
-### 2. Abra o centro de controle
+### Preparar uma partida
 
-Entre no servidor como administrador com **OP** ou a permissão **`vexland.admin`** e digite:
+1. Use `/mhgui` com `vexland.admin` (padrão: OP).
+2. Abra **Player Roles**, clique no bloco com o nome de um jogador e escolha **Runner**, **Hunter**, **Spectator** ou **No Team**. Isso abre um seletor de função exata; clicar no jogador não alterna sua função em sequência.
+3. Atribua pelo menos um Runner e um Hunter. Jogadores online sem função podem virar Hunter quando a partida começa; espectadores não preenchem a vaga necessária de nenhum dos times.
+4. Revise **Match Settings**, **GrimAC Security** e **Global Language**. Desative Server Freeze antes de iniciar.
+5. Abra **Match Controls → Start Match**. Os inventários dos participantes são preparados/esvaziados, a introdução é reproduzida e a roleta escolhe a vantagem antes de liberar os Hunter.
 
-```text
-/mhgui
-```
+### Início: `/mhgui` (cinco linhas)
 
-As instruções abaixo cobrem a interface pública da versão **1.9.11** do plugin, usando os nomes dos botões em inglês. Os nomes seguem o idioma selecionado no servidor. Para usar toda a GUI, use uma conta **OP** de confiança: a permissão do descritor permite abrir o comando, mas alguns manipuladores da GUI fornecida aplicam verificações OP mais rigorosas. O inventário principal tem cinco linhas de nove espaços. Passe o cursor sobre um botão para ler sua descrição e configuração atual. A maioria usa clique normal; ações especiais do mouse e confirmações são explicadas abaixo. O menu menor da 1.6.4 é explicado ao final.
-
-#### Configure sua primeira partida
-
-1. Abra **Player Roles**. Clique na cabeça de cada participante até que o papel exibido esteja correto. Na 1.9.11, o papel alterna entre **Runner** e **Hunter**; um participante sem papel se torna Corredor no primeiro clique. Clique esquerdo/direito/com Shift não são atalhos separados para escolher papéis. Use **Previous Page**, **Next Page** e **Back to Control Center** quando necessário.
-2. Atribua pelo menos um Corredor e pelo menos um Caçador. A rotina de início pode transformar os jogadores online restantes sem papel em Caçadores; atribuir todos explicitamente deixa as equipes claras.
-3. Clique em **Friendly Fire** para escolher se companheiros podem causar dano uns aos outros. Verifique o indicador ON/OFF após clicar.
-4. Clique em **Language** para escolher o idioma de todo o servidor. Essa configuração afeta mensagens, interfaces, avisos e livros de instruções de todos, não apenas do seu jogador.
-5. Confira **Smart Hunter Kit**, **Auto World Spawn** e **Anti-Cheat**. Leia o guia do administrador pelo botão do livro se precisar de explicações dentro do jogo.
-6. Certifique-se de que **Server Freeze** esteja desligado e clique em **Start Match**. O início prepara jogadores e inventários, executa a apresentação e a roleta aleatória da vantagem inicial antes de liberar os Caçadores, e começa a caçada. Antes de iniciar, guarde fora dos inventários dos participantes tudo que precisar preservar.
-
-#### Botões principais do centro de controle
-
-As posições abaixo contam linhas de cima para baixo e colunas da esquerda para a direita. Elas descrevem o layout final decorado da 1.9.11.
-
-| Posição | Botão em inglês | Função |
+| Posição | Botão | Ação |
 |---|---|---|
-| Linha 2, coluna 2 | Player Roles | Abre o menu paginado de cabeças de jogadores Corredores/Caçadores. |
-| Linha 2, coluna 3 | Target Player | Alterna entre outros jogadores online para ações administrativas sobre o alvo selecionado. Confira o nome atual. |
-| Linha 2, coluna 4 | Friendly Fire | Ativa/desativa dano entre companheiros. |
-| Linha 2, coluna 5 | Match Info | Envia um relatório rápido do estado da partida, equipes, fogo amigo e alvo selecionado. |
-| Linha 2, coluna 6 | Start Match | Executa o início normal da partida e a sequência aleatória de vantagem inicial. |
-| Linha 2, coluna 7 | Full Heal | Restaura a vida de todos os jogadores online. |
-| Linha 2, coluna 8 | Reset Match | Executa o reinício completo da partida. É diferente de Reset Settings. |
-| Linha 3, coluna 2 | Full Hunger | Restaura alimentação e saturação de todos os jogadores online. |
-| Linha 3, coluna 3 | Release Hunters | Libera os Caçadores que estão esperando antes do fim da vantagem inicial. |
-| Linha 3, coluna 4 | Clear Effects | Remove efeitos de poções de todos os jogadores online. |
-| Linha 3, coluna 5 | Server Freeze | Ativa/desativa o congelamento global do servidor; jogadores comuns sem OP ficam congelados. |
-| Linha 3, coluna 6 | Clear Target Inventory | Limpa inventário, armadura e mão secundária do jogador selecionado após confirmação. |
-| Linha 3, coluna 7 | Teleport Everyone | Traz todos os jogadores online à sua posição atual. |
-| Linha 3, coluna 8 | Kill Target | Mata o jogador selecionado após confirmação; as regras normais de morte podem afetar a partida. |
-| Linha 4, coluna 2 | Anti-Cheat | Abre os controles do VexAC Security. |
-| Linha 4, coluna 3 | Freeze Target | Ativa/desativa o congelamento individual do jogador selecionado. |
-| Linha 4, coluna 4 | Emergency Restore | Restaura vida, alimentação e saturação de todos online. |
-| Linha 4, coluna 5 | Freeze Team | Clique esquerdo alterna Corredores; direito alterna Caçadores; Shift-clique remove congelamentos individuais/de equipe. |
-| Linha 4, coluna 6 | Set Day | Define o horário diurno no seu mundo atual. |
-| Linha 4, coluna 7 | Clear Weather | Interrompe chuva e trovoadas no seu mundo atual. |
-| Linha 4, coluna 8 | Language | Abre o seletor global de idioma. |
-| Linha 5, coluna 2 | Smart Hunter Kit | Ativa/desativa kits adaptativos de renascimento dos Caçadores; mostra ON/OFF. |
-| Linha 5, coluna 3 | Clear Dropped Items | Remove entidades de itens caídos no seu mundo atual. |
-| Linha 5, coluna 4 | Pause Match / Resume Match | Para ou retoma a jogabilidade ativa e os temporizadores da partida. |
-| Linha 5, coluna 5 | Emergency Sync | Ressincroniza papéis, rastreadores e o estado de execução relacionado. |
-| Linha 5, coluna 6 | Reset Settings | Restaura configurações equilibradas após confirmação de dois cliques. |
-| Linha 5, coluna 7 | Close | Fecha o centro de controle. |
-| Linha 5, coluna 8 | Auto World Spawn | Abre o seletor de intervalo do spawn automático no Overworld. |
-| Linha 5, coluna 9 | Manhunt Administrator Guide | Fornece o livro de instruções traduzido para administradores. |
+| R2 C2 | Match Controls | Iniciar, pausar/retomar, liberar e redefinir. |
+| R2 C4 | Player Roles | Abrir a lista de funções dos jogadores online. |
+| R2 C6 | Match Settings | Fogo amigo, kits, spawn, reconexão e predefinições. |
+| R2 C8 | Player Management | Escolher um alvo e usar ferramentas de jogadores/mundo. |
+| R4 C2 | GrimAC Security | Abrir as configurações de proteção. |
+| R4 C4 | Global Language | Escolher o idioma usado por todos. |
+| R4 C6 | Administrator Guide | Adicionar o livro administrativo traduzido ao inventário. |
+| R5 C5 | Close | Fechar o menu. |
 
-Os vidros decorativos e itens de título/status não são botões de jogo.
+O sinalizador em R1 C5 informa o estado da partida e as quantidades de Runner/Hunter.
 
-#### Papéis e alvos selecionados
+### Match Controls (cinco linhas)
 
-**Player Roles** muda a equipe real de Manhunt de um participante. Clique em sua cabeça e leia o papel atualizado. Durante STARTING/RUNNING, a interface permite mudanças Corredor/Caçador, mas recusa transformar o último Corredor em Caçador. Isso preserva o lado dos Corredores na partida em andamento. Faça mudanças de papel conscientemente, pois o estado de execução das equipes e os rastreadores são sincronizados após uma mudança.
+| Posição | Botão | Ação |
+|---|---|---|
+| R2 C2 | Start Match | Iniciar a sequência completa. |
+| R2 C4 | Pause Match / Resume Match | Pausar ou retomar o jogo e os cronômetros; disponível para uma partida RUNNING. |
+| R2 C6 | Release Hunters | Encerrar antecipadamente a espera atual dos Hunter. |
+| R2 C8 | Reset Match | Abrir a confirmação e então redefinir completamente a partida. |
+| R4 C2 | Server Freeze | Alternar o congelamento global dos jogadores sem OP. |
+| R4 C4 | Teleport Everyone | Abrir a confirmação e então trazer todos os jogadores online até você. |
+| R4 C6 | Match Info | Enviar o relatório de partida e times. |
 
-**Target Player** é separado: seleciona alguém para ações como Freeze Target, Clear Target Inventory ou Kill Target sem mudar sua equipe. Alterne até aparecer o nome do jogador online desejado. Se um alvo salvo ficar indisponível, o código pode recorrer ao primeiro outro jogador online; por isso, confirme sempre o nome imediatamente antes de agir sobre um alvo. Se ninguém mais estiver online, informa que não há alvo disponível.
+**Back** fica em R5 C1; **Close**, em R5 C9. Server Freeze é separado de Pause Match: use Pause quando o relógio e os sistemas de jogo precisarem parar juntos.
 
-**Clear Target Inventory** e **Kill Target** exigem clicar na mesma ação para o mesmo alvo duas vezes em **cinco segundos**. O primeiro clique prepara a confirmação e identifica o alvo; o segundo executa a ação. Mudar de alvo ou esperar demais exige nova confirmação. Limpar um inventário apaga seu conteúdo; matar um Corredor pode encerrar ou alterar a partida conforme as regras normais de morte.
+### Player Roles
 
-**Freeze Team** tem os únicos atalhos de mouse específicos de equipe nesse menu: clique esquerdo normal seleciona os Corredores, clique direito normal seleciona os Caçadores e Shift-clique remove todos os congelamentos individuais/de equipe gerenciados por essa ferramenta. O interruptor global Server Freeze é um controle separado e deve ser desligado separadamente se os jogadores continuarem congelados.
+A lista de jogadores com seis linhas mostra até 45 blocos de função com nomes, ordenados pelo nome do jogador, nas cinco primeiras linhas. Runner usa concreto verde-limão, Hunter concreto vermelho, Spectator um olho do Ender e No Team concreto cinza. A linha inferior tem **Previous Page** em C1, informações da página/jogadores online em C3, **Back to Control Center** em C5 e **Next Page** em C9.
 
-#### Smart Hunter Kit
+Clique em um jogador para abrir **Choose Player Role** (três linhas):
 
-Clique em **Smart Hunter Kit** para ligar ou desligar kits adaptativos de renascimento dos Caçadores. O botão mostra o estado atual. Quando ligado, um Caçador que renasce pode receber um kit adaptado ao equipamento dos Corredores e ao contexto da partida; o guia fornecido descreve esse kit como mais fraco que a média dos Corredores. Quando desligado, Caçadores não recebem kit automático após morrer. Isso não desliga a bússola rastreadora.
+| Posição | Função exata |
+|---|---|
+| R2 C2 | Runner |
+| R2 C4 | Hunter |
+| R2 C6 | Spectator |
+| R2 C8 | No Team |
 
-Para definir diretamente em vez de alternar, use `/mhkit on`, `/mhkit off` ou `/mhkit status`. O valor de fallback inspecionado para uma configuração nova é ON.
+O nome/função atual aparece em R1 C5; **Back** fica em R3 C1 e **Close**, em R3 C9. Funções podem mudar durante a partida. Tirar a função Runner do último Runner atribuído durante RUNNING abre a confirmação **Last Runner: the match will end**. Aplicá-la pode dar a vitória aos Hunter. Comandos diretos de função têm efeito imediato: use-os com atenção. No Team pode ser atribuído aqui; a sincronização normal ao iniciar/entrar pode transformar um jogador sem função em Hunter durante uma partida ativa.
 
-#### Auto World Spawn
+### Espectadores
 
-Clique em **Auto World Spawn** e escolha **OFF**, **5 minutes**, **10 minutes**, **15 minutes**, **20 minutes** ou **30 minutes**. Selecionar uma opção a salva e retorna a `/mhgui`; **Back** retorna sem selecionar outro intervalo.
+Um administrador atribui `/mspectator <player>` ou escolhe **Spectator** em Player Roles. O comando verifica o acesso administrativo mesmo sem uma linha de permissão no descritor. Jogadores não entram nessa função por conta própria executando `/mhspectate`.
 
-Quando ativado, o sistema procura periodicamente uma superfície segura no Overworld perto de um Corredor ativo nessa dimensão e move o spawn do mundo para lá. Ele não move o spawn se nenhum Corredor estiver no Overworld ou se não encontrar um ponto seguro. O fallback de configuração nova é OFF. Para os mesmos controles por comando, use `/mhspawn off`, `/mhspawn 15` ou `/mhspawn status`, substituindo 15 por qualquer intervalo suportado.
+O espectador recebe uma bússola **Spectator teleport** no primeiro espaço da barra rápida. Segure-a na mão principal e clique com o botão direito, ou use `/mhspectate`, para abrir o menu de teleporte com seis linhas. Ele funciona somente enquanto o jogador tiver a função Spectator. As cinco primeiras linhas contêm até 45 Runner/Hunter vivos e online, ordenados pelo nome; clique em um bloco de função com nome para ir à posição atual daquele jogador, inclusive em outro mundo. A linha inferior tem **Previous Page** em C1, **Close** em C5 e **Next Page** em C9. Sem participante adequado, R3 C5 mostra **No players available**. Fechar esse menu não remove a função de espectador.
 
-#### Pausa, reconexão e recuperação
+Espectadores voam, ficam ocultos dos outros jogadores, não colidem e são protegidos contra dano. A implementação usa modo Aventura com voo; não concede a câmera do modo Espectador vanilla nem passagem através de blocos. Ela bloqueia ataques, quebra/colocação de blocos, interações normais com blocos/entidades, coleta/descarte de itens, troca da mão secundária, cliques/arrastos no inventário, manipulação de suportes de armadura e coleta/ganho de experiência. Criaturas não podem mirá-los e mudanças de fome são canceladas. `/teammsg <message>` chega a outros jogadores com a função Spectator. Não forneça aos competidores localizações de participantes ou outras ajudas externas.
 
-**Pause Match** está disponível quando a partida está RUNNING. Congela sistemas de jogo, movimento/interações, temporizadores da partida, rastreamento e movimentação do spawn. **Resume Match** retoma esses sistemas e compensa o tempo pausado. Server Freeze apenas congela jogadores e não deve substituí-lo quando você precisar pausar o relógio da partida.
+Para sair, um administrador atribui **Runner**, **Hunter** ou **No Team**, ou usa `/mrunner <player>` ou `/mhunter <player>`. Não há comando/botão específico para sair sozinho. A saída restaura inventário/cursor, localização, modo de jogo, voo, colisão e imunidade salvos; depois aplica o comportamento da nova função na partida. O estado do espectador é salvo para reconexão. Full Match Reset restaura esse estado, limpa as funções e move jogadores online para um spawn seguro do Overworld quando disponível. A limpeza normal no fim da partida exclui os espectadores do tratamento de itens/voo dos participantes.
 
-A janela de reconexão dos Corredores é configurável, com fallback inicial de **15 minutos**. Retornar dentro do prazo restaura o estado do Corredor e fornece dez segundos de proteção. O tempo de indisponibilidade do servidor não consome o prazo de reconexão salvo. Vagas de Corredores expiradas se tornam Caçadores; o prazo esgotado do último Corredor pode dar a vitória aos Caçadores.
+### Match Settings (cinco linhas)
 
-**Não há um seletor separado de duração de reconexão na GUI 1.9.11 fornecida**. Para personalizar, pare o servidor, edite `plugins/VexLandManhunt/config.yml`, preserve as demais configurações e defina:
+| Posição | Botão | Ação |
+|---|---|---|
+| R2 C2 | Friendly Fire | Alternar dano entre colegas de time. |
+| R2 C4 | Smart Hunter Kit | Alternar kits adaptativos de renascimento dos Hunter. |
+| R2 C6 | Auto World Spawn | Abrir a seleção de intervalo. |
+| R2 C8 | Reconnect Grace | Abrir a seleção da duração de reconexão dos Runner. |
+| R4 C2 | Match Preset | Escolher Classic, Fast, Hardcore ou Custom. |
+| R4 C4 | Reset Settings | Confirmar ajustes equilibrados: Kit ON, Spawn 15m, Reconnect 15m. |
+| R4 C6 | Random Head Start | Bloco informativo; a roleta continua escolhendo o atraso. |
 
-```yaml
-features:
-  custom-reconnect-minutes: 15
-```
+**Back** fica em R5 C1; **Close**, em R5 C9.
 
-Reinicie após editar. Valores abaixo de um minuto são limitados a um. **Reset Settings** restaura esse valor para 15 minutos. A compilação também salva estado de partida/reconexão e snapshots de reserva para recuperação após reinícios/falhas do servidor; deixe o plugin gerenciar esses arquivos em vez de editá-los durante o jogo.
+O seletor **Reconnect Grace** com três linhas oferece **1, 5, 10, 15, 20, 30 minutos** em R2 C2–C7, nessa ordem. Clicar salva o valor e mantém o seletor aberto. Back fica em R3 C1; Close, em R3 C9.
 
-#### Reset Settings e Reset Match
+O seletor **Match Preset** de três linhas coloca **Classic**, **Fast**, **Hardcore**, **Custom** em R2 C2, C4, C6, C8. Classic: Kit ON, Spawn 15m, Reconnect 15m. Fast: ON, 5m, 10m. Hardcore: OFF, OFF, 5m. Custom mantém os ajustes manuais atuais. As predefinições preservam a vantagem aleatória. A seleção mantém o menu aberto; Back fica em R3 C1, Close em R3 C9.
 
-**Reset Settings** exige clicar no botão duas vezes em **oito segundos**. O primeiro clique prepara a confirmação; o segundo restaura **Smart Kit ON**, **Auto Spawn a cada 15 minutos**, **Reconexão de 15 minutos** e uma **vantagem inicial aleatória**. Isso difere de uma instalação nova, em que Auto World Spawn usa fallback OFF. Altera a configuração; não substitui o reinício completo da partida.
+**Auto World Spawn** oferece OFF, 5m, 10m em R2 C2, C3, C4 e 15m, 20m, 30m em R2 C6, C7, C8. Back fica em R3 C5. Selecione um intervalo ou use `/mhspawn <off|5|10|15|20|30|status>`. Isso move o spawn do Overworld para perto de um Runner adequado no Overworld; pode ignorar a ação quando não houver candidato adequado. `/mhkit <on|off|toggle|status>` controla os kits diretamente.
 
-**Reset Match** executa o reinício existente da partida, limpando estado/itens temporários e retornando jogadores ao spawn do Overworld para outra rodada. Seu botão principal não usa a confirmação de dois cliques de Reset Settings. **Start Match** pode preparar/limpar inventários dos participantes. Confira qual controle de reinício/início pretende usar antes de clicar.
+### Player Management (seis linhas)
 
-#### Controles de idioma e anti-cheat
+| Posição | Botão | Aplica-se a |
+|---|---|---|
+| R1 C5 | Target Player | Abrir um seletor de jogadores por nome. |
+| R2 C2 | Full Heal | Todos os jogadores online. |
+| R2 C4 | Full Hunger | Todos os jogadores online. |
+| R2 C6 | Clear Effects | Todos os jogadores online. |
+| R2 C8 | Freeze Target | Jogador selecionado. |
+| R4 C2 | Clear Target Inventory | Jogador selecionado; exige confirmação. |
+| R4 C4 | Kill Target | Jogador selecionado; exige confirmação e os resultados normais da partida se aplicam. |
+| R4 C6 | Set Day | Seu mundo atual. |
+| R4 C8 | Clear Weather | Seu mundo atual. |
+| R5 C2 | Clear Dropped Items | Seu mundo atual; exige confirmação. |
+| R5 C4 | Emergency Sync | Atualizar sistemas de função/execução dos jogadores online. |
+| R5 C6 | Freeze Team | Esquerdo: Runner; direito: Hunter; Shift-clique: remover estes congelamentos de times/individuais. |
 
-**Language** abre o seletor global. Clique no idioma desejado. As duas compilações fornecidas contêm inglês, persa, árabe, espanhol, francês, alemão, russo, chinês simplificado, hindi e português. O idioma selecionado é compartilhado pelo servidor e salvo. A documentação README em japonês não adiciona japonês ao seletor de idiomas dentro do jogo.
+Back fica em R6 C1; Close, em R6 C9. A escolha de alvo não muda funções. O seletor oferece 28 outros jogadores online por página, nas linhas 2–5, colunas 2–8; clique em um nome para selecionar e voltar. Previous/Back/Next ficam em R6 C1/C5/C9. Confira novamente o alvo exibido antes de aplicar uma ação.
 
-**Anti-Cheat** abre **VexAC Security**. Clique em **VexAC Master** para ativar/desativar o mecanismo interno ou em **Movement**, **Combat**, **AutoClick**, **Velocity / AntiKB** ou **World / Scaffold** para alternar esse grupo. **Anti X-Ray** alterna o Anti-Xray configurado no Paper; reinicie o servidor para aplicar essa alteração. Os itens de status, registro de evidências e modelo de detecção explicam os sistemas atuais. **Back to Control Center** retorna ao menu principal.
+### Telas de confirmação
 
-A interface descreve moderação somente por monitoramento, mas a inspeção estática mantém um caminho de expulsão baseado em limites. Trate a indicação de ausência de expulsões do menu como uma divergência entre implementação/documentação e confirme a moderação em um servidor controlado antes de depender dela.
+Reset Match, Teleport Everyone, Reset Settings, Clear Target Inventory, Kill Target, Clear Dropped Items e a mudança do último Runner pela interface usam uma tela separada **Confirm Action** de três linhas. Leia a ação/alvo em R1 C5 e clique no **Confirm** verde em R2 C3 ou no **Cancel** vermelho em R2 C7. A confirmação expira após **30 segundos**. Alvos alterados/offline ou funções alteradas exigem nova seleção. Nos novos caminhos do menu, isso substitui as instruções antigas de cliques repetidos em cinco/oito segundos.
 
-#### Guia dentro do jogo e solução de problemas
+### GrimAC Security e idioma
 
-Clique em **Manhunt Administrator Guide** ou use `/mhhelp` para obter um livro de instruções traduzido. Jogadores podem usar `/mhhelp` para o guia adequado ao seu papel na 1.9.11. Caçadores clicam com o botão direito na bússola para selecionar um Corredor; essa interface de rastreamento é separada do seletor Target Player do administrador.
+O menu Grim de seis linhas tem status em R1 C5; controles em R2 C2 **GrimAC Master**, C4 **Movement**, C6 **Combat**, C8 **Packets**; R4 C2 **Velocity / AntiKB**, C4 **World / Scaffold**, C6 **Anti X-Ray**, C8 **Admin Alerts**; e R5 C5 **Monitor mode**. Back fica em R6 C1 e Close em R6 C9. Monitor mode controla alertas/evidências em vez da aplicação de medidas. Paper Anti-Xray é independente e exige reinicialização após alterações. São controles GrimAC; a descrição antiga do menu VexAC/AutoClick não corresponde a esta versão.
 
-Se um papel ou rastreador parecer fora de sincronia, **Emergency Sync** atualiza o estado de execução relacionado. **Match Info** ajuda a verificar as equipes e o estado atual. Se uma tentativa de início falhar, confira se a partida está pronta, o congelamento do servidor está desligado e há equipe de Corredores/Caçadores. Após mudar o JAR, use um reinício completo do servidor em vez de `/reload`. `/mhdebug` é um comando de diagnóstico administrativo incluído na 1.9.11; sua presença não afirma que essas versões passaram por testes em servidor ao vivo.
+Global Language vale para todos e atualiza menus/itens. Clique no idioma indicado pelo nome; Back fica em R3 C5. `/mhlang` abre o mesmo seletor e `/mhhelp` fornece o guia traduzido de jogador/administrador.
 
-#### Uso do centro de controle antigo da 1.6.4
+### Padrões atuais, reconexão e moderação
 
-A 1.6.4 mantém **Player Roles**, **Friendly Fire**, **Start Match**, **Reset Match**, **Release Hunters Now**, **Server Lock**, **Teleport Everyone To Me**, **Heal & Feed Everyone**, **Match Status**, seleção de idioma, **Anti Cheat** e um guia do administrador. Seus papéis alternam **None → Runner → Hunter**, e mudanças de papel ficam bloqueadas enquanto uma partida está iniciando/em execução.
-
-Seu menu anti-cheat contém os controles legados **Anti AutoClick** (regra de 30 CPS com aviso/expulsão), **Anti Fly** e **Anti X-Ray** do Paper. A janela de reconexão dos Corredores é fixa em **60 minutos**. A opção Smart Hunter Kit V3 mais recente, o seletor Auto World Spawn, pausa/retomada, confirmação Reset Settings e ferramentas ampliadas de alvo/mundo descritas acima pertencem à 1.9.11 e não devem ser esperados no menu antigo.
-
-Este guia foi elaborado a partir dos metadados dos JARs fornecidos, textos de idioma/ajuda incluídos e desmontagem estática. A interface não foi executada em um servidor Minecraft ao vivo durante essa inspeção.
-
-### 3. Jogue a perseguição
-
-Os Corredores escapam durante a vantagem inicial aleatória e avançam até derrotar o Ender Dragon. Os Caçadores esperam a liberação e clicam com o botão direito na bússola rastreadora para selecionar um Corredor. Os alvos podem mudar durante o jogo, inclusive quando a perseguição atravessa dimensões. Use `/teammsg <message>` para falar apenas com sua equipe e `/mhhelp` para o guia traduzido do seu papel na 1.9.11.
-
-Se um Corredor morrer, os restantes continuam jogando e o jogador morto se torna Caçador. Um Caçador pode renascer e continuar rastreando. A morte do último Corredor ou o fim do prazo de reconexão de um Corredor pode encerrar a partida para os Caçadores; derrotar o Ender Dragon encerra para os Corredores.
-
-### 4. Pause, finalize e prepare outra partida
-
-Na 1.9.11, pause com `/mhpause` e continue com `/mhresume`. Use `/mhrelease` se os Caçadores precisarem ser liberados antes do fim da contagem da vantagem inicial. Para uma nova partida, use o reinício completo do centro de controle ou `/mhreset`; o reinício limpa estado e itens temporários e retorna jogadores ao spawn do Overworld. Alterações do Paper Anti-Xray exigem reinício do servidor.
-
-## Configurações padrão na 1.9.11
-
-Os valores de fallback inspecionados para configuração nova são:
+Os valores de fallback de uma configuração nova em `plugins/VexLandManhunt/config.yml` são:
 
 ```yaml
 features:
@@ -200,41 +172,44 @@ features:
   custom-reconnect-minutes: 15
 ```
 
-`0` significa que a movimentação automática do spawn está desligada. A ação de restauração confirmada da GUI define o intervalo como 15 minutos. Use a GUI ou `/mhkit` e `/mhspawn` para as configurações correspondentes.
+`0` significa que o movimento automático do spawn está desligado. Reset Settings e Classic escolhem 15 minutos em seu lugar. Durante a janela de reconexão de um Runner, sua vaga é mantida; voltar a tempo concede dez segundos de proteção. O tempo de servidor parado salvo é excluído. O término do prazo pode transformar o Runner em Hunter ou encerrar a partida a favor dos Hunter. Pause/Resume congela sistemas de jogo e ajusta o tempo ativo da partida. Os arquivos de recuperação são gerenciados pelo plugin.
 
-## Referência de comandos públicos
+As configurações da ponte Grim persistem em `plugins/VexLandManhunt/grim-settings.yml`. Os padrões iniciais são Master ON, todos os cinco grupos ON, Admin Alerts ON e **Monitor mode OFF: a aplicação de medidas está ativada**. Monitor mode enfileira evidências/alertas e cancela os flags correspondentes. No modo de aplicação, a ponte pode transformar um comando de expulsão Grim em desconexão traduzida que permite reconectar; ela não estabelece uma política de banimento permanente. Os limites reais também dependem da configuração do Grim. Evidências são enfileiradas para `plugins/VexLandManhunt/anticheat/grim-evidence.log`; filas limitadas podem perder entradas sob carga. A ponte isenta espectadores, jogo pausado/congelado e certos contextos de veículos, com três segundos de tolerância após entrada, teleporte e renascimento. Não se afirma precisão do anticheat nem desempenho medidos.
 
-Os comandos administrativos listados aqui usam `vexland.admin`, que por padrão é OP. Chat de equipe, lixeira e visão noturna não têm permissão no descritor; `/mhhelp` passa a ser um guia para jogador/administrador na 1.9.11.
+## Referência dos comandos públicos — 1.13.1
 
-| Comando | Finalidade | Disponibilidade |
-| --- | --- | --- |
-| `/mhgui` | Abrir o centro de controle | Ambas as compilações |
-| `/mhstart` | Executar toda a sequência de início | Ambas as compilações |
-| `/mhreset` | Reiniciar completamente a partida atual | Ambas as compilações |
-| `/mhrelease` | Liberar Caçadores antes da hora | Ambas as compilações |
-| `/mrunner <player>` | Atribuir um Corredor | Ambas as compilações |
-| `/mhunter <player>` | Atribuir um Caçador | Ambas as compilações |
-| `/mhnone <player>` | Remover um papel | Apenas 1.6.4 |
-| `/teammsg <message>` | Enviar mensagem privada aos companheiros | Ambas as compilações |
-| `/trash` | Abrir o inventário descartável de 54 espaços | Ambas; aliases da 1.9.11: `/mhtrash`, `/vextrash` |
-| `/nv` | Alternar visão noturna pessoal | Ambas as compilações |
-| `/mhlang` | Abrir o seletor global de idioma | Ambas as compilações; administrador |
-| `/mhhelp` | Receber um livro de instruções traduzido | 1.6.4 apenas administrador; 1.9.11 guia para jogador/administrador |
-| `/mhkit <on\|off\|toggle\|status>` | Configurar kits inteligentes dos Caçadores | 1.9.11 |
-| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Configurar movimentação automática do spawn | 1.9.11 |
-| `/mhpause` | Pausar a partida em execução | 1.9.11 |
-| `/mhresume` | Retomar a partida pausada | 1.9.11 |
-| `/mhdebug` | Executar diagnósticos internos | 1.9.11 |
+Acesso administrativo significa OP ou `vexland.admin` (padrão OP). O manipulador de `/mspectator <player>` verifica isso apesar de não haver linha de permissão no descritor. Comandos diretos de função têm efeito imediato; mudar o último Runner durante RUNNING pode encerrar a partida. A interface oferece uma confirmação para esse caso.
 
-## Idiomas do jogo e idiomas da documentação
+| Comando | Finalidade | Acesso |
+|---|---|---|
+| `/mhgui` | Abrir a central de controle por categorias | Administrador |
+| `/mhstart` | Iniciar a sequência completa da partida | Administrador |
+| `/mhreset` | Redefinir toda a partida | Administrador |
+| `/mhrelease` | Liberar os Hunter em espera | Administrador |
+| `/mrunner <player>` | Atribuir Runner | Administrador |
+| `/mhunter <player>` | Atribuir Hunter | Administrador |
+| `/mspectator <player>` | Atribuir Spectator | Administrador; novo |
+| `/mhspectate` | Abrir menu de teleporte para participantes | Spectator atual; novo |
+| `/teammsg <message>` | Enviar para sua própria função/time | Jogador |
+| `/trash` | Inventário descartável de 54 espaços; aliases `/mhtrash`, `/vextrash` | Jogador |
+| `/nv` | Alternar visão noturna pessoal | Jogador |
+| `/mhlang` | Abrir o seletor global de idioma | Administrador |
+| `/mhkit <on\|off\|toggle\|status>` | Configurar kits adaptativos dos Hunter | Administrador |
+| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Configurar movimento do spawn | Administrador |
+| `/mhhelp` | Receber guia traduzido de função/administrador | Jogador / administrador |
+| `/mhpause` | Pausar a partida em andamento | Administrador |
+| `/mhresume` | Retomar a partida pausada | Administrador |
+| `/mhdebug` | Diagnósticos internos | Administrador |
 
-As duas compilações fornecidas têm **10 idiomas dentro do jogo**: inglês, persa, árabe, espanhol, francês, alemão, russo, chinês simplificado, hindi e português. Um administrador escolhe o **idioma global do servidor** com `/mhlang`; mensagens, menus, avisos e livros de instruções usam essa seleção, salva em `language.txt`.
+`/mhnone` não está registrado nesta versão; use No Team na interface. Hunter clicam com o botão direito na bússola rastreadora para escolher um Runner; isso é separado do teleporte de espectadores e do seletor administrativo de alvos. Runner vencem derrotando o Ender Dragon; Hunter vencem quando não resta nenhum Runner. Um Runner abatido vira Hunter se houver outros Runner restantes.
 
-A documentação do GitHub está sendo publicada em **18 idiomas, sem uma edição da documentação em árabe**. Japonês, turco e as outras traduções adicionais do README ajudam leitores a entender o projeto; não adicionam idiomas ao jogo nesses JARs originais.
+## Idiomas, histórico e créditos de terceiros
 
-## Histórico de versões e próxima compilação
+O plugin original oferece **10 idiomas no jogo**: inglês, persa, árabe, espanhol, francês, alemão, russo, chinês simplificado, hindi e português. `/mhlang` seleciona um idioma para todo o servidor, salvo em `language.txt`. O manual do GitHub tem **18 idiomas**, sem edição árabe da documentação. Japonês e outros idiomas extras do README não adicionam traduções ao jogo nos JARs inalterados.
 
-[CHANGELOG.md](../CHANGELOG.md) registra as diferenças entre as versões enviadas. A compilação adicional com um recurso dedicado de espectador está **aguardando recebimento para uma versão futura**. Referências existentes ao Spectator padrão não comprovam esse recurso novo nos dois downloads fornecidos. Cada compilação posteriormente fornecida terá seu próprio download, checksum e notas de mudanças após comparação com a versão anterior.
+O [histórico de versões](https://github.com/FarlandGame/Vexland_Manhunt/blob/main/CHANGELOG.md) registra cada compilação fornecida. O manual completo anterior de 1.9.11 / 1.6.4 permanece no [arquivo de versões](archive/1.9.11/README.pt-BR.md). A compilação dedicada aos espectadores já foi fornecida e publicada como 1.13.1; seus recursos não devem ser atribuídos aos downloads antigos.
+
+**GrimAC é um projeto independente dos colaboradores GrimAC, distribuído sob GPL-3.0.** Bardiya e Ali criaram Vexland_Manhunt e sua integração; não são creditados como autores do GrimAC. O JAR Grim fornecido corresponde aos SHA-512 e SHA-1 do artefato Bukkit oficial Modrinth 2.3.73. Seu commit de código embutido corresponde ao [upstream v2.3.73](https://github.com/GrimAnticheat/Grim/releases/tag/v2.3.73). A versão inclui binários inalterados, checksums, snapshot do código upstream, licença e [avisos de terceiros](../THIRD_PARTY_NOTICES.md). Esses avisos de componentes não atribuem uma licença ao projeto Manhunt separado.
 
 ## Um desafio bem-humorado ao Dream
 

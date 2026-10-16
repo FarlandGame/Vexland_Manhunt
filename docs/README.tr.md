@@ -8,14 +8,16 @@ Vexland_Manhunt; maç kurulumu, takım rolleri, ilk kovalamaca, takip, ilerleme,
 
 ## İndirmeler ve uyumluluk
 
-| Eklenti sürümü | İndirme | Hedef ortam |
-| --- | --- | --- |
-| **1.9.11** — sağlanan güncel yapı | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Paper **1.21.11**, Java **21** |
-| **1.6.4** — önceki yapı | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Paper **1.21.11**, Java **21** |
+| Dosya / sürüm | İndir | Amaç |
+|---|---|---|
+| **1.13.1 — güncel** | [VexLandManhunt-1.13.1.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/VexLandManhunt-1.13.1.jar) | Bardiya ve Ali tarafından geliştirilen Manhunt eklentisi |
+| **GrimAC 2.3.73 — gerekli** | [grimac-bukkit-2.3.73.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/grimac-bukkit-2.3.73.jar) | Ayrı, üçüncü taraf hile önleme bağımlılığı |
+| 1.9.11 — arşiv | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Önceki Manhunt derlemesi |
+| 1.6.4 — arşiv | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Daha eski Manhunt derlemesi |
 
-**1.6.4 ve 1.9.11, eklentinin sürüm numaralarıdır.** Sağlanan iki yapı da Minecraft API `1.21.11` ve Java 21 sınıf dosyaları bildirir. Bunlar Minecraft Java Edition için sunucu eklentileridir. [Paper'ın sürüme göre Java gereksinimleri](https://docs.papermc.io/paper/getting-started/) de Paper 1.21.11 için Java 21 belirtir. Sağlanan eklenti tanımlarında ek bir eklenti bağımlılığı bildirilmez.
+**Hedef: Paper 1.21.11, Java 21.** 1.6.4, 1.9.11 ve 1.13.1 sayıları desteklenen Minecraft sürümleri değil, eklenti sürümleridir. 1.13.1 sürümünde GrimAC zorunlu bir bağımlılıktır ve köprü 2.3.73 API'sini gerektirir. **Her iki güncel JAR dosyasını** indirin. Bunlar sunucu eklentileridir; oyuncular bunları istemcinin mods klasörüne yüklemez.
 
-Bunlar, **geliştiricilere özel yükseltilmiş yönetim erişimi içeren özgün kişisel sunucu yapılarıdır** ve verildikleri biçimde aynen korunmuştur. Aşağıdaki rehber, herkese açık Manhunt kontrollerini anlatır.
+Bunlar, belirli geliştiricilere özgü yükseltilmiş yönetici erişimi içeren ve sağlandıkları biçimde aynen korunan özgün kişisel sunucu derlemeleridir. Bu kılavuz Manhunt'ın herkese açık kontrollerini kapsar.
 
 ## Manhunt deneyimi
 
@@ -30,168 +32,138 @@ Bunlar, **geliştiricilere özel yükseltilmiş yönetim erişimi içeren özgü
 - **Yerelleştirilmiş rehberler:** Kaçan, Avcı ve yönetici kitapları hedefleri, pusula kullanımını, ölümleri, kurulumu ve komutları açıklar. 1.9.11 sürümü, `/mhhelp` üzerinden oyuncunun rolüne uygun rehber verir.
 - **Paper Anti-Xray entegrasyonu:** menü kontrolleri Paper'ın dünya düzeyindeki korumasını yapılandırır; değişikliklerin uygulanması için sunucu yeniden başlatılmalıdır.
 
-## 1.9.11 sürümünde neler yeni?
+## 1.13.1 sürümündeki yenilikler
 
-Bu değişiklikler; sağlanan iki yapının meta verileri, mesaj kaynakları ve derlenmiş sınıfları dahil olmak üzere karşılaştırılmasıyla belirlenmiştir.
+Sağlanan 1.9.11 derlemesine kıyasla:
 
-| Eklenen veya değişen özellik | 1.9.11 sürümündeki davranış |
-| --- | --- |
-| **Smart Hunter Kit V3** | Uyarlanabilir yeniden doğma kitleri; Kaçan ekipmanını, takımları ve maçın bağlamını dikkate alır. Sistem Avcı kitlerini Kaçanların ortalama ekipmanının altında tutmayı amaçlar; `/mhkit` veya arayüzle açılıp kapatılır. |
-| **Otomatik Overworld doğma noktası** | Dünya doğma noktası, uygun bir Overworld Kaçanının yakınına seçilen aralıkta taşınır: kapalı, 5, 10, 15, 20 veya 30 dakika. Sistem güvenli bir yüzey adayı seçer ve uygun olmayan durumları atlar. |
-| **Duraklatma ve sürdürme** | `/mhpause`; oynanışı, maça bağlı sayaçları, takibi ve doğma noktası hareketini dondurur; `/mhresume` devam ettirir. Duraklatılmış süre etkin maç süresinden düşülür. |
-| **Yeniden başlatma/çökme kurtarma** | Kurtarma katmanı; ana/yedek anlık görüntüler, periyodik kayıtlar ve kapanış kayıtlarıyla maç durumunu, rolleri, pusula hedeflerini, ilerlemeyi, ödül/ölüm sayaçlarını ve yeniden bağlantı durumunu geri yükler. |
-| **Kaçanın yeniden bağlantı ayarları** | Yapılandırılabilir süre, önceki sabit 60 dakikalık sürenin yerini alır. Yeni kurulum varsayılanı 15 dakika ve geri dönüşte 10 saniyelik korumadır. Sunucunun kapalı kaldığı süre sayılmaz; sürenin dolması Kaçanı Avcıya dönüştürebilir veya maçı bitirebilir. |
-| **Genişletilmiş yönetim** | Son Kaçanı koruyarak devam eden maçta rol değiştirme; seçilen oyuncu işlemleri, takım ışınlama/dondurma, çalışma zamanı durumunu yeniden eşitleme ve kısayollar maç yönetimini geliştirir. |
-| **Onaylı ayar sıfırlama** | Sekiz saniyede iki tıklama; Smart Kit AÇIK, otomatik doğma noktası 15 dakikada bir ve yeniden bağlantı 15 dakika ayarlarını uygular. Bu, yeni kurulumdaki otomatik doğma noktası KAPALI varsayılanından farklıdır. |
-| **VexAC 3.0** | Hareket, savaş, AutoClick, hız/geri tepme ve dünya inşası denetimleri; grup/ana kontroller, kanıt kaydı, yönetici uyarıları ve ortam/gecikme istisnaları. |
-| **Ultra Deep Debug v4** | `/mhdebug`; durum makinesi, arayüz, sentetik kit/yük, dil yer tutucuları, kurtarma kaydetme/geri yükleme döngüsü ve bütünlük tanılama araçları sağlar. |
-| **Genişletilmiş göstergeler** | Daha ayrıntılı ilerleme, ejderha canı görselleri, MVP/hasar/mesafe sonuçları ve TAB ping bilgisi. |
-| **Komut değişiklikleri** | `/mhkit`, `/mhspawn`, `/mhpause`, `/mhresume` ve `/mhdebug` eklenir; `/mhnone` kaldırılır; `/mhhelp` oyuncu/yöneticiye uygun hâle gelir ve `/trash` için takma adlar eklenir. |
-| **Daha çok yerelleştirilmiş mesaj** | Çeviri kaynakları dil başına 446 mesaj anahtarından 683'e çıkar. |
+- **Hayalet izleyiciler:** ayrı bir rol, yönetici tarafından atama, korumalı uçuş, gizli oyuncular, durumun kaydedilip geri yüklenmesi ve sayfalı katılımcıya ışınlanma menüsü.
+- **Yenilenmiş kontrol merkezi:** kategorili menüler, dört rolden açık seçim, isimli hedef seçici, yeniden bağlanma süresi seçicisi, Classic/Fast/Hardcore/Custom ön ayarları ve 30 saniyelik özel onay ekranları.
+- **GrimAC entegrasyonu:** zorunlu GrimAC 2.3.73, etkin VexAC başlangıç yolunun yerini alır. Ana anahtar, beş denetim grubu, uyarılar ve izleme/yaptırım kontrolleri GUI'de sunulur. Paper Anti-Xray bağımsız kalır.
+- **Yeni Smart Hunter Kit planlayıcısı:** ekipman ve malzemeleri Runner ekipmanına/büyülerine, en yakın Runner'a, takım sayılarına, uzaklığa, boyuta ve araziye uyarlar. Mevcut daha güçlü ekipmanı korur, yinelenen araçlardan kaçınır ve 30 saniyelik geçmişle tüketilebilir eşya takviyesini sınırlar. Bu, sabit ekipman farkı veya ölçülmüş denge garantisi değildir.
+- **Doğrulanmış kurtarma:** SHA-256 ile mühürlenmiş anlık görüntüler, şema/durum denetimleri ve geçerli yedeğe dönüş; geçersiz veya daha yeni biçimdeki görüntüler üzerlerine yazılmadan saklanır. İzleyici durumu ayrı olarak kalıcılaştırılır.
+- **Genişletilmiş mesajlar:** paketlenmiş her çeviride çevrilen anahtar sayısı 683'ten 762'ye çıkar; oyun içindeki aynı on dil korunur. İki yeni herkese açık komut kaydedilmiştir: `/mspectator <player>` ve `/mhspectate`.
+- **Sıfırlama alternatifi:** Overworld doğma noktası yakınında güvenli yüzey bulunamazsa sıfırlama, ışınlanmayı zorlamak yerine atlayabilir.
 
-VexAC'ın paketlenmiş denetimleri Fly, Speed, Timer, Phase, Step, NoSlow, GroundSpoof, Reach, KillAura, AimAssist, duvar arkasından vurma, BadPackets, AutoClick zamanlama örüntüleri, değiştirilmiş geri tepme, Scaffold, Tower, FastPlace, Nuker ve blok erişimini kapsar. Arayüz yalnızca izleme etiketi kullanırken derlenmiş kodda oyuncuyu sunucudan atma yolları da vardır; bu etikete güvenmeden önce gerçek moderasyon davranışını test sunucusunda doğrulayın. Eski yapı bunun yerine eski Anti AutoClick ve Anti Fly kontrollerini içerir.
+## `/mhgui` ile tam kurulum ve kullanım
 
-## `/mhgui` ile eksiksiz kurulum ve kullanım
+Sunucuyu durdurun ve dünyaların ve eklenti verilerinin yedeğini alın. Her iki güncel JAR'ı `plugins/` içine koyun; burada yalnızca bir Manhunt JAR'ı ve bir GrimAC JAR'ı bırakın. Yükseltirken mevcut `plugins/VexLandManhunt/` ayarlarını/verilerini koruyun. Paper 1.21.11 / Java 21 sunucusunu tamamen başlatın; derlemeleri değiştirirken tam yeniden başlatma yapın. GrimAC başarıyla yüklenmelidir. Eklentinin dahili adı `VexLandManhunt` olarak kalır.
 
-### 1. Sunucuya tek bir yapı kurun
+Bu kılavuz **1.13.1** eklenti sürümünü İngilizce etiketlerle açıklar. Etiketler sunucu genelindeki dile uyar. Konumlarda satırlar yukarıdan aşağıya, sütunlar soldan sağa sayılır. Özel işlem belirtilmedikçe normal sol tıklamayı kullanın. Bu kılavuz statik incelemeye dayanır; Minecraft sunucusu çalıştırılmamıştır.
 
-**Paper 1.21.11 / Java 21** sunucunuzu durdurun. İndirilen JAR'lardan birini `plugins/` klasörüne koyun. Aynı anda yalnızca bir VexLandManhunt yapısı kurulu olsun. Yapıyı değiştirdikten sonra sunucuyu tamamen yeniden başlatın. Eklentinin dahili adı `VexLandManhunt`, herkese açık proje adı ise `Vexland_Manhunt` olarak kalır.
+### Maç kurma
 
-### 2. Kontrol merkezini açın
+1. `vexland.admin` izniyle (varsayılan: OP) `/mhgui` kullanın.
+2. **Player Roles** menüsünü açın, isimli oyuncu kutucuğuna tıklayın ve **Runner**, **Hunter**, **Spectator** veya **No Team** seçin. Bu, kesin rol seçicisini açar; oyuncuya tıklamak rolünü sırayla değiştirmez.
+3. En az bir Runner ve bir Hunter atayın. Atanmamış çevrimiçi oyuncular maç başladığında Hunter olabilir; izleyiciler iki takımın da gerekli kontenjanını doldurmaz.
+4. **Match Settings**, **GrimAC Security** ve **Global Language** ayarlarını gözden geçirin. Başlamadan önce Server Freeze'i kapatın.
+5. **Match Controls → Start Match** açın. Katılımcı envanterleri hazırlanır/temizlenir, giriş oynatılır ve rulet Hunter'ların bekleme süresini seçer.
 
-Sunucuya **OP** veya **`vexland.admin`** iznine sahip yönetici olarak katılıp şunu girin:
+### Ana sayfa: `/mhgui` (beş satır)
 
-```text
-/mhgui
-```
-
-Aşağıdaki açıklamalar, **1.9.11** eklenti sürümünün herkese açık arayüzünü İngilizce düğme adlarıyla anlatır. Etiketler sunucunun seçilen dilini izler. Arayüzün tamamını kullanmak için güvendiğiniz bir **OP** hesabı kullanın: tanım dosyasındaki izin komutu açmaya izin verse de sağlanan bazı arayüz işleyicileri daha sıkı OP denetimleri uygular. Ana envanter, dokuz yuvalı beş satırdan oluşur. Açıklamasını ve mevcut ayarını okumak için düğmenin üzerine gelin. Çoğu düğme normal tıklamayla çalışır; özel fare işlemleri ve onaylar aşağıda açıklanır. Daha küçük 1.6.4 menüsü sonunda anlatılır.
-
-#### İlk maçınızı kurun
-
-1. **Player Roles** (Oyuncu Rolleri) menüsünü açın. Görünen rol doğru olana kadar her katılımcının oyuncu kafasına tıklayın. 1.9.11'de rol **Runner** ve **Hunter** arasında değişir; henüz rolü olmayan katılımcı ilk tıklamada Kaçan olur. Sol/sağ/shift tıklama ayrı rol seçme kısayolları değildir. Gerektiğinde **Previous Page** (Önceki Sayfa), **Next Page** (Sonraki Sayfa) ve **Back to Control Center** (Kontrol Merkezine Dön) düğmelerini kullanın.
-2. En az bir Kaçan ve bir Avcı atayın. Başlatma işlemi kalan rolsüz çevrimiçi oyuncuları Avcıya dönüştürebilir; bu yüzden tüm katılımcıları açıkça atamak takımları netleştirir.
-3. Takım arkadaşlarının birbirlerine zarar verip veremeyeceğini seçmek için **Friendly Fire** (Dost Ateşi) düğmesine tıklayın. Ardından ON/OFF göstergesini kontrol edin.
-4. Sunucunun tamamı için dil seçmek üzere **Language** (Dil) düğmesine tıklayın. Bu ayar yalnızca sizin oyuncunuzu değil, herkesin mesajlarını, arayüzlerini, bildirimlerini ve rehberlerini etkiler.
-5. **Smart Hunter Kit**, **Auto World Spawn** ve **Anti-Cheat** ayarlarını inceleyin. Oyun içi açıklama gerekiyorsa kitap düğmesinden yönetici rehberini okuyun.
-6. **Server Freeze** (Sunucuyu Dondur) kapalı olsun, ardından **Start Match** (Maçı Başlat) düğmesine tıklayın. Başlatma, oyuncuları ve envanterlerini hazırlar; tanıtımı ve Avcıların bekleme süresini belirleyen rastgele ruleti çalıştırır, sonra av başlar. Başlatmadan önce saklamak istediğiniz eşyaları katılımcı envanterlerinin dışında tutun.
-
-#### Ana kontrol merkezi düğmeleri
-
-Aşağıdaki konumlarda satırlar yukarıdan aşağıya, sütunlar soldan sağa sayılır. Bunlar 1.9.11'in son süslenmiş düzenini anlatır.
-
-| Konum | İngilizce düğme | İşlevi |
+| Konum | Düğme | İşlem |
 |---|---|---|
-| Satır 2, sütun 2 | Player Roles | Sayfalı Kaçan/Avcı oyuncu kafası menüsünü açar. |
-| Satır 2, sütun 3 | Target Player | Seçili hedefe yönetici işlemleri uygulamak için diğer çevrimiçi oyuncular arasında geçer. Mevcut hedef adını kontrol edin. |
-| Satır 2, sütun 4 | Friendly Fire | Takım arkadaşları arasında hasarı açıp kapatır. |
-| Satır 2, sütun 5 | Match Info | Maç durumu, takımlar, dost ateşi ve seçilen hedef hakkında kısa rapor gönderir. |
-| Satır 2, sütun 6 | Start Match | Normal maç başlangıcını ve rastgele önden kaçma dizisini çalıştırır. |
-| Satır 2, sütun 7 | Full Heal | Tüm çevrimiçi oyuncuların canını yeniler. |
-| Satır 2, sütun 8 | Reset Match | Maçı tamamen sıfırlar. Reset Settings ile farklıdır. |
-| Satır 3, sütun 2 | Full Hunger | Tüm çevrimiçi oyuncuların açlık ve doygunluğunu yeniler. |
-| Satır 3, sütun 3 | Release Hunters | Bekleyen Avcıları önden kaçma süresi dolmadan serbest bırakır. |
-| Satır 3, sütun 4 | Clear Effects | Tüm çevrimiçi oyunculardan iksir etkilerini kaldırır. |
-| Satır 3, sütun 5 | Server Freeze | Genel sunucu dondurmasını açıp kapatır; sıradan OP olmayan oyuncular donar. |
-| Satır 3, sütun 6 | Clear Target Inventory | Onaydan sonra seçilen oyuncunun envanterini, zırhını ve ikinci elini temizler. |
-| Satır 3, sütun 7 | Teleport Everyone | Tüm çevrimiçi oyuncuları bulunduğunuz konuma getirir. |
-| Satır 3, sütun 8 | Kill Target | Onaydan sonra seçilen oyuncuyu öldürür; normal ölüm kuralları maçı etkileyebilir. |
-| Satır 4, sütun 2 | Anti-Cheat | VexAC Security kontrollerini açar. |
-| Satır 4, sütun 3 | Freeze Target | Seçilen oyuncunun bireysel dondurmasını açıp kapatır. |
-| Satır 4, sütun 4 | Emergency Restore | Çevrimiçi herkesin canını, açlığını ve doygunluğunu yeniler. |
-| Satır 4, sütun 5 | Freeze Team | Sol tıklama Kaçanları, sağ tıklama Avcıları dondurur/çözer; shift tıklama bireysel/takım dondurmalarını temizler. |
-| Satır 4, sütun 6 | Set Day | Mevcut dünyanızı gündüz yapar. |
-| Satır 4, sütun 7 | Clear Weather | Mevcut dünyanızdaki yağmuru ve gök gürültüsünü durdurur. |
-| Satır 4, sütun 8 | Language | Genel dil seçicisini açar. |
-| Satır 5, sütun 2 | Smart Hunter Kit | Uyarlanabilir Avcı yeniden doğma kitlerini açıp kapatır; ON/OFF gösterir. |
-| Satır 5, sütun 3 | Clear Dropped Items | Mevcut dünyanızda yere düşmüş eşya varlıklarını kaldırır. |
-| Satır 5, sütun 4 | Pause Match / Resume Match | Etkin oynanışı ve maç sayaçlarını durdurur veya sürdürür. |
-| Satır 5, sütun 5 | Emergency Sync | Oyuncu rollerini, pusulaları ve ilgili çalışma zamanı durumunu yeniden eşitler. |
-| Satır 5, sütun 6 | Reset Settings | İki tıklamalı onaydan sonra dengeli ayarları geri yükler. |
-| Satır 5, sütun 7 | Close | Kontrol merkezini kapatır. |
-| Satır 5, sütun 8 | Auto World Spawn | Otomatik Overworld doğma noktası aralığı seçicisini açar. |
-| Satır 5, sütun 9 | Manhunt Administrator Guide | Yerelleştirilmiş yönetici rehberini verir. |
+| R2 C2 | Match Controls | Başlatma, duraklatma/sürdürme, serbest bırakma ve sıfırlama. |
+| R2 C4 | Player Roles | Çevrimiçi oyuncuların rol listesini açar. |
+| R2 C6 | Match Settings | Dost ateşi, kitler, doğma noktası, yeniden bağlanma ve ön ayarlar. |
+| R2 C8 | Player Management | Hedef seçimi ve oyuncu/dünya araçları. |
+| R4 C2 | GrimAC Security | Koruma ayarlarını açar. |
+| R4 C4 | Global Language | Herkes için kullanılacak dili seçer. |
+| R4 C6 | Administrator Guide | Yerelleştirilmiş yönetici kitabını envanterinize ekler. |
+| R5 C5 | Close | Menüyü kapatır. |
 
-Dekoratif camlar ve başlık/durum eşyaları oynanış düğmeleri değildir.
+R1 C5 konumundaki işaretçi maç durumunu ve Runner/Hunter sayılarını bildirir.
 
-#### Roller ve seçili hedefler
+### Match Controls (beş satır)
 
-**Player Roles**, katılımcının gerçek Manhunt takımını değiştirir. Kafasına tıklayıp güncellenen rolü okuyun. STARTING/RUNNING sırasında arayüz Kaçan/Avcı değişikliklerine izin verir, ancak son Kaçanı Avcıya çevirmeyi reddeder. Böylece devam eden maçın Kaçan tarafı korunur. Değişiklikten sonra takımın çalışma zamanı durumu ve pusulalar eşitlendiği için rolleri bilinçli değiştirin.
+| Konum | Düğme | İşlem |
+|---|---|---|
+| R2 C2 | Start Match | Tam diziyi başlatır. |
+| R2 C4 | Pause Match / Resume Match | Oynanışı ve maç sayaçlarını duraklatır veya sürdürür; RUNNING durumundaki maçta kullanılabilir. |
+| R2 C6 | Release Hunters | Geçerli Hunter bekleme süresini erken bitirir. |
+| R2 C8 | Reset Match | Onay ekranını açar, ardından maçı tamamen sıfırlar. |
+| R4 C2 | Server Freeze | OP olmayan oyuncular için genel dondurmayı açar/kapatır. |
+| R4 C4 | Teleport Everyone | Onay ekranını açar, ardından tüm çevrimiçi oyuncuları yanınıza getirir. |
+| R4 C6 | Match Info | Maç ve takım raporunu gönderir. |
 
-**Target Player** ayrıdır: oyuncunun takımını değiştirmeden Freeze Target, Clear Target Inventory veya Kill Target gibi işlemler için onu hedef seçer. İstediğiniz çevrimiçi oyuncunun adı görünene kadar ilerleyin. Kayıtlı hedef kullanılamaz olursa kod diğer ilk çevrimiçi oyuncuya dönebilir; bu yüzden hedefe yönelik işlemden hemen önce adı mutlaka doğrulayın. Başka kimse çevrimiçi değilse hedef bulunmadığını bildirir.
+**Back**, R5 C1; **Close**, R5 C9 konumundadır. Server Freeze, Pause Match'ten ayrıdır: saat ve oynanış sistemlerinin birlikte durması gerektiğinde Pause kullanın.
 
-**Clear Target Inventory** ve **Kill Target**, aynı hedef için aynı işleme **beş saniye** içinde iki kez tıklamayı gerektirir. İlk tıklama onayı hazırlar ve hedefi belirtir; ikinci işlem uygular. Hedefi değiştirmek veya fazla beklemek yeni onay gerektirir. Envanteri temizlemek içeriğini siler; bir Kaçanı öldürmek normal ölüm kuralları uyarınca maçı bitirebilir veya değiştirebilir.
+### Player Roles
 
-**Freeze Team**, bu menüde takıma özel fare kısayollarının bulunduğu tek düğmedir: normal sol tıklama Kaçan takımını, normal sağ tıklama Avcı takımını seçer; shift tıklama bu aracın yönettiği tüm bireysel/takım dondurmalarını temizler. Genel Server Freeze ayrı bir kontroldür; oyuncular hâlâ donmuşsa ayrıca kapatılmalıdır.
+Altı satırlı oyuncu listesi, ilk beş satırında oyuncu adına göre sıralanmış en fazla 45 isimli rol kutucuğu gösterir. Runner açık yeşil beton, Hunter kırmızı beton, Spectator Ender Gözü, No Team gri beton kullanır. Alt satırda C1'de **Previous Page**, C3'te sayfa/çevrimiçi bilgisi, C5'te **Back to Control Center** ve C9'da **Next Page** bulunur.
 
-#### Smart Hunter Kit
+**Choose Player Role** ekranını (üç satır) açmak için oyuncuya tıklayın:
 
-Uyarlanabilir Avcı yeniden doğma kitlerini açıp kapatmak için **Smart Hunter Kit** düğmesine tıklayın. Düğme mevcut durumu gösterir. Açıkken yeniden doğan Avcı, Kaçan ekipmanına ve maçın bağlamına uyarlanmış bir kit alabilir; sağlanan oyuncu rehberi kitin Kaçan ortalamasından zayıf olduğunu açıklar. Kapalıyken Avcılar ölümden sonra otomatik kit almaz. Bu, takip pusulasını kapatmaz.
+| Konum | Kesin rol |
+|---|---|
+| R2 C2 | Runner |
+| R2 C4 | Hunter |
+| R2 C6 | Spectator |
+| R2 C8 | No Team |
 
-Açıp kapatmak yerine doğrudan ayarlamak için `/mhkit on`, `/mhkit off` veya `/mhkit status` kullanın. İncelenen yeni yapılandırmanın yedek varsayılanı ON'dur.
+Oyuncunun adı/geçerli rolü R1 C5'te görünür; **Back**, R3 C1 ve **Close**, R3 C9 konumundadır. Maç sırasında roller değişebilir. RUNNING sırasında son atanmış Runner'ı başka role geçirmek, **Last Runner: the match will end** onayını açar. Uygulamak Hunter'lara galibiyet verebilir. Doğrudan rol komutları hemen uygulanır; bu nedenle bilinçli kullanın. Burada No Team atanabilir; normal başlangıç/katılma eşitlemesi, etkin maçta atanmamış oyuncuyu Hunter'a dönüştürebilir.
 
-#### Auto World Spawn
+### İzleyiciler
 
-**Auto World Spawn** düğmesine tıklayın, ardından **OFF**, **5 minutes**, **10 minutes**, **15 minutes**, **20 minutes** veya **30 minutes** seçin. Bir seçenek ayarı kaydedip `/mhgui` menüsüne döner; **Back** yeni aralık seçmeden geri döner.
+Yönetici `/mspectator <player>` ile atar veya Player Roles içinde **Spectator** seçer. Komut, tanımlayıcısında izin satırı bulunmasa da yönetici erişimini denetler. Oyuncular `/mhspectate` çalıştırarak kendilerini kaydedemez.
 
-Etkin olduğunda sistem, Overworld'deki etkin bir Kaçanın yakınında güvenli bir Overworld yüzeyi arayıp dünya doğma noktasını oraya taşır. Overworld'de Kaçan yoksa veya güvenli aday bulunmazsa taşıma atlanır. Yeni yapılandırmanın yedek varsayılanı OFF'tur. Aynı kontroller için `/mhspawn off`, `/mhspawn 15` veya `/mhspawn status` kullanın; 15 yerine desteklenen herhangi bir aralığı yazabilirsiniz.
+İzleyici, hızlı erişim çubuğunun ilk yuvasında **Spectator teleport** pusulası alır. Altı satırlı ışınlanma menüsünü açmak için ana elde tutup sağ tıklayın veya `/mhspectate` kullanın. Menü yalnızca oyuncunun Spectator rolü varken çalışır. İlk beş satırda ada göre sıralanmış, yaşayan en fazla 45 çevrimiçi Runner/Hunter bulunur; başka bir dünyada olsa bile o oyuncunun güncel konumuna ışınlanmak için isimli rol kutucuğuna tıklayın. Alt satırda C1'de **Previous Page**, C5'te **Close**, C9'da **Next Page** vardır. Uygun katılımcı yoksa R3 C5'te **No players available** yazar. Menüyü kapatmak izleyicilikten çıkarmaz.
 
-#### Duraklatma, yeniden bağlantı ve kurtarma
+İzleyiciler uçar, diğer oyunculardan gizlenir, çarpışmaz ve hasardan korunur. Uygulama uçuşlu Adventure modunu kullanır; vanilla Spectator kamerasını veya blokların içinden geçmeyi sağlamaz. Saldırıları, blok kırma/yerleştirmeyi, olağan blok/varlık etkileşimlerini, eşya alma/atmayı, ikinci el değiştirmeyi, envanter tıklama/sürüklemelerini, zırh askısı kullanımını ve deneyim alma/kazanmayı engeller. Yaratıklar onları hedefleyemez ve açlık değişimleri iptal edilir. `/teammsg <message>`, Spectator rolündeki diğer oyunculara ulaşır. Yarışmacılara katılımcı konumlarını veya başka dış yardımları aktarmayın.
 
-**Pause Match**, maç RUNNING durumundayken kullanılabilir. Oynanış sistemlerini, hareket/etkileşimleri, maç sayaçlarını, takibi ve doğma noktası hareketini dondurur. **Resume Match** bunları sürdürür ve duraklatılmış süreyi telafi eder. Server Freeze yalnızca oyuncuları dondurur; maç saatini duraklatmak gerektiğinde onun yerine kullanılmamalıdır.
+Çıkmak için yönetici **Runner**, **Hunter** veya **No Team** atar ya da `/mrunner <player>` veya `/mhunter <player>` kullanır. Kişinin kendi çıkışı için özel komut/düğme yoktur. Çıkış, kayıtlı envanter/imleç eşyasını, konumu, oyun modunu, uçuşu, çarpışmayı ve bağışıklık durumunu geri yükler; ardından yeni rolün maç davranışını uygular. İzleyici durumu yeniden katılma için kaydedilir. Tam Match Reset, izleyici durumunu geri yükler, rolleri temizler ve çevrimiçi oyuncuları mevcutsa güvenli bir Overworld doğma noktasına taşır. Normal maç sonu temizliği, izleyicileri katılımcı eşya/uçuş işlemlerinin dışında tutar.
 
-Kaçanın yeniden bağlantı süresi yapılandırılabilir; yeni kurulumdaki yedek varsayılan **15 dakikadır**. Zamanında yeniden katılmak Kaçan durumunu geri yükler ve on saniyelik geri dönüş koruması verir. Sunucunun kapalı kaldığı süre kayıtlı yeniden bağlantı süresini tüketmez. Süresi dolan Kaçan yerleri Avcı olur; son Kaçanın süresinin dolması Avcılara zafer kazandırabilir.
+### Match Settings (beş satır)
 
-**Sağlanan 1.9.11 arayüzünde ayrı bir yeniden bağlantı süresi seçicisi yoktur.** Özelleştirmek için sunucuyu durdurun, `plugins/VexLandManhunt/config.yml` dosyasını diğer ayarları koruyarak düzenleyin ve şunu ayarlayın:
+| Konum | Düğme | İşlem |
+|---|---|---|
+| R2 C2 | Friendly Fire | Takım arkadaşına hasarı açar/kapatır. |
+| R2 C4 | Smart Hunter Kit | Uyarlanabilir Hunter yeniden doğma kitlerini açar/kapatır. |
+| R2 C6 | Auto World Spawn | Aralık seçimini açar. |
+| R2 C8 | Reconnect Grace | Runner yeniden bağlanma süresi seçimini açar. |
+| R4 C2 | Match Preset | Classic, Fast, Hardcore veya Custom seçer. |
+| R4 C4 | Reset Settings | Dengeli ayarları onaylar: Kit ON, Spawn 15m, Reconnect 15m. |
+| R4 C6 | Random Head Start | Bilgi kutucuğu; gecikmeyi hâlâ rulet seçer. |
 
-```yaml
-features:
-  custom-reconnect-minutes: 15
-```
+**Back**, R5 C1; **Close**, R5 C9 konumundadır.
 
-Düzenledikten sonra yeniden başlatın. Bir dakikanın altındaki değerler bire çıkarılır. **Reset Settings** bu değeri 15 dakikaya getirir. Derlenmiş yapı, yeniden başlatma/çökme sonrasında kurtarma için maç/yeniden bağlantı durumunu ve yedek anlık görüntüleri de kaydeder; oyun sırasında dosyaları düzenlemek yerine eklentinin yönetmesine izin verin.
+Üç satırlı **Reconnect Grace** seçicisi R2 C2–C7'de sırayla **1, 5, 10, 15, 20, 30 dakika** sunar. Tıklamak değeri kaydeder ve seçiciyi açık tutar. Back, R3 C1; Close, R3 C9 konumundadır.
 
-#### Reset Settings ve Reset Match
+Üç satırlı **Match Preset** seçicisi **Classic**, **Fast**, **Hardcore**, **Custom** seçeneklerini R2 C2, C4, C6, C8'e koyar. Classic: Kit ON, Spawn 15m, Reconnect 15m. Fast: ON, 5m, 10m. Hardcore: OFF, OFF, 5m. Custom mevcut elle yapılan ayarları korur. Ön ayarlar rastgele başlangıç avantajını korur. Seçim menüyü açık tutar; Back, R3 C1; Close, R3 C9'dadır.
 
-**Reset Settings**, **sekiz saniye** içinde iki tıklama gerektirir. İlk tıklama onayı hazırlar; ikincisi **Smart Kit ON**, **Auto Spawn her 15 dakikada**, **Reconnect 15 dakika** ve **rastgele önden kaçma süresi** ayarlarını geri getirir. Bu, Auto World Spawn'ın yedek varsayılanı OFF olan yeni kurulumdan farklıdır. Yapılandırmayı değiştirir; maçın tam sıfırlanmasının yerini almaz.
+**Auto World Spawn**, R2 C2, C3, C4'te OFF, 5m, 10m ve R2 C6, C7, C8'de 15m, 20m, 30m sunar. Back, R3 C5'tedir. Aralık seçin veya `/mhspawn <off|5|10|15|20|30|status>` kullanın. Overworld doğma noktasını uygun bir Overworld Runner'ının yakınına taşır; uygun oyuncu yoksa atlayabilir. `/mhkit <on|off|toggle|status>` kitleri doğrudan kontrol eder.
 
-**Reset Match**, mevcut maç sıfırlamasını yapar; geçici maç durumunu/eşyalarını temizler ve oyuncuları yeni tur için Overworld doğma noktasına döndürür. Ana düğmesi Reset Settings'in iki tıklamalı onayını kullanmaz. **Start Match**, katılımcı envanterlerini hazırlayabilir/temizleyebilir. Tıklamadan önce hangi sıfırlama/başlatma kontrolünü kullanmak istediğinizi inceleyin.
+### Player Management (altı satır)
 
-#### Dil ve hile koruması kontrolleri
+| Konum | Düğme | Uygulandığı hedef |
+|---|---|---|
+| R1 C5 | Target Player | İsimli oyuncu seçicisini açar. |
+| R2 C2 | Full Heal | Tüm çevrimiçi oyuncular. |
+| R2 C4 | Full Hunger | Tüm çevrimiçi oyuncular. |
+| R2 C6 | Clear Effects | Tüm çevrimiçi oyuncular. |
+| R2 C8 | Freeze Target | Seçilen oyuncu. |
+| R4 C2 | Clear Target Inventory | Seçilen oyuncu; onay gerekir. |
+| R4 C4 | Kill Target | Seçilen oyuncu; onay gerekir ve normal maç sonuçları uygulanır. |
+| R4 C6 | Set Day | Bulunduğunuz dünya. |
+| R4 C8 | Clear Weather | Bulunduğunuz dünya. |
+| R5 C2 | Clear Dropped Items | Bulunduğunuz dünya; onay gerekir. |
+| R5 C4 | Emergency Sync | Çevrimiçi oyuncuların rol/çalışma sistemlerini yeniler. |
+| R5 C6 | Freeze Team | Sol: Runner'lar; sağ: Hunter'lar; Shift+tıklama: bu takım/bireysel dondurmalarını kaldırır. |
 
-**Language** genel seçiciyi açar. İstediğiniz dilin adına tıklayın. Sağlanan iki yapı da İngilizce, Farsça, Arapça, İspanyolca, Fransızca, Almanca, Rusça, Basitleştirilmiş Çince, Hintçe ve Portekizce içerir. Seçilen dil sunucunun tamamında paylaşılır ve kaydedilir. Japonca README belgesi, eklentinin oyun içi seçicisine Japonca eklemez.
+Back, R6 C1; Close, R6 C9'dadır. Hedef seçimi rolleri değiştirmez. Seçici, her sayfada 2–5. satırlar ve 2–8. sütunlarda diğer 28 çevrimiçi oyuncuyu sunar; seçip dönmek için ada tıklayın. Previous/Back/Next, R6 C1/C5/C9'dadır. İşlemi uygulamadan önce gösterilen hedefi tekrar kontrol edin.
 
-**Anti-Cheat**, **VexAC Security** menüsünü açar. Dahili motoru açıp kapatmak için **VexAC Master** düğmesine; grubunu açıp kapatmak için **Movement**, **Combat**, **AutoClick**, **Velocity / AntiKB** veya **World / Scaffold** düğmesine tıklayın. **Anti X-Ray**, Paper'ın yapılandırılmış Anti-Xray korumasını açıp kapatır; bu değişiklik için sunucuyu yeniden başlatın. Durum, kanıt kaydı ve algılama modeli kutucukları mevcut sistemleri açıklar. **Back to Control Center** ana menüye döner.
+### Onay ekranları
 
-Yapının arayüzü yalnızca izleme yapan moderasyon anlatır, ancak statik incelemede eşik tabanlı sunucudan atma yolu vardır. Menüdeki oyuncu atmama ifadesini uygulama/belgeleme tutarsızlığı olarak ele alın; ona güvenmeden önce kontrollü bir sunucuda moderasyon davranışını doğrulayın.
+Reset Match, Teleport Everyone, Reset Settings, Clear Target Inventory, Kill Target, Clear Dropped Items ve GUI'de son Runner rolünü değiştirme işlemi, ayrı üç satırlı **Confirm Action** ekranını kullanır. R1 C5'te işlem/hedefi okuyun, ardından R2 C3'te yeşil **Confirm** veya R2 C7'de kırmızı **Cancel** seçeneğine tıklayın. Onay **30 saniye** sonra sona erer. Değişen/çevrimdışı hedefler veya değişen roller yeni seçim gerektirir. Bu yeni menü yolları için eski kılavuzdaki beş/sekiz saniyelik tekrar tıklama talimatlarının yerini bu alır.
 
-#### Oyun içi rehber ve sorun giderme
+### GrimAC Security ve dil
 
-Yerelleştirilmiş rehber almak için **Manhunt Administrator Guide** düğmesine tıklayın veya `/mhhelp` kullanın. Oyuncular 1.9.11'de kendi rollerine uygun rehber için `/mhhelp` kullanabilir. Avcılar Kaçan seçmek için pusulalarına sağ tıklar; bu takip arayüzü, yöneticinin Target Player seçicisinden ayrıdır.
+Altı satırlı Grim menüsünde durum R1 C5'tedir; anahtarlar R2 C2 **GrimAC Master**, C4 **Movement**, C6 **Combat**, C8 **Packets**; R4 C2 **Velocity / AntiKB**, C4 **World / Scaffold**, C6 **Anti X-Ray**, C8 **Admin Alerts** ve R5 C5 **Monitor mode** konumlarındadır. Back, R6 C1; Close, R6 C9'dadır. Monitor mode, uyarı/kanıt ile yaptırım arasında seçim yapar. Paper Anti-Xray bağımsızdır ve değişikliklerden sonra yeniden başlatma gerektirir. Bunlar GrimAC kontrolleridir; eski VexAC/AutoClick menü açıklaması bu sürümü anlatmaz.
 
-Bir rol veya pusula eşleşmiyor görünüyorsa **Emergency Sync** ilgili çalışma zamanı durumunu yeniler. **Match Info** mevcut takımları ve durumu kontrol etmeye yardım eder. Başlatma isteği başarısızsa maçın hazır olduğunu, sunucu dondurmasının kapalı olduğunu ve Kaçan/Avcı takımlarının bulunduğunu kontrol edin. JAR değişikliğinden sonra `/reload` yerine sunucuyu tamamen yeniden başlatın. `/mhdebug`, 1.9.11'de bulunan yönetici tanılama komutudur; varlığı bu sürümlerin canlı sunucu testlerini geçtiği anlamına gelmez.
+Global Language herkese uygulanır ve menüleri/eşyaları yeniler. İsimli dile tıklayın; Back, R3 C5'tedir. `/mhlang` aynı seçiciyi açar, `/mhhelp` ise yerelleştirilmiş oyuncu/yönetici kılavuzunu verir.
 
-#### Eski 1.6.4 kontrol merkezini kullanma
+### Güncel varsayılanlar, yeniden bağlanma ve moderasyon
 
-1.6.4; **Player Roles**, **Friendly Fire**, **Start Match**, **Reset Match**, **Release Hunters Now**, **Server Lock**, **Teleport Everyone To Me**, **Heal & Feed Everyone**, **Match Status**, dil seçimi, **Anti Cheat** ve yönetici rehberini korur. Roller **None → Runner → Hunter** şeklinde döner ve maç başlarken/çalışırken rol değişiklikleri kilitlenir.
-
-Hile koruması menüsü eski **Anti AutoClick** (uyarı/sunucudan atma işlemleriyle 30 CPS kuralı), **Anti Fly** ve Paper **Anti X-Ray** içerir. Kaçanın yeniden bağlantı süresi sabit **60 dakikadır**. Yukarıdaki yeni Smart Hunter Kit V3 anahtarı, Auto World Spawn seçicisi, duraklatma/sürdürme, Reset Settings onayı ve genişletilmiş seçili hedef/dünya araçları 1.9.11'e aittir; eski menüde beklenmemelidir.
-
-Bu rehber, sağlanan JAR meta verileri, paketlenmiş dil/yardım metinleri ve statik ayrıştırmadan elde edilmiştir. İnceleme sırasında arayüz canlı Minecraft sunucusunda çalıştırılmamıştır.
-
-### 3. Kovalamacayı oynayın
-
-Kaçanlar rastgele önden kaçma süresinde uzaklaşıp Ender Dragon'u yenmeye ilerler. Avcılar serbest bırakılmayı bekler, sonra Kaçan seçmek için takip pusulalarına sağ tıklar. Takip boyutları geçse bile oyun sırasında hedefler değiştirilebilir. Yalnızca takımınızla konuşmak için `/teammsg <message>`, 1.9.11'de yerelleştirilmiş rol rehberi için `/mhhelp` kullanın.
-
-Bir Kaçan ölürse kalan Kaçanlar devam eder ve ölen oyuncu Avcı olur. Avcı yeniden doğup takibi sürdürebilir. Son Kaçanın ölümü veya bağlantısı kesilen Kaçanın süresinin dolması Avcılara maçı kazandırabilir; Ender Dragon'un yenilmesi Kaçanlara kazandırır.
-
-### 4. Duraklatın, bitirin ve yeni maçı hazırlayın
-
-1.9.11'de `/mhpause` ile duraklatıp `/mhresume` ile sürdürün. Avcılar bekleme geri sayımı dolmadan salınacaksa `/mhrelease` kullanın. Yeni maç için kontrol merkezinin tam sıfırlamasını veya `/mhreset` kullanın; sıfırlama geçici maç durumunu/eşyalarını temizler ve oyuncuları Overworld doğma noktasına döndürür. Paper Anti-Xray ayarlarını değiştirmek yeniden başlatma gerektirir.
-
-## 1.9.11 varsayılan ayarları
-
-İncelenen yeni yapılandırmanın yedek varsayılan değerleri:
+`plugins/VexLandManhunt/config.yml` içindeki yeni yapılandırmanın yedek varsayılanları şunlardır:
 
 ```yaml
 features:
@@ -200,41 +172,44 @@ features:
   custom-reconnect-minutes: 15
 ```
 
-`0`, otomatik doğma noktası hareketinin kapalı olduğunu belirtir. Arayüzün onaylı ayar sıfırlaması aralığı bunun yerine 15 dakikaya getirir. İlgili ayarlar için arayüzü veya `/mhkit` ve `/mhspawn` kullanın.
+`0`, doğma noktasının otomatik taşınmasının kapalı olduğunu belirtir. Reset Settings ve Classic ise 15 dakika seçer. Runner'ın yeniden bağlanma penceresinde yeri korunur; zamanında dönmesi on saniye koruma sağlar. Kaydedilen sunucu kapalı kalma süresi sayılmaz. Sürenin dolması Runner'ı Hunter'a dönüştürebilir veya maçı Hunter'ların galibiyetiyle bitirebilir. Pause/Resume oynanış sistemlerini dondurur ve etkin maç zamanlamasını ayarlar. Kurtarma dosyalarını eklenti yönetir.
 
-## Herkese açık komut başvurusu
+Grim köprü ayarları `plugins/VexLandManhunt/grim-settings.yml` içinde saklanır. Yeni varsayılanlar Master ON, beş grubun tamamı ON, Admin Alerts ON ve **Monitor mode OFF: yaptırım etkindir** şeklindedir. Monitor mode kanıt/uyarıları kuyruğa alır ve uygun ihlal bildirimlerini iptal eder. Yaptırım modunda köprü, Grim atma komutunu yeniden bağlanmaya izin veren yerelleştirilmiş bağlantı kesmeye dönüştürebilir; kalıcı yasaklama politikası oluşturmaz. Gerçek eşikler Grim yapılandırmasına da bağlıdır. Kanıtlar `plugins/VexLandManhunt/anticheat/grim-evidence.log` dosyasına kuyruğa alınır; sınırlı kuyruklar yük altında kayıt düşürebilir. Köprü, izleyicileri, duraklatılmış/dondurulmuş oyunu ve belirli araç durumlarını muaf tutar; katılma, ışınlanma ve yeniden doğmadan sonra üç saniyelik tolerans sağlar. Hile önleme doğruluğu veya performans ölçümü iddia edilmez.
 
-Buradaki yönetici komutları, varsayılan olarak OP'ye verilen `vexland.admin` iznini kullanır. Takım sohbeti, çöp ve gece görüşünün tanım dosyasında izni yoktur; `/mhhelp`, 1.9.11'de oyuncu/yönetici rehberi olarak kullanılabilir.
+## Herkese açık komut başvurusu — 1.13.1
 
-| Komut | Amaç | Kullanılabilirlik |
-| --- | --- | --- |
-| `/mhgui` | Kontrol merkezini açar | İki yapı |
-| `/mhstart` | Tam maç başlangıcını çalıştırır | İki yapı |
-| `/mhreset` | Mevcut maçı tamamen sıfırlar | İki yapı |
-| `/mhrelease` | Avcıları erken serbest bırakır | İki yapı |
-| `/mrunner <player>` | Kaçan atar | İki yapı |
-| `/mhunter <player>` | Avcı atar | İki yapı |
-| `/mhnone <player>` | Rolü kaldırır | Yalnızca 1.6.4 |
-| `/teammsg <message>` | Takım arkadaşlarına özel mesaj gönderir | İki yapı |
-| `/trash` | 54 yuvalı tek kullanımlık envanteri açar | İkisi; 1.9.11 takma adları: `/mhtrash`, `/vextrash` |
-| `/nv` | Kişisel gece görüşünü açıp kapatır | İki yapı |
-| `/mhlang` | Genel dil seçicisini açar | İki yapı; yönetici |
-| `/mhhelp` | Yerelleştirilmiş rehber verir | 1.6.4 yalnızca yönetici; 1.9.11 oyuncu/yönetici rehberi |
-| `/mhkit <on\|off\|toggle\|status>` | Akıllı Avcı kitlerini yapılandırır | 1.9.11 |
-| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Otomatik doğma noktası hareketini yapılandırır | 1.9.11 |
-| `/mhpause` | Devam eden maçı duraklatır | 1.9.11 |
-| `/mhresume` | Duraklatılmış maçı sürdürür | 1.9.11 |
-| `/mhdebug` | Dahili tanılama çalıştırır | 1.9.11 |
+Yönetici erişimi OP veya `vexland.admin` anlamına gelir (varsayılan OP). `/mspectator <player>` işleyicisi, tanımlayıcı izin satırı olmasa da bunu kontrol eder. Doğrudan rol komutları hemen uygulanır; RUNNING sırasında son Runner'ı değiştirmek maçı bitirebilir. GUI bu durumda onay sunar.
 
-## Oyun içi diller ve belge dilleri
+| Komut | Amaç | Erişim |
+|---|---|---|
+| `/mhgui` | Kategorili kontrol merkezini açar | Yönetici |
+| `/mhstart` | Tam maç dizisini başlatır | Yönetici |
+| `/mhreset` | Maçı tamamen sıfırlar | Yönetici |
+| `/mhrelease` | Bekleyen Hunter'ları serbest bırakır | Yönetici |
+| `/mrunner <player>` | Runner atar | Yönetici |
+| `/mhunter <player>` | Hunter atar | Yönetici |
+| `/mspectator <player>` | Spectator atar | Yönetici; yeni |
+| `/mhspectate` | Katılımcıya ışınlanma menüsünü açar | Mevcut Spectator; yeni |
+| `/teammsg <message>` | Kendi rolünüze/takımınıza gönderir | Oyuncu |
+| `/trash` | Tek kullanımlık 54 yuvalı envanter; takma adlar `/mhtrash`, `/vextrash` | Oyuncu |
+| `/nv` | Kişisel gece görüşünü açar/kapatır | Oyuncu |
+| `/mhlang` | Genel dil seçicisini açar | Yönetici |
+| `/mhkit <on\|off\|toggle\|status>` | Uyarlanabilir Hunter kitlerini yapılandırır | Yönetici |
+| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Doğma noktası taşınmasını yapılandırır | Yönetici |
+| `/mhhelp` | Yerelleştirilmiş rol/yönetici kılavuzunu verir | Oyuncu / yönetici |
+| `/mhpause` | Devam eden maçı duraklatır | Yönetici |
+| `/mhresume` | Duraklatılmış maçı sürdürür | Yönetici |
+| `/mhdebug` | Dahili tanılama | Yönetici |
 
-Sağlanan iki yapıda **10 oyun içi dil** vardır: İngilizce, Farsça, Arapça, İspanyolca, Fransızca, Almanca, Rusça, Basitleştirilmiş Çince, Hintçe ve Portekizce. Yönetici `/mhlang` ile **genel sunucu dilini** seçer; mesajlar, menüler, bildirimler ve rehberler bu seçimi kullanır ve seçim `language.txt` dosyasına kaydedilir.
+`/mhnone` bu sürümde kayıtlı değildir; GUI'deki No Team rolünü kullanın. Hunter'lar Runner seçmek için takip pusulalarına sağ tıklar; bu, izleyici ışınlanmasından ve yöneticinin hedef seçicisinden ayrıdır. Runner'lar Ender Ejderhası'nı yenerek kazanır; Hunter'lar hiç Runner kalmadığında kazanır. Başka Runner'lar kalmışsa düşen Runner, Hunter olur.
 
-GitHub belgeleri **Arapça belge sürümü olmadan 18 dilde** yayımlanıyor. Japonca, Türkçe ve diğer ek README çevirileri okuyucuların projeyi anlamasına yardımcı olur; özgün JAR'lara yeni oyun içi diller eklemez.
+## Diller, geçmiş ve üçüncü taraf katkıları
 
-## Sürüm geçmişi ve sonraki yapı
+Özgün eklenti **10 oyun içi dil** sunar: İngilizce, Farsça, Arapça, İspanyolca, Fransızca, Almanca, Rusça, Basitleştirilmiş Çince, Hintçe ve Portekizce. `/mhlang` tüm sunucu için tek dil seçer ve `language.txt` içinde saklar. GitHub kılavuzu, Arapça belge sürümü hariç **18 dil** içerir. Japonca ve diğer ek README dilleri, değiştirilmemiş JAR'lara oyun içi çeviri eklemez.
 
-[CHANGELOG.md](../CHANGELOG.md), yüklenen sürümler arasındaki farkları kaydeder. Özel izleyici özelliği ekleyen yapı **gelecekte yayımlanmak üzere teslim bekliyor**. Mevcut standart Spectator atıfları, sağlanan iki indirmede bu yeni özelliğin bulunduğunu kanıtlamaz. Sonradan sağlanan her yapı, önceki sürümle karşılaştırıldıktan sonra kendi indirmesini, sağlama toplamını ve özellik değişikliği notlarını alacak.
+[Sürüm geçmişi](https://github.com/FarlandGame/Vexland_Manhunt/blob/main/CHANGELOG.md) sağlanan her derlemeyi kaydeder. Eski 1.9.11 / 1.6.4 kılavuzunun tamamı [sürümlü arşivde](archive/1.9.11/README.tr.md) korunur. Özel izleyici derlemesi artık sağlanmış ve 1.13.1 olarak yayımlanmıştır; özellikleri eski indirmelere atfedilmemelidir.
+
+**GrimAC, GrimAC katkıcılarının GPL-3.0 altında dağıtılan bağımsız projesidir.** Bardiya ve Ali, Vexland_Manhunt'ı ve entegrasyonunu geliştirmiştir; GrimAC'nin yazarları olarak gösterilmezler. Sağlanan Grim JAR'ı, resmi Modrinth 2.3.73 Bukkit dosyasının SHA-512 ve SHA-1 değerleriyle eşleşir. Gömülü kaynak commit'i [upstream v2.3.73](https://github.com/GrimAnticheat/Grim/releases/tag/v2.3.73) ile eşleşir. Sürüm; değiştirilmemiş ikili dosyaları, sağlama toplamlarını, upstream kaynak anlık görüntüsünü, lisansı ve [üçüncü taraf bildirimlerini](../THIRD_PARTY_NOTICES.md) içerir. Bu bileşen bildirimleri, ayrı Manhunt projesine bir lisans atamaz.
 
 ## Dream'e eğlenceli bir meydan okuma
 

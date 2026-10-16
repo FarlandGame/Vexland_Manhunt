@@ -8,14 +8,16 @@ Vexland_Manhunt 将比赛设置、队伍角色、开场追逐、追踪、进度�
 
 ## 下载与兼容性
 
-| 插件版本 | 下载 | 目标环境 |
-| --- | --- | --- |
-| **1.9.11** — 当前提供的构建 | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Paper **1.21.11**，Java **21** |
-| **1.6.4** — 较早的构建 | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Paper **1.21.11**，Java **21** |
+| 文件 / 版本 | 下载 | 用途 |
+|---|---|---|
+| **1.13.1 — 当前版本** | [VexLandManhunt-1.13.1.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/VexLandManhunt-1.13.1.jar) | Bardiya 和 Ali 开发的 Manhunt 插件 |
+| **GrimAC 2.3.73 — 必需** | [grimac-bukkit-2.3.73.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/grimac-bukkit-2.3.73.jar) | 独立的第三方反作弊依赖 |
+| 1.9.11 — 已归档 | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | 上一个 Manhunt 构建版本 |
+| 1.6.4 — 已归档 | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | 更早的 Manhunt 构建版本 |
 
-**1.6.4 和 1.9.11 是插件版本号。** 两个提供的构建都声明使用 Minecraft API `1.21.11` 和 Java 21 类文件。这些是 Minecraft Java 版的服务器插件。[Paper 各版本的 Java 要求](https://docs.papermc.io/paper/getting-started/)也为 Paper 1.21.11 列出了 Java 21。提供的插件描述文件没有声明额外的插件依赖。
+**目标环境：Paper 1.21.11、Java 21。** 1.6.4、1.9.11 和 1.13.1 是插件的发布版本号，不是支持的 Minecraft 版本号。在 1.13.1 中，GrimAC 是强制依赖，桥接层需要 2.3.73 API。请下载**两个当前版本的 JAR**。它们是服务器插件，玩家无需将其安装到客户端的 mods 文件夹。
 
-这些是**原始的个人服务器构建，包含创建者专属的高级管理权限**，完全按收到时的样子保留。下方指南介绍公开的 Manhunt 控制功能。
+这些是原始的个人服务器构建，保留了创建者专属的高级管理权限，内容与提供时完全一致。本手册介绍公开的 Manhunt 控制功能。
 
 ## Manhunt 体验
 
@@ -30,168 +32,138 @@ Vexland_Manhunt 将比赛设置、队伍角色、开场追逐、追踪、进度�
 - **本地化指南：**逃亡者、猎人和管理员指南书解释目标、追踪器用法、死亡、设置与命令。1.9.11 版本通过 `/mhhelp` 向玩家提供与其角色对应的指南。
 - **Paper Anti-Xray 集成：**菜单控制 Paper 的世界级保护；更改需要重启服务器才会生效。
 
-## 1.9.11 有哪些新内容？
+## 1.13.1 有哪些新内容？
 
-以下变化通过比较两个提供的构建得出，比较内容包括元数据、消息资源与已编译的类。
+与提供的 1.9.11 构建相比：
 
-| 新增或更改 | 1.9.11 中的行为 |
-| --- | --- |
-| **Smart Hunter Kit V3** | 自适应重生装备包考虑逃亡者装备、队伍与比赛情况。系统旨在将猎人的装备包保持在逃亡者平均装备水平以下，可通过 `/mhkit` 或 GUI 开关。 |
-| **自动主世界出生点** | 按所选间隔，将世界出生点移动到符合条件的主世界逃亡者附近：关闭、5、10、15、20 或 30 分钟。系统会选择安全的地表候选位置，并跳过不适合的情况。 |
-| **暂停与恢复** | `/mhpause` 冻结游戏，以及与比赛相关的计时器、追踪和出生点移动；`/mhresume` 恢复这些功能。暂停时间会从有效比赛时间中扣除。 |
-| **重启／崩溃恢复** | 恢复层利用主／备份快照、定期保存和关服保存，恢复比赛状态、角色、追踪目标、进度、奖励／死亡计时器与重新连接状态。 |
-| **逃亡者重新连接设置** | 可配置的重新连接时限取代了之前固定的 60 分钟时限。全新配置默认值为 15 分钟，并提供 10 秒的重新加入保护。服务器停机时间不计入时限；超时可能使逃亡者变为猎人或结束比赛。 |
-| **扩展管理功能** | 在进行中的比赛里更改角色，同时保留最后一名逃亡者；选定玩家操作、队伍传送／冻结、运行时重新同步和快捷功能改善了比赛管理。 |
-| **需要确认的设置重置** | 在八秒内点击两次，会应用 Smart Kit 开启、每 15 分钟自动移动出生点，以及 15 分钟重新连接时限。这与全新安装的自动出生点关闭默认值不同。 |
-| **VexAC 3.0** | 移动、战斗、AutoClick、速度／击退和世界建筑检查；分组／总开关、证据日志、管理员提醒以及环境／延迟豁免。 |
-| **Ultra Deep Debug v4** | `/mhdebug` 提供状态机、GUI、合成装备包／压力、语言占位符、恢复往返和完整性诊断。 |
-| **扩展显示** | 更详细的进度、末影龙生命值显示、MVP／伤害／移动距离结果，以及 TAB 延迟信息。 |
-| **命令变化** | 新增 `/mhkit`、`/mhspawn`、`/mhpause`、`/mhresume` 和 `/mhdebug`；移除 `/mhnone`；让 `/mhhelp` 区分玩家／管理员，并新增 `/trash` 别名。 |
-| **更多本地化消息** | 每种语言的翻译资源从 446 个消息键扩展至 683 个。 |
+- **幽灵观察者：** 独立角色，由管理员分配；提供受保护的飞行、对其他玩家隐藏、状态保存与恢复，以及分页的参赛者传送菜单。
+- **重新设计的控制中心：** 分类菜单、明确的四种角色选择、按名称选择目标、重连时长选择器、Classic/Fast/Hardcore/Custom 预设，以及独立的 30 秒确认界面。
+- **GrimAC 集成：** 必需的 GrimAC 2.3.73 替代了原先启用的 VexAC 启动路径。GUI 提供总开关、五个检测组、提醒及监控/执行模式控制。Paper Anti-Xray 仍然独立运行。
+- **新的 Smart Hunter Kit 规划器：** 根据 Runner 的装备和附魔、最近的 Runner、队伍人数、距离、维度及地形调整装备与补给。保留已有的更强装备，避免重复工具，并通过 30 秒历史记录限制消耗品补充。这不保证固定的装备差距，也不代表经过实测的平衡性。
+- **经校验的恢复：** 使用 SHA-256 封存快照、检查数据结构和状态，并在需要时回退到有效备份；无效或格式更新的快照会保留，不会被覆盖。观察者状态单独持久化保存。
+- **更多消息：** 每份内置翻译的消息键从 683 个增加到 762 个，游戏内语言仍为相同的十种。新增两个公开注册命令：`/mspectator <player>` 和 `/mhspectate`。
+- **重置后备行为：** 如果主世界出生点附近找不到安全地面，重置可以跳过该次传送，而不强行传送。
 
-VexAC 内置的检查涵盖 Fly、Speed、Timer、Phase、Step、NoSlow、GroundSpoof、Reach、KillAura、AimAssist、穿墙攻击、BadPackets、AutoClick 点击时间模式、修改击退、Scaffold、Tower、FastPlace、Nuker 和方块交互距离。界面使用“仅监测”的标签，但已编译代码也包含踢出玩家的路径；在依赖该标签之前，应先在测试服务器上确认实际管理行为。较早的构建则包含旧版 Anti AutoClick 和 Anti Fly 控制。
+## 使用 `/mhgui` 完整设置与操作
 
-## 使用 `/mhgui` 的完整设置与操作指南
+停止服务器，并备份世界及插件数据。将两个当前版本的 JAR 放入 `plugins/`，该目录中只保留一个 Manhunt JAR 和一个 GrimAC JAR。升级时保留现有的 `plugins/VexLandManhunt/` 设置与数据。完整启动 Paper 1.21.11 / Java 21 服务器；替换构建版本后应完全重启。GrimAC 必须成功加载。插件的内部名称仍为 `VexLandManhunt`。
 
-### 1. 在服务器上安装一个构建
+本指南介绍插件 **1.13.1**，并使用英文界面标签。实际标签遵循服务器的全局语言。位置按从上到下数行、从左到右数列。除非另有说明，否则使用普通左键点击。本指南基于静态检查，未运行 Minecraft 服务器。
 
-停止你的 **Paper 1.21.11 / Java 21** 服务器。将其中一个下载的 JAR 放进 `plugins/` 目录。任何时候只安装一个 VexLandManhunt 构建。更换构建后，以完整重启的方式启动服务器。插件内部名称仍为 `VexLandManhunt`；公开项目名称为 `Vexland_Manhunt`。
+### 设置一场比赛
 
-### 2. 打开控制中心
+1. 使用具有 `vexland.admin` 权限的账号执行 `/mhgui`（默认：OP）。
+2. 打开 **Player Roles**，点击带玩家名称的图标，然后选择 **Runner**、**Hunter**、**Spectator** 或 **No Team**。这会打开明确的角色选择器；点击玩家不会循环切换角色。
+3. 至少分配一名 Runner 和一名 Hunter。比赛开始时，尚未分配角色的在线玩家可能变为 Hunter；观察者不能充当任一队伍所需的成员。
+4. 检查 **Match Settings**、**GrimAC Security** 和 **Global Language**。开始前关闭 Server Freeze。
+5. 打开 **Match Controls → Start Match**。系统准备/清空参赛者的物品栏，播放开场介绍，并由轮盘决定 Hunter 的延迟出发时间。
 
-使用拥有 **OP** 或 **`vexland.admin`** 权限的管理员身份进入服务器，并输入：
+### 主页：`/mhgui`（五行）
 
-```text
-/mhgui
-```
-
-以下说明涵盖插件版本 **1.9.11** 的公开界面，并使用其英文按钮名称。按钮标签会随所选服务器语言变化。要使用全部 GUI 功能，请使用可信的 **OP** 账号：描述文件中的权限允许执行打开菜单的命令，但部分提供的 GUI 处理程序会实施更严格的 OP 检查。主物品栏共有五行，每行九格。将鼠标悬停在按钮上，可以阅读说明和当前设置。大多数按钮使用普通点击；特殊鼠标操作和确认步骤在下文说明。较小的 1.6.4 菜单在本节末尾介绍。
-
-#### 设置你的第一场比赛
-
-1. 打开 **Player Roles（玩家角色）**。点击每位参赛者的玩家头像，直到显示的角色正确。1.9.11 中角色在 **Runner（逃亡者）** 与 **Hunter（猎人）** 之间循环；尚未分配角色的参赛者第一次点击后会成为逃亡者。左键／右键／Shift 点击并不是分别选择角色的快捷操作。需要时使用 **Previous Page（上一页）**、**Next Page（下一页）** 和 **Back to Control Center（返回控制中心）**。
-2. 至少分配一名逃亡者和一名猎人。开始流程可以把其余尚未分配角色的在线玩家转为猎人，因此明确分配每位参赛者有助于清楚划分队伍。
-3. 点击 **Friendly Fire（友军伤害）**，选择队友是否可以互相造成伤害。点击后检查 ON/OFF 指示。
-4. 点击 **Language（语言）**，选择全服务器使用的语言。此设置影响所有人的消息、界面、通知和指南书，而不仅是你自己的玩家。
-5. 检查 **Smart Hunter Kit（智能猎人装备包）**、**Auto World Spawn（自动世界出生点）** 和 **Anti-Cheat（反作弊）**。需要游戏内说明时，可通过书本按钮阅读管理员指南。
-6. 确认 **Server Freeze（服务器冻结）** 已关闭，然后点击 **Start Match（开始比赛）**。开始流程会准备玩家和物品栏，播放介绍与随机的猎人等待轮盘，然后开始追逐。开始前，请将需要保留的物品放在参赛者物品栏之外。
-
-#### 控制中心主按钮
-
-下方位置按从上到下的行、从左到右的列计算，描述的是 1.9.11 完成装饰后的布局。
-
-| 位置 | 英文按钮 | 功能 |
+| 位置 | 按钮 | 操作 |
 |---|---|---|
-| 第 2 行，第 2 列 | Player Roles | 打开分页的逃亡者／猎人玩家头像菜单。 |
-| 第 2 行，第 3 列 | Target Player | 循环选择其他在线玩家，供针对所选目标的管理操作使用。请检查当前目标名称。 |
-| 第 2 行，第 4 列 | Friendly Fire | 切换队友之间是否可造成伤害。 |
-| 第 2 行，第 5 列 | Match Info | 发送比赛状态、队伍、友军伤害和所选目标的简要报告。 |
-| 第 2 行，第 6 列 | Start Match | 执行正常的比赛开始和随机领先时间流程。 |
-| 第 2 行，第 7 列 | Full Heal | 为所有在线玩家恢复生命值。 |
-| 第 2 行，第 8 列 | Reset Match | 执行完整比赛重置。与 Reset Settings 不同。 |
-| 第 3 行，第 2 列 | Full Hunger | 为所有在线玩家恢复饥饿值和饱和度。 |
-| 第 3 行，第 3 列 | Release Hunters | 在领先时间结束前释放等待中的猎人。 |
-| 第 3 行，第 4 列 | Clear Effects | 移除所有在线玩家的药水效果。 |
-| 第 3 行，第 5 列 | Server Freeze | 切换全局服务器冻结；普通非 OP 玩家会被冻结。 |
-| 第 3 行，第 6 列 | Clear Target Inventory | 确认后清空所选玩家的物品栏、盔甲和副手。 |
-| 第 3 行，第 7 列 | Teleport Everyone | 将所有在线玩家传送到你当前的位置。 |
-| 第 3 行，第 8 列 | Kill Target | 确认后杀死所选玩家；正常死亡规则可能影响比赛。 |
-| 第 4 行，第 2 列 | Anti-Cheat | 打开 VexAC Security 控制。 |
-| 第 4 行，第 3 列 | Freeze Target | 切换所选玩家的单独冻结。 |
-| 第 4 行，第 4 列 | Emergency Restore | 为所有在线玩家恢复生命、饥饿值和饱和度。 |
-| 第 4 行，第 5 列 | Freeze Team | 左键切换逃亡者；右键切换猎人；Shift 点击解除单独／队伍冻结。 |
-| 第 4 行，第 6 列 | Set Day | 将你当前世界的时间设为白天。 |
-| 第 4 行，第 7 列 | Clear Weather | 停止你当前世界的降雨与雷暴。 |
-| 第 4 行，第 8 列 | Language | 打开全局语言选择器。 |
-| 第 5 行，第 2 列 | Smart Hunter Kit | 切换自适应猎人重生装备包；显示 ON/OFF。 |
-| 第 5 行，第 3 列 | Clear Dropped Items | 移除你当前世界中的掉落物实体。 |
-| 第 5 行，第 4 列 | Pause Match / Resume Match | 停止或恢复正在进行的游戏与比赛计时器。 |
-| 第 5 行，第 5 列 | Emergency Sync | 重新同步玩家角色、追踪器和相关运行时状态。 |
-| 第 5 行，第 6 列 | Reset Settings | 经两次点击确认后恢复平衡设置。 |
-| 第 5 行，第 7 列 | Close | 关闭控制中心。 |
-| 第 5 行，第 8 列 | Auto World Spawn | 打开自动主世界出生点间隔选择器。 |
-| 第 5 行，第 9 列 | Manhunt Administrator Guide | 提供本地化的管理员指南书。 |
+| R2 C2 | Match Controls | 开始、暂停/继续、放行及重置。 |
+| R2 C4 | Player Roles | 打开在线玩家角色列表。 |
+| R2 C6 | Match Settings | 友军伤害、装备包、出生点、重连及预设。 |
+| R2 C8 | Player Management | 选择目标并使用玩家/世界工具。 |
+| R4 C2 | GrimAC Security | 打开保护设置。 |
+| R4 C4 | Global Language | 选择所有人使用的语言。 |
+| R4 C6 | Administrator Guide | 将本地化管理员指南书加入物品栏。 |
+| R5 C5 | Close | 关闭菜单。 |
 
-装饰玻璃以及标题／状态物品不是游戏操作按钮。
+R1 C5 的信标显示比赛状态及 Runner/Hunter 人数。
 
-#### 角色与所选目标
+### Match Controls（五行）
 
-**Player Roles（玩家角色）** 更改参赛者实际所属的 Manhunt 队伍。点击玩家头像，并查看更新后的角色。在 STARTING/RUNNING 期间，界面允许更改逃亡者／猎人角色，但拒绝将最后一名逃亡者转为猎人。这样可以保留当前比赛的逃亡者阵营。请有意识地更改角色，因为更改后会同步队伍运行时状态与追踪器。
+| 位置 | 按钮 | 操作 |
+|---|---|---|
+| R2 C2 | Start Match | 开始完整流程。 |
+| R2 C4 | Pause Match / Resume Match | 暂停或继续游戏及比赛计时；适用于 RUNNING 状态的比赛。 |
+| R2 C6 | Release Hunters | 提前结束当前 Hunter 等待时间。 |
+| R2 C8 | Reset Match | 打开确认界面，然后完全重置比赛。 |
+| R4 C2 | Server Freeze | 切换对全服非 OP 玩家的冻结。 |
+| R4 C4 | Teleport Everyone | 打开确认界面，然后将所有在线玩家传送到你身边。 |
+| R4 C6 | Match Info | 发送比赛和队伍报告。 |
 
-**Target Player（目标玩家）** 是独立功能：选择某位玩家，用于 Freeze Target、Clear Target Inventory 或 Kill Target 等操作，而不更改其队伍。循环选择，直到显示想要操作的在线玩家名称。若保存的目标变得不可用，代码可能回退到第一位其他在线玩家，因此每次执行目标操作前，都要立即确认名称。如果没有其他玩家在线，会报告没有可用目标。
+**Back** 位于 R5 C1；**Close** 位于 R5 C9。Server Freeze 与 Pause Match 相互独立：需要同时停止计时和游戏系统时，请使用 Pause。
 
-**Clear Target Inventory（清空目标物品栏）** 和 **Kill Target（杀死目标）** 要求在**五秒**内，对同一目标点击同一操作两次。第一次点击启动确认并指明目标；第二次点击执行操作。更换目标或等待太久都需要重新确认。清空物品栏会删除其中的内容；杀死逃亡者可能按照正常死亡规则结束或改变比赛。
+### Player Roles
 
-**Freeze Team（冻结队伍）** 是此菜单中唯一具有队伍专属鼠标快捷操作的功能：普通左键选择逃亡者队伍，普通右键选择猎人队伍，Shift 点击则解除该工具管理的全部单独／队伍冻结。全局 Server Freeze 开关是另一个独立控制；若玩家仍被冻结，应单独将其关闭。
+六行的玩家列表在前五行最多显示 45 个带名称的角色图标，按玩家名称排序。Runner 使用黄绿色混凝土，Hunter 使用红色混凝土，Spectator 使用末影之眼，No Team 使用灰色混凝土。底行 C1 是 **Previous Page**，C3 显示页码/在线信息，C5 是 **Back to Control Center**，C9 是 **Next Page**。
 
-#### Smart Hunter Kit（智能猎人装备包）
+点击玩家可打开 **Choose Player Role**（三行）：
 
-点击 **Smart Hunter Kit** 开启或关闭自适应猎人重生装备包。按钮显示当前状态。开启时，重生的猎人可以获得根据逃亡者装备和比赛情况调整的装备包；内置玩家指南将其描述为弱于逃亡者平均装备水平。关闭时，猎人死亡后不会自动获得装备包。这不会关闭追踪指南针。
+| 位置 | 指定角色 |
+|---|---|
+| R2 C2 | Runner |
+| R2 C4 | Hunter |
+| R2 C6 | Spectator |
+| R2 C8 | No Team |
 
-若要直接设置而不是切换状态，可以使用 `/mhkit on`、`/mhkit off` 或 `/mhkit status`。检查到的全新配置回退值为开启。
+玩家名称/当前角色显示在 R1 C5；**Back** 位于 R3 C1，**Close** 位于 R3 C9。比赛期间可以更改角色。在 RUNNING 状态下，将最后一名已分配的 Runner 改为其他角色，会打开 **Last Runner: the match will end** 确认界面。确认后可能判定 Hunter 获胜。直接角色命令会立即生效，请谨慎使用。这里可以分配 No Team；在正在进行的比赛中，正常的开始/加入同步可能将未分配角色的玩家变为 Hunter。
 
-#### Auto World Spawn（自动世界出生点）
+### 观察者
 
-点击 **Auto World Spawn**，然后选择 **OFF（关闭）**、**5 minutes（5 分钟）**、**10 minutes（10 分钟）**、**15 minutes（15 分钟）**、**20 minutes（20 分钟）** 或 **30 minutes（30 分钟）**。选择一个选项后会保存并返回 `/mhgui`；**Back（返回）** 则不选择新间隔，直接返回。
+管理员使用 `/mspectator <player>` 或在 Player Roles 中选择 **Spectator** 来分配角色。虽然命令描述文件没有权限行，处理器仍检查管理员权限。玩家执行 `/mhspectate` 不会自行加入观察者。
 
-启用后，系统定期在活动的主世界逃亡者附近寻找安全的主世界地表，并将世界出生点移到那里。若没有逃亡者位于主世界，或找不到安全候选位置，就会跳过移动。全新配置的回退值为关闭。使用命令进行相同控制时，可输入 `/mhspawn off`、`/mhspawn 15` 或 `/mhspawn status`，并用任何支持的间隔替代 15。
+观察者会在快捷栏第一格收到 **Spectator teleport** 指南针。主手持有它并右键点击，或使用 `/mhspectate`，即可打开六行传送菜单。此菜单仅在玩家具有 Spectator 角色时可用。前五行最多列出 45 名存活且在线的 Runner/Hunter，按名称排序；点击带名称的角色图标可传送到该玩家的当前位置，也支持其他世界。底行 C1 是 **Previous Page**，C5 是 **Close**，C9 是 **Next Page**。没有合适参赛者时，R3 C5 显示 **No players available**。关闭菜单后仍保持观察者角色。
 
-#### 暂停、重新连接与恢复
+观察者可以飞行、对其他玩家隐藏、无碰撞，并受到伤害保护。实现采用带飞行能力的冒险模式，不提供原版旁观模式的摄像机功能或穿墙移动。系统阻止攻击、破坏/放置方块、普通方块/实体交互、拾取/丢弃物品、副手交换、物品栏点击/拖动、操作盔甲架及拾取/获得经验。生物无法将其设为目标，饥饿值变化也会被取消。`/teammsg <message>` 会发送给其他 Spectator 角色玩家。请勿向参赛者泄露参与者位置或提供其他场外协助。
 
-比赛处于 RUNNING 时可使用 **Pause Match（暂停比赛）**。它会冻结游戏系统、移动／交互、比赛计时器、追踪和出生点移动。**Resume Match（恢复比赛）** 恢复这些系统，并补偿暂停时间。Server Freeze 只冻结玩家；需要暂停比赛计时器时，不应把它当作替代功能。
+退出时，管理员分配 **Runner**、**Hunter** 或 **No Team**，或使用 `/mrunner <player>`、`/mhunter <player>`。没有专门的自行退出命令/按钮。退出会恢复保存的物品栏/光标物品、位置、游戏模式、飞行、碰撞及免伤状态，再应用新角色的比赛行为。观察者状态会保存以便重新加入。完整 Match Reset 会恢复观察者状态、清除角色，并在存在安全主世界出生点时将在线玩家传送过去。正常的比赛结束清理不会对观察者执行参赛者的物品/飞行处理。
 
-逃亡者重新连接时限可以配置，全新配置的回退值为 **15 分钟**。及时重新加入会恢复逃亡者状态，并提供十秒的重新加入保护。服务器停机不会消耗已保存的重新连接时间。超时的逃亡者位置会转为猎人；最后一名逃亡者超时可能使猎人获胜。
+### Match Settings（五行）
 
-**提供的 1.9.11 GUI 中没有独立的重新连接时长选择器。** 若要自定义，请停止服务器，编辑 `plugins/VexLandManhunt/config.yml`，保留其他设置，并设置：
+| 位置 | 按钮 | 操作 |
+|---|---|---|
+| R2 C2 | Friendly Fire | 切换队友伤害。 |
+| R2 C4 | Smart Hunter Kit | 切换自适应 Hunter 重生装备包。 |
+| R2 C6 | Auto World Spawn | 打开间隔选择器。 |
+| R2 C8 | Reconnect Grace | 打开 Runner 重连时长选择器。 |
+| R4 C2 | Match Preset | 选择 Classic、Fast、Hardcore 或 Custom。 |
+| R4 C4 | Reset Settings | 确认平衡设置：Kit ON、Spawn 15m、Reconnect 15m。 |
+| R4 C6 | Random Head Start | 信息图标；延迟仍由轮盘决定。 |
 
-```yaml
-features:
-  custom-reconnect-minutes: 15
-```
+**Back** 位于 R5 C1；**Close** 位于 R5 C9。
 
-编辑后重启。小于一分钟的值会被限制为一分钟。**Reset Settings（重置设置）** 会将此值恢复为 15 分钟。已编译构建还会保存比赛／重新连接状态与备份快照，以便在服务器重启／崩溃后恢复；请让插件管理这些文件，而不要在游戏期间编辑它们。
+三行的 **Reconnect Grace** 选择器在 R2 C2–C7 依次提供 **1、5、10、15、20、30 分钟**。点击后保存数值，并保持选择器打开。Back 位于 R3 C1；Close 位于 R3 C9。
 
-#### Reset Settings（重置设置）与 Reset Match（重置比赛）
+三行的 **Match Preset** 选择器在 R2 C2、C4、C6、C8 放置 **Classic**、**Fast**、**Hardcore**、**Custom**。Classic：Kit ON、Spawn 15m、Reconnect 15m。Fast：ON、5m、10m。Hardcore：OFF、OFF、5m。Custom 保留当前手动设置。预设保留随机延迟出发。选择后菜单保持打开；Back 位于 R3 C1，Close 位于 R3 C9。
 
-**Reset Settings** 要求在**八秒**内点击按钮两次。第一次点击启动确认；第二次恢复 **Smart Kit 开启**、**每 15 分钟自动移动出生点**、**15 分钟重新连接时限** 和**随机领先时间**。这与全新安装不同，后者的 Auto World Spawn 回退值为关闭。此操作更改配置，并不代替完整比赛重置。
+**Auto World Spawn** 在 R2 C2、C3、C4 提供 OFF、5m、10m，在 R2 C6、C7、C8 提供 15m、20m、30m。Back 位于 R3 C5。选择间隔或使用 `/mhspawn <off|5|10|15|20|30|status>`。它会将主世界出生点移动到合适的主世界 Runner 附近；没有合适目标时可以跳过。`/mhkit <on|off|toggle|status>` 可直接控制装备包。
 
-**Reset Match** 执行已有的比赛重置，清除临时比赛状态／物品，并将玩家送回主世界出生点，准备下一轮。其主按钮不使用 Reset Settings 的两次点击确认。**Start Match** 可能会准备／清空参赛者物品栏。点击前，请确认你打算使用哪个重置／开始控制。
+### Player Management（六行）
 
-#### 语言与反作弊控制
+| 位置 | 按钮 | 作用对象 |
+|---|---|---|
+| R1 C5 | Target Player | 打开按名称选择玩家的界面。 |
+| R2 C2 | Full Heal | 所有在线玩家。 |
+| R2 C4 | Full Hunger | 所有在线玩家。 |
+| R2 C6 | Clear Effects | 所有在线玩家。 |
+| R2 C8 | Freeze Target | 选中的玩家。 |
+| R4 C2 | Clear Target Inventory | 选中的玩家；需要确认。 |
+| R4 C4 | Kill Target | 选中的玩家；需要确认，并适用正常比赛结果规则。 |
+| R4 C6 | Set Day | 你当前所在的世界。 |
+| R4 C8 | Clear Weather | 你当前所在的世界。 |
+| R5 C2 | Clear Dropped Items | 你当前所在的世界；需要确认。 |
+| R5 C4 | Emergency Sync | 刷新在线玩家的角色/运行时系统。 |
+| R5 C6 | Freeze Team | 左键：Runner；右键：Hunter；Shift 点击：清除这些队伍/个人冻结。 |
 
-**Language（语言）** 打开全局选择器。点击你想要的语言名称。两个提供的构建都包含英语、波斯语、阿拉伯语、西班牙语、法语、德语、俄语、简体中文、印地语和葡萄牙语。所选语言由全服务器共享，并会持久保存。日语 README 文档不会向插件的游戏内选择器添加日语。
+Back 位于 R6 C1；Close 位于 R6 C9。选择目标不会更改角色。选择器每页显示另外 28 名在线玩家，位于第 2–5 行、第 2–8 列；点击名称即可选择并返回。Previous/Back/Next 分别位于 R6 C1/C5/C9。执行操作前再次核对显示的目标。
 
-**Anti-Cheat（反作弊）** 打开 **VexAC Security**。点击 **VexAC Master** 启用／禁用内部引擎，或点击 **Movement**、**Combat**、**AutoClick**、**Velocity / AntiKB** 或 **World / Scaffold** 切换对应分组。**Anti X-Ray** 切换 Paper 已配置的 Anti-Xray；重启服务器后才能应用此更改。状态、证据日志和检测模型方块会说明当前系统。**Back to Control Center（返回控制中心）** 返回主菜单。
+### 确认界面
 
-构建的界面将管理行为描述为仅监测，但静态检查发现仍保留了基于阈值的踢出路径。请将菜单中“不踢出玩家”的表述视为实现与文档之间的差异，并在受控服务器上确认管理行为后再依赖它。
+Reset Match、Teleport Everyone、Reset Settings、Clear Target Inventory、Kill Target、Clear Dropped Items，以及 GUI 中最后一名 Runner 的角色更改，均使用独立的三行 **Confirm Action** 界面。查看 R1 C5 的操作/目标，然后点击 R2 C3 的绿色 **Confirm** 或 R2 C7 的红色 **Cancel**。确认在 **30 秒**后过期。目标发生变化/离线，或角色变化时，需要重新选择。这些新菜单路径取代旧指南中五/八秒内重复点击的说明。
 
-#### 游戏内指南与故障排查
+### GrimAC Security 与语言
 
-点击 **Manhunt Administrator Guide（Manhunt 管理员指南）**，或使用 `/mhhelp` 获取本地化指南书。1.9.11 中，玩家可以用 `/mhhelp` 获取与其角色对应的指南。猎人右键点击指南针来选择逃亡者；此追踪器界面与管理员的 Target Player 选择器是独立的。
+六行 Grim 菜单在 R1 C5 显示状态；开关位于 R2 C2 **GrimAC Master**、C4 **Movement**、C6 **Combat**、C8 **Packets**；R4 C2 **Velocity / AntiKB**、C4 **World / Scaffold**、C6 **Anti X-Ray**、C8 **Admin Alerts**；以及 R5 C5 **Monitor mode**。Back 位于 R6 C1，Close 位于 R6 C9。Monitor mode 控制提醒/证据与执行模式之间的切换。Paper Anti-Xray 独立运行，更改后需要重启。这些是 GrimAC 控制；旧版 VexAC/AutoClick 菜单说明不适用于本版本。
 
-若角色或追踪器似乎不同步，**Emergency Sync（紧急同步）** 会刷新相关运行时状态。**Match Info（比赛信息）** 有助于检查当前队伍与状态。如果请求开始比赛失败，请检查比赛是否准备就绪、服务器冻结是否关闭，以及逃亡者／猎人队伍是否存在。更换 JAR 后，应完整重启服务器，而不是使用 `/reload`。`/mhdebug` 是 1.9.11 包含的管理员诊断命令；它的存在并不表示这些版本已通过真实服务器测试。
+Global Language 对所有人有效，并刷新菜单/物品。点击带名称的语言；Back 位于 R3 C5。`/mhlang` 打开同一选择器，`/mhhelp` 提供本地化玩家/管理员指南。
 
-#### 使用较早的 1.6.4 控制中心
+### 当前默认值、重连与管理处罚
 
-1.6.4 保留了 **Player Roles**、**Friendly Fire**、**Start Match**、**Reset Match**、**Release Hunters Now**、**Server Lock**、**Teleport Everyone To Me**、**Heal & Feed Everyone**、**Match Status**、语言选择、**Anti Cheat** 以及管理员指南。角色按 **None → Runner → Hunter** 循环，比赛正在开始／进行时禁止更改角色。
-
-其反作弊菜单包含旧版 **Anti AutoClick**（30-CPS 规则，并提供警告／踢出处理）、**Anti Fly** 和 Paper **Anti X-Ray**。逃亡者重新连接时限固定为 **60 分钟**。上文介绍的新 Smart Hunter Kit V3 开关、Auto World Spawn 选择器、暂停／恢复、Reset Settings 确认，以及扩展的所选目标／世界工具都属于 1.9.11，不应期待它们出现在旧菜单里。
-
-本指南根据提供的 JAR 元数据、内置语言／帮助文本和静态反汇编得出。本次检查没有在真实 Minecraft 服务器上运行界面。
-
-### 3. 开始追逐
-
-逃亡者在随机领先时间内逃离，并朝击败末影龙的目标推进。猎人等待释放，然后右键点击追踪指南针来选择一名逃亡者。游戏中可以更换目标，包括追逐跨越维度时。使用 `/teammsg <message>` 仅向自己的队伍发言，并在 1.9.11 中使用 `/mhhelp` 获取本地化角色指南。
-
-若一名逃亡者死亡，其余逃亡者继续游戏，死亡玩家则成为猎人。猎人可以重生并继续追踪。最后一名逃亡者死亡，或逃亡者断线时限到期，可能使比赛以猎人获胜结束；击败末影龙则让逃亡者获胜。
-
-### 4. 暂停、结束并准备下一场比赛
-
-1.9.11 中，通过 `/mhpause` 暂停，并用 `/mhresume` 继续。若要在领先时间倒计时结束前释放猎人，请使用 `/mhrelease`。开始新比赛时，使用控制中心的完整重置或 `/mhreset`；重置会清除临时比赛状态和物品，并把玩家送回主世界出生点。更改 Paper Anti-Xray 设置需要重启。
-
-## 1.9.11 默认设置
-
-检查到的全新配置回退值如下：
+`plugins/VexLandManhunt/config.yml` 中新配置的后备默认值为：
 
 ```yaml
 features:
@@ -200,41 +172,44 @@ features:
   custom-reconnect-minutes: 15
 ```
 
-`0` 表示关闭自动出生点移动。GUI 中经确认的设置重置操作则会将出生点间隔设为 15 分钟。使用 GUI，或 `/mhkit` 和 `/mhspawn` 管理相应设置。
+`0` 表示自动移动出生点已关闭。Reset Settings 和 Classic 则会选择 15 分钟。在 Runner 的重连窗口内，其名额会保留；及时返回可获得十秒保护。已保存的服务器停机时间不计入。超时可能使 Runner 变为 Hunter，或结束比赛并判定 Hunter 获胜。Pause/Resume 冻结游戏系统并调整有效比赛计时。恢复文件由插件管理。
 
-## 公开命令参考
+Grim 桥接设置保存在 `plugins/VexLandManhunt/grim-settings.yml`。新配置默认 Master ON、五个组全部 ON、Admin Alerts ON，以及 **Monitor mode OFF：已启用执行模式**。监控模式将证据/提醒加入队列，并取消符合条件的标记。在执行模式下，桥接层可将 Grim 踢出命令转换为允许重连的本地化断开连接；这并不建立永久封禁策略。实际阈值也取决于 Grim 配置。证据排队写入 `plugins/VexLandManhunt/anticheat/grim-evidence.log`；有上限的队列在高负载下可能丢弃条目。桥接层豁免观察者、暂停/冻结的游戏状态及某些载具场景，并在加入、传送和重生后给予三秒宽限期。不宣称任何反作弊准确率或性能基准。
 
-这里列出的管理员命令使用 `vexland.admin` 权限，默认授予 OP。队伍聊天、垃圾物品栏和夜视没有描述文件权限；1.9.11 中的 `/mhhelp` 可作为玩家／管理员指南使用。
+## 公开命令参考 — 1.13.1
 
-| 命令 | 用途 | 可用版本 |
-| --- | --- | --- |
-| `/mhgui` | 打开控制中心 | 两个构建 |
-| `/mhstart` | 执行完整的比赛开始流程 | 两个构建 |
-| `/mhreset` | 完整重置当前比赛 | 两个构建 |
-| `/mhrelease` | 提前释放猎人 | 两个构建 |
-| `/mrunner <player>` | 分配逃亡者 | 两个构建 |
-| `/mhunter <player>` | 分配猎人 | 两个构建 |
-| `/mhnone <player>` | 移除角色 | 仅 1.6.4 |
-| `/teammsg <message>` | 向队友发送私密消息 | 两个构建 |
-| `/trash` | 打开 54 格临时垃圾物品栏 | 两者；1.9.11 别名：`/mhtrash`、`/vextrash` |
-| `/nv` | 切换个人夜视 | 两个构建 |
-| `/mhlang` | 打开全局语言选择器 | 两个构建；管理员 |
-| `/mhhelp` | 获取本地化指南书 | 1.6.4 仅限管理员；1.9.11 为玩家／管理员指南 |
-| `/mhkit <on\|off\|toggle\|status>` | 配置智能猎人装备包 | 1.9.11 |
-| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | 配置自动出生点移动 | 1.9.11 |
-| `/mhpause` | 暂停进行中的比赛 | 1.9.11 |
-| `/mhresume` | 恢复已暂停的比赛 | 1.9.11 |
-| `/mhdebug` | 运行内部诊断 | 1.9.11 |
+管理员权限指 OP 或 `vexland.admin`（默认 OP）。`/mspectator <player>` 处理器即使没有描述文件权限行，也会检查该权限。直接角色命令立即生效；在 RUNNING 状态下更改最后一名 Runner 的角色可能结束比赛。GUI 会为该情况提供确认。
 
-## 游戏内语言与文档语言
+| 命令 | 用途 | 权限 |
+|---|---|---|
+| `/mhgui` | 打开分类控制中心 | 管理员 |
+| `/mhstart` | 开始完整比赛流程 | 管理员 |
+| `/mhreset` | 完全重置比赛 | 管理员 |
+| `/mhrelease` | 放行等待中的 Hunter | 管理员 |
+| `/mrunner <player>` | 分配 Runner | 管理员 |
+| `/mhunter <player>` | 分配 Hunter | 管理员 |
+| `/mspectator <player>` | 分配 Spectator | 管理员；新增 |
+| `/mhspectate` | 打开参赛者传送菜单 | 当前为 Spectator；新增 |
+| `/teammsg <message>` | 发送给相同角色/队伍 | 玩家 |
+| `/trash` | 一次性 54 格垃圾物品栏；别名 `/mhtrash`、`/vextrash` | 玩家 |
+| `/nv` | 切换个人夜视 | 玩家 |
+| `/mhlang` | 打开全局语言选择器 | 管理员 |
+| `/mhkit <on\|off\|toggle\|status>` | 配置自适应 Hunter 装备包 | 管理员 |
+| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | 配置出生点移动 | 管理员 |
+| `/mhhelp` | 获取本地化角色/管理员指南 | 玩家 / 管理员 |
+| `/mhpause` | 暂停进行中的比赛 | 管理员 |
+| `/mhresume` | 继续暂停的比赛 | 管理员 |
+| `/mhdebug` | 内部诊断 | 管理员 |
 
-两个提供的构建都有 **10 种游戏内语言**：英语、波斯语、阿拉伯语、西班牙语、法语、德语、俄语、简体中文、印地语和葡萄牙语。管理员通过 `/mhlang` 选择**全局服务器语言**；消息、菜单、通知和指南书使用该语言，并将选择保存到 `language.txt`。
+本版本未注册 `/mhnone`；请使用 GUI 的 No Team 角色。Hunter 右键点击追踪指南针来选择 Runner；这与观察者传送及管理员目标选择器各自独立。Runner 通过击败末影龙获胜；没有 Runner 剩余时 Hunter 获胜。若仍有其他 Runner，死亡的 Runner 会变为 Hunter。
 
-GitHub 文档将以 **18 种语言发布，不提供阿拉伯语文档版本**。日语、土耳其语以及其他新增的 README 翻译帮助读者了解项目；它们不会为这些原始 JAR 添加新的游戏内语言。
+## 语言、历史与第三方鸣谢
 
-## 版本历史与下一个构建
+原插件提供 **10 种游戏内语言**：英语、波斯语、阿拉伯语、西班牙语、法语、德语、俄语、简体中文、印地语和葡萄牙语。`/mhlang` 为整个服务器选择一种语言，并保存到 `language.txt`。GitHub 手册有 **18 种语言**，不包含阿拉伯语文档版本。日语及其他额外 README 语言不会为未修改的 JAR 增加游戏内翻译。
 
-[CHANGELOG.md](../CHANGELOG.md) 记录了已上传版本之间的差异。带有专门旁观者功能的额外构建**尚待接收，以便在未来发布**。已有的原版 Spectator 引用并不能证明两个提供的下载包含这项新功能。之后每个提供的构建都会在与前一个版本比较后，获得自己的下载、校验和及功能变更说明。
+[版本历史](https://github.com/FarlandGame/Vexland_Manhunt/blob/main/CHANGELOG.md) 记录每个提供的构建版本。完整的旧版 1.9.11 / 1.6.4 手册保留在[版本化归档](archive/1.9.11/README.zh-CN.md)中。专门支持观察者的构建现已提供，并作为 1.13.1 发布；这些功能不应归属于旧版下载。
+
+**GrimAC 是 GrimAC 贡献者开发的独立项目，以 GPL-3.0 分发。** Bardiya 和 Ali 创建了 Vexland_Manhunt 及其集成；他们不是 GrimAC 的作者。提供的 Grim JAR 与官方 Modrinth 2.3.73 Bukkit 文件的 SHA-512 和 SHA-1 一致。其内嵌源码提交与[上游 v2.3.73](https://github.com/GrimAnticheat/Grim/releases/tag/v2.3.73)一致。发布内容包括未修改的二进制文件、校验和、上游源码快照、许可证及[第三方声明](../THIRD_PARTY_NOTICES.md)。这些组件声明不会为独立的 Manhunt 项目指定许可证。
 
 ## 给 Dream 的玩笑挑战
 
