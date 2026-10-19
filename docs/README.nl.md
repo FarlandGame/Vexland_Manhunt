@@ -1,5 +1,6 @@
 # Vexland_Manhunt
 
+
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
 **Een complete Minecraft-ervaring met Runners tegen Hunters, samen gemaakt door [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) en [Ali · Alivexor](https://github.com/Alivexor).**
@@ -8,16 +9,15 @@ Vexland_Manhunt brengt wedstrijdinstellingen, teamrollen, de eerste achtervolgin
 
 ## Downloads en compatibiliteit
 
-| Bestand / versie | Download | Doel |
+| Geleverde versie | Download | Installatie |
 |---|---|---|
-| **1.13.1 — huidig** | [VexLandManhunt-1.13.1.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/VexLandManhunt-1.13.1.jar) | Manhunt-plugin van Bardiya en Ali |
-| **GrimAC 2.3.73 — vereist** | [grimac-bukkit-2.3.73.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.13.1/grimac-bukkit-2.3.73.jar) | Afzonderlijke anti-cheatafhankelijkheid van derden |
-| 1.9.11 — gearchiveerd | [VexLandManhunt-1.9.11-.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.9.11/VexLandManhunt-1.9.11-.jar) | Vorige Manhunt-build |
-| 1.6.4 — gearchiveerd | [VexLandManhunt-1.6.4.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v1.6.4/VexLandManhunt-1.6.4.jar) | Eerdere Manhunt-build |
+| **2.0.0 — gecombineerd pakket** | [VexLandManhunt-2.0.0.jar](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v2.0.0/VexLandManhunt-2.0.0.jar) | **Eén JAR**, met geïntegreerde GrimAC 2.3.73 |
+| **1.13.1 — toeschouwerstak** | [Versie en beide JAR's](https://github.com/FarlandGame/Vexland_Manhunt/releases/tag/v1.13.1) | Manhunt plus afzonderlijke GrimAC 2.3.73 |
+| 1.9.11 / 1.6.4 — ouder | [Alle versies](https://github.com/FarlandGame/Vexland_Manhunt/releases) | Historische zelfstandige builds |
 
-**Doelplatform: Paper 1.21.11, Java 21.** De nummers 1.6.4, 1.9.11 en 1.13.1 zijn pluginversies, geen ondersteunde Minecraft-versies. In 1.13.1 is GrimAC een verplichte afhankelijkheid en vereist de bridge de API van 2.3.73. Download **beide huidige JAR-bestanden**. Dit zijn serverplugins; spelers installeren ze niet in een modsmap van hun client.
+**Paper 1.21.11 / Java 21.** Dit zijn serverplugins, geen clientmods. De geleverde bestandsnaam en openbare versie zijn **2.0.0**, maar de ongewijzigde descriptor meldt **`1.9.11-grim.1`** en duidt 1.9.11 aan als de spelbasis. Dit gecombineerde pakket bevat **niet** de aparte rol Spectator, `/mspectator <player>`, `/mhspectate`, gecategoriseerde menu's of andere toevoegingen uit 1.13.1. Blijf de afzonderlijk vermelde 1.13.1-tak gebruiken als je die functies nodig hebt.
 
-Dit zijn de oorspronkelijke builds voor persoonlijke servers, met verhoogde beheerderstoegang voor de makers, exact bewaard zoals ze zijn aangeleverd. Deze handleiding beschrijft de openbare bediening van Manhunt.
+Originele builds voor persoonlijke servers met verhoogde beheerderstoegang specifiek voor de makers worden bewaard zoals geleverd. De handleiding behandelt de openbare bediening.
 
 ## De Manhunt-ervaring
 
@@ -32,138 +32,196 @@ Dit zijn de oorspronkelijke builds voor persoonlijke servers, met verhoogde behe
 - **Vertaalde gidsen:** boeken voor Runners, Hunters en beheerders leggen doelen, kompasgebruik, overlijden, voorbereiding en commando’s uit. Versie 1.9.11 geeft spelers via `/mhhelp` een gids voor hun rol.
 - **Paper Anti-Xray-integratie:** menuopties configureren Papers bescherming per wereld; wijzigingen vereisen een serverherstart om van kracht te worden.
 
-## Wat is er nieuw in 1.13.1?
+## Wat is er veranderd in het geleverde 2.0.0-pakket?
 
-Vergeleken met de aangeleverde build 1.9.11:
+- **Eén geïntegreerde JAR:** Manhunt, aangepaste GrimAC 2.3.73 en meegeleverde PacketEvents delen één Bukkit-plugininstantie. Voor dit pakket is geen aparte installatie van GrimAC of PacketEvents nodig. De descriptor biedt `GrimAC`; het archief is afgevlakt en bevat geen geneste ongewijzigde Grim-JAR.
+- **Modulestatus:** beheerdersopdracht `/vexintegration` meldt Grim ACTIVE/INACTIVE, de Bukkit-eigenaar, de VexAC-status, de PacketEvents-status en het aantal gevolgde spelers. De ingebouwde opdrachten `/grim` en `/grimac` worden door de geïntegreerde module geregistreerd.
+- **Gecontroleerd opstarten:** de lader vereist de configuratie-API van Paper en exact Minecraft 1.21.11. Hij weigert laden tijdens bedrijf met online spelers en een aparte GrimAC-instantie. Als geïntegreerd opstarten mislukt, wordt de plugin uitgeschakeld en wordt gelogd dat Grim-bescherming inactief is; de server zelf kan doorgaan. Controleer de status voordat je een wedstrijd start.
+- **Migratie van bestaande gegevens:** bij de eerste geïntegreerde laadbeurt maakt de migratie een back-up van beide oude plugingegevensstructuren en kopieert oude GrimAC-gegevens alleen als de geïntegreerde bestemming niet bestaat. Bestaande geïntegreerde gegevens krijgen voorrang als beide bestaan; er wordt niets samengevoegd of overschreven. De oorspronkelijke gegevens blijven behouden.
+- **Verantwoordelijkheid voor bewegingscorrectie:** `plugins/VexLandManhunt/integration.properties` gebruikt standaard `movement-correction-owner=legacy`. Het ondersteunde alternatief is `grim`; andere waarden breken het opstarten af. De keuze grim onderdrukt de VexAC-correctiepaden voor terugplaatsen/teleporteren, terwijl VexAC-controles, waarschuwingen en bewijsmateriaal behouden blijven. Dit schakelt niet elke oudere straf uit.
+- **Spelbasis:** het vlakke `/mhgui`, het wisselen tussen de rollen Runner/Hunter, VexAC-bediening, Smart Hunter Kit V3, pauzeren/hervatten, herstel en 683 vertaalde sleutels volgen 1.9.11. Dit is een versie voor gecombineerde verpakking/integratie, niet de functieset van 1.13.1 met toeschouwersondersteuning.
 
-- **Onzichtbare toeschouwers:** een afzonderlijke rol, toewijzing door een beheerder, beschermd vliegen, verborgen spelers, opgeslagen/herstelde status en een menu met pagina's om naar deelnemers te teleporteren.
-- **Vernieuwd bedieningscentrum:** menu's met categorieën, expliciete keuze uit vier rollen, doelwitselectie op naam, selectie van de herverbindingstijd, de voorinstellingen Classic/Fast/Hardcore/Custom en afzonderlijke bevestigingsschermen met een termijn van 30 seconden.
-- **GrimAC-integratie:** het verplichte GrimAC 2.3.73 vervangt het actieve VexAC-opstartpad. De GUI biedt de hoofdschakelaar, vijf controlegroepen, meldingen en bediening voor monitoren/handhaving. Paper Anti-Xray blijft onafhankelijk.
-- **Nieuwe Smart Hunter Kit-planner:** past uitrusting en voorraden aan op de uitrusting/betoveringen van Runners, de dichtstbijzijnde Runner, teamaantallen, afstand, dimensie en terrein. Hij behoudt bestaande sterkere uitrusting, vermijdt dubbele gereedschappen en beperkt het aanvullen van verbruiksartikelen met een geschiedenis van 30 seconden. Dit garandeert geen vast verschil in uitrusting of gemeten spelbalans.
-- **Gevalideerd herstel:** snapshots met SHA-256-verzegeling, controles van schema/status en terugval op een geldige back-up; ongeldige snapshots of snapshots in een nieuwer formaat blijven bewaard zonder ze te overschrijven. De toeschouwersstatus wordt afzonderlijk bewaard.
-- **Uitgebreide berichten:** het aantal vertaalde sleutels groeit van 683 naar 762 per meegeleverde vertaling, nog steeds in dezelfde tien speltalen. Er zijn twee nieuwe openbare commando's geregistreerd: `/mspectator <player>` en `/mhspectate`.
-- **Terugval bij reset:** als er geen veilig oppervlak bij de spawn in de Overworld wordt gevonden, kan de reset die teleportatie overslaan in plaats van af te dwingen.
+## Spelmechanieken behouden uit de 1.9.11-basis
 
-## Volledige installatie en gebruik met `/mhgui`
+De volgende systemen zijn aan de 1.9.11-basis toegevoegd en blijven in dit gecombineerde pakket behouden. Het zijn overgenomen spelfuncties, in plaats van nieuwe toeschouwerfuncties van 2.0.0.
 
-Stop de server en bewaar een back-up van de werelden en plugingegevens. Plaats beide huidige JAR-bestanden in `plugins/` en houd daar slechts één Manhunt-JAR en één GrimAC-JAR. Behoud bestaande instellingen/gegevens in `plugins/VexLandManhunt/` bij het upgraden. Start de Paper 1.21.11 / Java 21-server volledig op; voer een volledige herstart uit wanneer je builds vervangt. GrimAC moet succesvol laden. De interne pluginnaam blijft `VexLandManhunt`.
+| Toevoeging of wijziging | Gedrag in 1.9.11 |
+| --- | --- |
+| **Smart Hunter Kit V3** | Adaptieve respawnkits houden rekening met Runner-uitrusting, teams en wedstrijdcontext. Het systeem probeert Hunter-kits onder de gemiddelde Runner-uitrusting te houden en is aan/uit te zetten met `/mhkit` of de GUI. |
+| **Automatische Overworld-spawn** | Verplaatst de wereldspawn nabij een geschikte Overworld-Runner met een gekozen interval: uit, 5, 10, 15, 20 of 30 minuten. Het systeem kiest een veilige plek aan de oppervlakte en slaat ongeschikte gevallen over. |
+| **Pauzeren en hervatten** | `/mhpause` bevriest gameplay, wedstrijdtimers, tracking en spawnverplaatsing; `/mhresume` gaat verder. Gepauzeerde tijd wordt van de actieve wedstrijdtijd uitgesloten. |
+| **Herstel na herstart/crash** | Een herstellaag herstelt wedstrijdstatus, rollen, kompasdoelen, voortgang, belonings-/doodtimers en verbindingsstatus met primaire/back-upsnapshots, periodieke opslag en opslag bij afsluiten. |
+| **Runner-verbindingsinstellingen** | Een instelbare terugkeertijd vervangt het eerdere vaste venster van 60 minuten. Nieuwe standaard: 15 minuten, met 10 seconden bescherming na terugkeer. Serverdowntime telt niet mee; verstrijken kan de Runner in een Hunter veranderen of de wedstrijd beëindigen. |
+| **Uitgebreid beheer** | Verander rollen tijdens een lopende wedstrijd met behoud van de laatste Runner; acties voor een gekozen speler, teams teleporteren/bevriezen, runtime opnieuw synchroniseren en snelkoppelingen verbeteren het beheer. |
+| **Instellingenreset met bevestiging** | Twee klikken binnen acht seconden stellen Smart Kit ON, automatische spawn elke 15 minuten en terugkeertijd 15 minuten in. Dit verschilt van een nieuwe installatie met automatische spawn standaard OFF. |
+| **VexAC 3.0** | Controles voor beweging, gevechten, AutoClick, snelheid/knockback en bouwen; groeps-/hoofdschakelaars, bewijsregistratie, beheerdersmeldingen en uitzonderingen voor omgeving/lag. |
+| **Ultra Deep Debug v4** | `/mhdebug` biedt diagnostiek voor toestandsmachine, GUI, synthetische kits/stress, taalplaceholders, een volledige herstelcyclus en integriteit. |
+| **Uitgebreide weergaven** | Meer voortgangsdetails, drakengezondheid, MVP-/schade-/afstandsresultaten en pinginformatie in TAB. |
+| **Commandowijzigingen** | Voegt `/mhkit`, `/mhspawn`, `/mhpause`, `/mhresume` en `/mhdebug` toe; verwijdert `/mhnone`; past `/mhhelp` aan spelers/beheerders aan en voegt `/trash`-aliassen toe. |
+| **Meer vertaalde berichten** | De vertaalbronnen groeien van 446 berichtsleutels per taal naar 683. |
 
-Deze handleiding beschrijft pluginversie **1.13.1** met Engelse labels. De labels volgen de taal voor de hele server. Posities tellen rijen van boven naar beneden en kolommen van links naar rechts. Gebruik een normale linkermuisklik, tenzij een speciale handeling wordt vermeld. Deze handleiding is gebaseerd op statische inspectie; er is geen Minecraft-server uitgevoerd.
+De meegeleverde VexAC-controles dekken Fly, Speed, Timer, Phase, Step, NoSlow, GroundSpoof, Reach, KillAura, AimAssist, slaan door muren, BadPackets, AutoClick-tijdpatronen, gewijzigde knockback, Scaffold, Tower, FastPlace, Nuker en blokbereik. De interface gebruikt een label voor alleen monitoring, terwijl gecompileerde code ook kickpaden bevat; controleer het daadwerkelijke moderatiegedrag op een testserver voordat je op dat label vertrouwt. De eerdere build bevat in plaats daarvan de oude Anti AutoClick- en Anti Fly-bediening.
 
-### Een wedstrijd instellen
+## Volledige voorbereiding en gebruik met `/mhgui`
 
-1. Gebruik `/mhgui` met `vexland.admin` (standaard: OP).
-2. Open **Player Roles**, klik op een spelertegel met naam en kies vervolgens **Runner**, **Hunter**, **Spectator** of **No Team**. Hiermee open je een keuzemenu voor een specifieke rol; klikken op de speler doorloopt de rollen niet.
-3. Wijs minstens één Runner en één Hunter toe. Online spelers zonder toegewezen rol kunnen Hunter worden wanneer een wedstrijd begint; toeschouwers vullen de vereiste plek van geen van beide teams.
-4. Controleer **Match Settings**, **GrimAC Security** en **Global Language**. Schakel Server Freeze uit voordat je begint.
-5. Open **Match Controls → Start Match**. De inventarissen van deelnemers worden voorbereid/leeggemaakt, de introductie wordt afgespeeld en de roulette kiest hoe lang de Hunters bij de start moeten wachten.
+### 1. Installeer de gecombineerde build
 
-### Home: `/mhgui` (vijf rijen)
+1. Stop de **Paper 1.21.11 / Java 21**-server volledig en maak een back-up van werelden en plugingegevens.
+2. Plaats alleen `VexLandManhunt-2.0.0.jar` uit deze versie in `plugins/`. Verplaats oudere JAR's van Manhunt en zelfstandige GrimAC uit de actieve pluginmap. Bewaar hun gegevensmappen; verwijder ze niet. Spelers installeren deze JAR niet op de client.
+3. Start normaal op in plaats van `/reload` te gebruiken. De geïntegreerde lader beheert de levenscyclus van Grim en PacketEvents.
+4. Voer als OP of met `vexland.admin` de opdracht `/vexintegration` uit. Controleer `Grim=ACTIVE` en `PacketEvents=true` voordat je doorgaat naar `/mhgui`. Inactieve bescherming is een opstartprobleem, geen geslaagde geïntegreerde installatie.
 
-| Positie | Knop | Actie |
+De Grim-configuratie staat in `plugins/VexLandManhunt/grim/` (`config.yml`, `messages.yml`, `punishments.yml`, `discord.yml`), met optionele geschiedenis in `violations.sqlite`. Back-ups van de eerste migratie gaan naar `plugins/VexLandManhunt-integration-backups/`; `plugins/VexLandManhunt/integration-migration-v1.txt` markeert de voltooiing. Als zowel oude als geïntegreerde Grim-gegevens bestaan, blijft de geïntegreerde bestemming behouden en wordt een waarschuwing gelogd. Migratie weigert symbolische koppelingen.
+
+Controleer de verantwoordelijkheid voor beweging in `plugins/VexLandManhunt/integration.properties`; behoud de andere instellingen. Standaardwaarde bij een nieuwe installatie:
+
+```properties
+movement-correction-owner=legacy
+```
+
+De volledige handleiding voor de openbare menu's hieronder volgt de 1.9.11-spelbasis van dit pakket. De toeschouwerstak heeft een eigen gearchiveerde handleiding.
+
+### 2. Open het controlecentrum
+
+Meld je op de server aan als beheerder met **OP** of de permissie **`vexland.admin`** en voer in:
+
+```text
+/mhgui
+```
+
+De instructies hieronder beschrijven de openbare interface in pluginversie **2.0.0**, met Engelse knopnamen. Labels volgen de gekozen servertaal. Gebruik voor volledige GUI-bediening een vertrouwd **OP**-account: de descriptorpermissie staat het openen van het commando toe, terwijl sommige meegeleverde GUI-handlers strengere OP-controles uitvoeren. De hoofdinventaris heeft vijf rijen van negen vakken. Houd de muis boven een knop voor de beschrijving en huidige instelling. De meeste knoppen gebruiken een normale klik; bijzondere muisacties en bevestigingen worden hieronder uitgelegd. Het kleinere 1.6.4-menu komt aan het einde aan bod.
+
+#### Bereid je eerste wedstrijd voor
+
+1. Open **Player Roles**. Klik op het spelershoofd van elke deelnemer tot de juiste rol verschijnt. In 2.0.0 wisselt de rol tussen **Runner** en **Hunter**; een deelnemer zonder rol wordt bij de eerste klik Runner. Links-/rechts-/shift-klikken zijn geen afzonderlijke snelkoppelingen voor rolkeuze. Gebruik zo nodig **Previous Page**, **Next Page** en **Back to Control Center**.
+2. Wijs minstens één Runner en minstens één Hunter toe. De startroutine kan overige online spelers zonder rol in Hunters veranderen; iedereen expliciet indelen maakt de teams duidelijk.
+3. Klik op **Friendly Fire** om te bepalen of teamgenoten elkaar schade mogen toebrengen. Controleer na klikken de ON/OFF-indicator.
+4. Klik op **Language** om de serverbrede taal te kiezen. Dit beïnvloedt berichten, interfaces, meldingen en gidsboeken voor iedereen, niet alleen voor jezelf.
+5. Controleer **Smart Hunter Kit**, **Auto World Spawn** en **Anti-Cheat**. Lees via de boekknop de beheerdersgids als je uitleg in het spel nodig hebt.
+6. Zorg dat **Server Freeze** uitstaat en klik op **Start Match**. De start bereidt spelers en inventarissen voor, toont de introductie en willekeurige roulette voor de voorsprong voordat Hunters vrijkomen, en begint de jacht. Bewaar vooraf alles wat je wilt behouden buiten de inventarissen van deelnemers.
+
+#### Hoofdknoppen van het controlecentrum
+
+De posities tellen rijen van boven naar beneden en kolommen van links naar rechts. Ze beschrijven de uiteindelijke versierde 2.0.0-indeling.
+
+| Positie | Engelse knop | Functie |
 |---|---|---|
-| R2 C2 | Match Controls | Starten, pauzeren/hervatten, vrijlaten en resetten. |
-| R2 C4 | Player Roles | Open de rollenlijst van online spelers. |
-| R2 C6 | Match Settings | Eigen vuur, kits, spawn, herverbinding en voorinstellingen. |
-| R2 C8 | Player Management | Kies een doelwit en gebruik speler-/wereldhulpmiddelen. |
-| R4 C2 | GrimAC Security | Open de beveiligingsinstellingen. |
-| R4 C4 | Global Language | Kies de taal die voor iedereen wordt gebruikt. |
-| R4 C6 | Administrator Guide | Voeg het gelokaliseerde beheerdersboek toe aan je inventaris. |
-| R5 C5 | Close | Sluit het menu. |
+| Rij 2, kolom 2 | Player Roles | Opent het paginamenu met Runner-/Hunter-spelershoofden. |
+| Rij 2, kolom 3 | Target Player | Wisselt tussen andere online spelers voor beheerdersacties op het gekozen doel. Controleer de huidige naam. |
+| Rij 2, kolom 4 | Friendly Fire | Schakelt schade tussen teamgenoten aan/uit. |
+| Rij 2, kolom 5 | Match Info | Stuurt een kort rapport over wedstrijdstatus, teams, friendly fire en gekozen doel. |
+| Rij 2, kolom 6 | Start Match | Voert de normale wedstrijdstart en willekeurige voorsprong uit. |
+| Rij 2, kolom 7 | Full Heal | Herstelt de gezondheid van alle online spelers. |
+| Rij 2, kolom 8 | Reset Match | Voert de volledige wedstrijdreset uit. Dit verschilt van Reset Settings. |
+| Rij 3, kolom 2 | Full Hunger | Herstelt voedsel en verzadiging van alle online spelers. |
+| Rij 3, kolom 3 | Release Hunters | Laat wachtende Hunters vrij voordat de voorsprong afloopt. |
+| Rij 3, kolom 4 | Clear Effects | Verwijdert drankjeseffecten van alle online spelers. |
+| Rij 3, kolom 5 | Server Freeze | Schakelt globale serverbevriezing aan/uit; gewone spelers zonder OP worden bevroren. |
+| Rij 3, kolom 6 | Clear Target Inventory | Leegt inventaris, pantser en tweede hand van de gekozen speler na bevestiging. |
+| Rij 3, kolom 7 | Teleport Everyone | Brengt alle online spelers naar je huidige positie. |
+| Rij 3, kolom 8 | Kill Target | Doodt de gekozen speler na bevestiging; normale doodregels kunnen de wedstrijd beïnvloeden. |
+| Rij 4, kolom 2 | Anti-Cheat | Opent de VexAC Security-bediening. |
+| Rij 4, kolom 3 | Freeze Target | Schakelt individuele bevriezing van de gekozen speler aan/uit. |
+| Rij 4, kolom 4 | Emergency Restore | Herstelt gezondheid, voedsel en verzadiging van iedereen online. |
+| Rij 4, kolom 5 | Freeze Team | Linksklik schakelt Runners; rechtsklik Hunters; shift-klik verwijdert individuele/teambevriezingen. |
+| Rij 4, kolom 6 | Set Day | Stelt dagtijd in voor je huidige wereld. |
+| Rij 4, kolom 7 | Clear Weather | Stopt regen en onweer in je huidige wereld. |
+| Rij 4, kolom 8 | Language | Opent de globale taalkeuze. |
+| Rij 5, kolom 2 | Smart Hunter Kit | Schakelt adaptieve Hunter-respawnkits aan/uit; toont ON/OFF. |
+| Rij 5, kolom 3 | Clear Dropped Items | Verwijdert gevallen item-entiteiten in je huidige wereld. |
+| Rij 5, kolom 4 | Pause Match / Resume Match | Stopt of hervat actieve gameplay en wedstrijdtimers. |
+| Rij 5, kolom 5 | Emergency Sync | Synchroniseert rollen, kompassen en gerelateerde runtime opnieuw. |
+| Rij 5, kolom 6 | Reset Settings | Herstelt evenwichtige instellingen na bevestiging met twee klikken. |
+| Rij 5, kolom 7 | Close | Sluit het controlecentrum. |
+| Rij 5, kolom 8 | Auto World Spawn | Opent de intervalkeuze voor automatische Overworld-spawn. |
+| Rij 5, kolom 9 | Manhunt Administrator Guide | Geeft het vertaalde beheerdersgidsboek. |
 
-Het baken op R1 C5 geeft de wedstrijdstatus en aantallen Runners/Hunters weer.
+Decoratief glas en titel-/statusitems zijn geen spelknoppen.
 
-### Match Controls (vijf rijen)
+#### Rollen en gekozen doelen
 
-| Positie | Knop | Actie |
-|---|---|---|
-| R2 C2 | Start Match | Start de volledige reeks. |
-| R2 C4 | Pause Match / Resume Match | Pauzeer of hervat het spel en de wedstrijdtimers; beschikbaar voor een wedstrijd met status RUNNING. |
-| R2 C6 | Release Hunters | Beëindig de huidige wachttijd voor Hunters voortijdig. |
-| R2 C8 | Reset Match | Open de bevestiging en reset vervolgens de wedstrijd volledig. |
-| R4 C2 | Server Freeze | Schakel het globaal bevriezen van spelers zonder OP in of uit. |
-| R4 C4 | Teleport Everyone | Open de bevestiging en haal vervolgens alle online spelers naar je toe. |
-| R4 C6 | Match Info | Verstuur het wedstrijd- en teamrapport. |
+**Player Roles** verandert het daadwerkelijke Manhunt-team van een deelnemer. Klik op het hoofd en lees de bijgewerkte rol. Tijdens STARTING/RUNNING staat de interface Runner-/Hunter-wijzigingen toe, maar weigert de laatste Runner in Hunter te veranderen. Zo blijft de Runner-kant in de lopende wedstrijd behouden. Verander rollen bewust, want teamruntime en kompassen worden na een wijziging gesynchroniseerd.
 
-**Back** staat op R5 C1; **Close** staat op R5 C9. Server Freeze staat los van Pause Match: gebruik Pause wanneer de klok en de spelsystemen tegelijk moeten stoppen.
+**Target Player** staat hier los van: het selecteert iemand voor acties als Freeze Target, Clear Target Inventory of Kill Target zonder diens team te veranderen. Wissel tot de bedoelde online speler wordt getoond. Als een opgeslagen doel niet meer beschikbaar is, kan de code terugvallen op de eerste andere online speler; controleer daarom de naam vlak vóór een actie op het gekozen doel. Als niemand anders online is, meldt het dat er geen doel beschikbaar is.
 
-### Player Roles
+**Clear Target Inventory** en **Kill Target** vereisen twee klikken op dezelfde actie voor hetzelfde doel binnen **vijf seconden**. De eerste klik zet de bevestiging klaar en toont het doel; de tweede voert de actie uit. Van doel wisselen of te lang wachten vereist een nieuwe bevestiging. Een inventaris legen verwijdert de inhoud; een Runner doden kan de wedstrijd beëindigen of veranderen volgens de normale doodregels.
 
-De spelerslijst met zes rijen toont maximaal 45 roltegels met naam, gesorteerd op spelersnaam, in de eerste vijf rijen. Runner gebruikt lichtgroen beton, Hunter rood beton, Spectator een Enderoog en No Team grijs beton. De onderste rij bevat **Previous Page** op C1, pagina-/online-informatie op C3, **Back to Control Center** op C5 en **Next Page** op C9.
+**Freeze Team** heeft de enige teamspecifieke muissnelkoppelingen in dit menu: gewoon linksklikken kiest het Runner-team, gewoon rechtsklikken het Hunter-team, en shift-klikken verwijdert alle individuele/teambevriezingen die dit hulpmiddel beheert. De globale Server Freeze-schakelaar is apart en moet apart worden uitgezet als spelers bevroren blijven.
 
-Klik op een speler om **Choose Player Role** te openen (drie rijen):
+#### Smart Hunter Kit
 
-| Positie | Specifieke rol |
-|---|---|
-| R2 C2 | Runner |
-| R2 C4 | Hunter |
-| R2 C6 | Spectator |
-| R2 C8 | No Team |
+Klik op **Smart Hunter Kit** om adaptieve Hunter-respawnkits aan/uit te zetten. De knop toont de huidige status. Met de functie aan kan een respawnende Hunter een kit krijgen die is aangepast aan Runner-uitrusting en wedstrijdcontext; de meegeleverde spelersgids beschrijft de kit als zwakker dan het Runner-gemiddelde. Met de functie uit krijgen Hunters na overlijden geen automatische kit. Dit schakelt het trackingkompas niet uit.
 
-De naam/huidige rol van de speler verschijnt op R1 C5; **Back** staat op R3 C1 en **Close** op R3 C9. Rollen kunnen tijdens een wedstrijd veranderen. Als je tijdens RUNNING de laatste toegewezen Runner een andere rol dan Runner geeft, verschijnt de bevestiging **Last Runner: the match will end**. Het toepassen hiervan kan de Hunters de overwinning geven. Directe rolcommando's worden onmiddellijk toegepast, dus gebruik ze weloverwogen. No Team kan hier worden toegewezen; de normale synchronisatie bij starten/deelnemen kan een speler zonder toegewezen rol tijdens een actieve wedstrijd veranderen in een Hunter.
+Gebruik voor een directe instelling in plaats van omschakelen `/mhkit on`, `/mhkit off` of `/mhkit status`. De geïnspecteerde terugvalwaarde voor een nieuwe configuratie is ON.
 
-### Toeschouwers
+#### Auto World Spawn
 
-Een beheerder wijst de rol toe met `/mspectator <player>` of kiest **Spectator** in Player Roles. Het commando controleert beheerderstoegang, hoewel de descriptor geen machtigingsregel heeft. Spelers schrijven zichzelf niet in door `/mhspectate` uit te voeren.
+Klik op **Auto World Spawn** en kies **OFF**, **5 minutes**, **10 minutes**, **15 minutes**, **20 minutes** of **30 minutes**. Een keuze wordt opgeslagen en brengt je terug naar `/mhgui`; **Back** gaat terug zonder een nieuw interval te kiezen.
 
-Een toeschouwer krijgt een **Spectator teleport**-kompas in het eerste vak van de snelbalk. Houd het in de hoofdhand en klik met de rechtermuisknop, of gebruik `/mhspectate`, om het teleportatiemenu met zes rijen te openen. Het menu werkt alleen zolang de speler de rol Spectator heeft. De eerste vijf rijen bevatten maximaal 45 levende, online Runners/Hunters, gesorteerd op naam; klik op een roltegel met naam om naar de huidige locatie van die speler te teleporteren, ook in een andere wereld. De onderste rij bevat **Previous Page** op C1, **Close** op C5 en **Next Page** op C9. Als er geen geschikte deelnemer is, staat op R3 C5 **No players available**. Als je dit menu sluit, blijf je toeschouwer.
+Indien ingeschakeld zoekt het systeem periodiek een veilige Overworld-oppervlakte nabij een actieve Runner daar en verplaatst de wereldspawn. Het slaat verplaatsing over als er geen Runner in de Overworld is of geen veilige plek gevonden wordt. De terugvalwaarde voor een nieuwe configuratie is OFF. Gebruik voor dezelfde bediening via commando `/mhspawn off`, `/mhspawn 15` of `/mhspawn status`, met een ondersteund interval in plaats van 15.
 
-Toeschouwers vliegen, zijn verborgen voor andere spelers, hebben geen botsingen en zijn beschermd tegen schade. De implementatie gebruikt de avonturenmodus met vliegen; ze geeft geen camera van de standaard toeschouwersmodus of beweging door blokken. Aanvallen, blokken breken/plaatsen, normale interacties met blokken/entiteiten, voorwerpen oppakken/weggooien, wisselen met de tweede hand, klikken/slepen in de inventaris, aanpassen van harnashouders en ervaring oppakken/verkrijgen worden geblokkeerd. Mobs kunnen hen niet als doelwit kiezen en veranderingen in honger worden geannuleerd. `/teammsg <message>` bereikt andere spelers met de rol Spectator. Geef geen locaties van deelnemers of andere hulp van buitenaf door aan wedstrijdspelers.
+#### Pauze, opnieuw verbinden en herstel
 
-Om te stoppen wijst een beheerder **Runner**, **Hunter** of **No Team** toe, of gebruikt `/mrunner <player>` of `/mhunter <player>`. Er is geen specifiek commando of specifieke knop waarmee je zelf kunt stoppen. Bij het verlaten worden de opgeslagen inventaris/cursor, locatie, spelmodus, vliegstatus, botsingen en immuniteitsstatus hersteld; daarna wordt het wedstrijdgedrag van de nieuwe rol toegepast. De toeschouwersstatus wordt opgeslagen om opnieuw verbinding te kunnen maken. Een volledige wedstrijdreset herstelt de toeschouwersstatus, wist rollen en verplaatst online spelers naar een veilige spawn in de Overworld wanneer die beschikbaar is. De normale opruiming na afloop van een wedstrijd laat toeschouwers buiten de afhandeling van voorwerpen/vliegen voor deelnemers.
+**Pause Match** is beschikbaar als de wedstrijd RUNNING is. Het bevriest gameplay-systemen, beweging/interacties, wedstrijdtimers, tracking en spawnverplaatsing. **Resume Match** hervat die systemen en compenseert gepauzeerde tijd. Server Freeze bevriest alleen spelers en dient niet als vervanging wanneer ook de wedstrijdklok moet pauzeren.
 
-### Match Settings (vijf rijen)
+Het Runner-terugkeervenster is instelbaar, met een nieuwe terugvalwaarde van **15 minuten**. Tijdig terugkeren herstelt Runner-status en geeft tien seconden bescherming. Serverdowntime verbruikt de opgeslagen terugkeertijd niet. Verlopen Runner-plaatsen worden Hunters; de timeout van de laatste Runner kan Hunters de winst geven.
 
-| Positie | Knop | Actie |
-|---|---|---|
-| R2 C2 | Friendly Fire | Schakel schade aan teamgenoten in of uit. |
-| R2 C4 | Smart Hunter Kit | Schakel adaptieve kits voor Hunters bij respawnen in of uit. |
-| R2 C6 | Auto World Spawn | Open de intervalkeuze. |
-| R2 C8 | Reconnect Grace | Open de keuze van de herverbindingstijd voor Runners. |
-| R4 C2 | Match Preset | Kies Classic, Fast, Hardcore of Custom. |
-| R4 C4 | Reset Settings | Bevestig gebalanceerde instellingen: Kit ON, Spawn 15m, Reconnect 15m. |
-| R4 C6 | Random Head Start | Informatietegel; de roulette blijft de vertraging bepalen. |
+**De aangeleverde 2.0.0-GUI bevat geen afzonderlijke keuze voor de terugkeerduur**. Stop om dit aan te passen de server, bewerk `plugins/VexLandManhunt/config.yml`, behoud de overige instellingen en stel in:
 
-**Back** staat op R5 C1; **Close** op R5 C9.
+```yaml
+features:
+  custom-reconnect-minutes: 15
+```
 
-Het keuzemenu **Reconnect Grace** met drie rijen biedt **1, 5, 10, 15, 20, 30 minuten** op R2 C2–C7, in die volgorde. Een klik slaat de waarde op en houdt het keuzemenu open. Back staat op R3 C1; Close op R3 C9.
+Herstart na bewerken. Waarden onder één minuut worden begrensd op één. **Reset Settings** zet dit terug op 15 minuten. De gecompileerde build bewaart ook wedstrijd-/verbindingsstatus en back-upsnapshots voor herstel na herstart/crash; laat de plugin die bestanden beheren in plaats van ze tijdens het spelen te bewerken.
 
-Het keuzemenu **Match Preset** met drie rijen zet **Classic**, **Fast**, **Hardcore**, **Custom** op R2 C2, C4, C6, C8. Classic: Kit ON, Spawn 15m, Reconnect 15m. Fast: ON, 5m, 10m. Hardcore: OFF, OFF, 5m. Custom behoudt de huidige handmatige instellingen. Voorinstellingen behouden de willekeurige voorsprong bij de start. Na de keuze blijft dit menu open; Back staat op R3 C1, Close op R3 C9.
+#### Reset Settings en Reset Match
 
-**Auto World Spawn** biedt OFF, 5m, 10m op R2 C2, C3, C4 en 15m, 20m, 30m op R2 C6, C7, C8. Back staat op R3 C5. Kies een interval of gebruik `/mhspawn <off|5|10|15|20|30|status>`. Dit verplaatst de spawn in de Overworld naar de buurt van een geschikte Runner in de Overworld; als niemand geschikt is, kan dit worden overgeslagen. `/mhkit <on|off|toggle|status>` bedient kits rechtstreeks.
+**Reset Settings** vereist twee klikken op de knop binnen **acht seconden**. De eerste zet de bevestiging klaar; de tweede herstelt **Smart Kit ON**, **Auto Spawn elke 15 minuten**, **Terugkeertijd 15 minuten** en een **willekeurige voorsprong**. Dit verschilt van een nieuwe installatie, waar Auto World Spawn terugvalt op OFF. Het verandert de configuratie; het vervangt de volledige wedstrijdreset niet.
 
-### Player Management (zes rijen)
+**Reset Match** voert de bestaande wedstrijdreset uit, wist tijdelijke wedstrijdstatus/items en brengt spelers naar de Overworld-spawn voor een volgende ronde. De hoofdknop gebruikt niet de bevestiging met twee klikken van Reset Settings. **Start Match** kan deelnemersinventarissen voorbereiden/legen. Controleer welke reset-/startbediening je wilt gebruiken voordat je klikt.
 
-| Positie | Knop | Van toepassing op |
-|---|---|---|
-| R1 C5 | Target Player | Open een spelerskiezer met namen. |
-| R2 C2 | Full Heal | Alle online spelers. |
-| R2 C4 | Full Hunger | Alle online spelers. |
-| R2 C6 | Clear Effects | Alle online spelers. |
-| R2 C8 | Freeze Target | Geselecteerde speler. |
-| R4 C2 | Clear Target Inventory | Geselecteerde speler; bevestiging vereist. |
-| R4 C4 | Kill Target | Geselecteerde speler; bevestiging vereist en de normale wedstrijduitkomsten zijn van toepassing. |
-| R4 C6 | Set Day | Je huidige wereld. |
-| R4 C8 | Clear Weather | Je huidige wereld. |
-| R5 C2 | Clear Dropped Items | Je huidige wereld; bevestiging vereist. |
-| R5 C4 | Emergency Sync | Vernieuw de rol-/runtimesystemen voor online spelers. |
-| R5 C6 | Freeze Team | Links: Runners; rechts: Hunters; shift-klik: hef deze team-/individuele bevriezingen op. |
+#### Taal- en anti-cheatbediening
 
-Back staat op R6 C1; Close op R6 C9. Doelwitselectie verandert geen rollen. De kiezer biedt 28 andere online spelers per pagina, in rij 2–5, kolom 2–8; klik op een naam om die te selecteren en terug te keren. Previous/Back/Next staan op R6 C1/C5/C9. Controleer het weergegeven doelwit opnieuw voordat je een actie toepast.
+**Language** opent de globale keuze. Klik op de gewenste taal. Beide aangeleverde builds bevatten Engels, Perzisch, Arabisch, Spaans, Frans, Duits, Russisch, Vereenvoudigd Chinees, Hindi en Portugees. De geselecteerde taal geldt voor de server en wordt opgeslagen. Japanse README-documentatie voegt geen Japans toe aan de taalkeuze in de plugin.
 
-### Bevestigingsschermen
+**Anti-Cheat** opent **VexAC Security**. Klik op **VexAC Master** om de interne engine aan/uit te zetten, of op **Movement**, **Combat**, **AutoClick**, **Velocity / AntiKB** of **World / Scaffold** om die groep te schakelen. **Anti X-Ray** schakelt Papers ingestelde Anti-Xray; herstart de server om dit toe te passen. Status-, bewijslog- en detectiemodeltegels leggen de huidige systemen uit. **Back to Control Center** gaat terug naar het hoofdmenu.
 
-Reset Match, Teleport Everyone, Reset Settings, Clear Target Inventory, Kill Target, Clear Dropped Items en de wijziging van de laatste Runner via de GUI gebruiken een afzonderlijk scherm **Confirm Action** met drie rijen. Lees de actie/het doelwit op R1 C5 en klik vervolgens op de groene knop **Confirm** op R2 C3 of de rode knop **Cancel** op R2 C7. De bevestiging verloopt na **30 seconden**. Gewijzigde/offline doelwitten of gewijzigde rollen vereisen een nieuwe selectie. Dit vervangt de instructies uit de oude handleiding over herhaald klikken binnen vijf/acht seconden voor deze nieuwe menupaden.
+De interface beschrijft moderatie via alleen monitoring, maar statische inspectie toont nog een kickpad op basis van drempelwaarden. Behandel de menutekst over geen kicks als een verschil tussen implementatie/documentatie en controleer moderatie op een gecontroleerde server voordat je erop vertrouwt.
 
-### GrimAC Security en taal
+#### Geïntegreerde GrimAC en oudere VexAC
 
-Het Grim-menu met zes rijen heeft de status op R1 C5; schakelaars op R2 C2 **GrimAC Master**, C4 **Movement**, C6 **Combat**, C8 **Packets**; R4 C2 **Velocity / AntiKB**, C4 **World / Scaffold**, C6 **Anti X-Ray**, C8 **Admin Alerts**; en R5 C5 **Monitor mode**. Back staat op R6 C1 en Close op R6 C9. Monitor mode regelt meldingen/bewijs tegenover handhaving. Paper Anti-Xray is onafhankelijk en vereist een herstart na wijzigingen. Dit zijn GrimAC-instellingen; de oudere beschrijving van het VexAC/AutoClick-menu beschrijft deze versie niet.
+De bestaande **VexAC Security**-GUI bestuurt de oudere VexAC-engine; de Master/groepsknoppen zijn geen nieuw Grim-bedieningspaneel. Geïntegreerde GrimAC draait ernaast. Gebruik `/vexintegration` voor de modulestatus en de ingebouwde `/grim` of `/grimac` voor Grims eigen opdrachten en hulpmiddelen die door machtigingen worden geregeld. Grims instellingen en strafregels staan in `plugins/VexLandManhunt/grim/`.
 
-Global Language geldt voor iedereen en vernieuwt menu's/voorwerpen. Klik op de taalnaam; Back staat op R3 C5. `/mhlang` opent hetzelfde keuzemenu en `/mhhelp` levert de gelokaliseerde handleiding voor spelers/beheerders.
+Het GrimBridge-monitor/groepsmenu uit 1.13.1 en `grim-settings.yml` beschrijven dit pakket niet. Ga er niet van uit dat het uitschakelen van VexAC ook geïntegreerde GrimAC uitschakelt, of dat een monitorlabel een beleid zonder kicks vastlegt. Paper Anti-Xray blijft een onafhankelijke instelling waarvoor opnieuw opstarten nodig is.
 
-### Huidige standaardwaarden, herverbinding en moderatie
+#### Gids in het spel en probleemoplossing
 
-De terugvalwaarden voor een nieuwe configuratie in `plugins/VexLandManhunt/config.yml` zijn:
+Klik op **Manhunt Administrator Guide** of gebruik `/mhhelp` voor een vertaald gidsboek. Spelers kunnen in 2.0.0 `/mhhelp` gebruiken voor hun rolgebonden gids. Hunters klikken met rechts op hun kompas om een Runner te kiezen; die trackinginterface staat los van de beheerderskeuze Target Player.
+
+Als een rol of kompas niet gesynchroniseerd lijkt, vernieuwt **Emergency Sync** de gerelateerde runtime. **Match Info** helpt teams en status te controleren. Mislukt een start, controleer dan of de wedstrijd klaarstaat, serverbevriezing uitstaat en er een Runner-/Hunter-team is. Gebruik na vervangen van de JAR een volledige serverherstart in plaats van `/reload`. `/mhdebug` is een beheerderscommando voor diagnostiek in 2.0.0; de aanwezigheid betekent niet dat deze versies tests op een actieve server hebben doorstaan.
+
+#### Het oudere 1.6.4-controlecentrum gebruiken
+
+1.6.4 behoudt **Player Roles**, **Friendly Fire**, **Start Match**, **Reset Match**, **Release Hunters Now**, **Server Lock**, **Teleport Everyone To Me**, **Heal & Feed Everyone**, **Match Status**, taalkeuze, **Anti Cheat** en een beheerdersgids. Rollen doorlopen **None → Runner → Hunter**, en rolwijzigingen zijn geblokkeerd terwijl een wedstrijd start/loopt.
+
+Het anti-cheatmenu bevat de oude **Anti AutoClick** (30-CPS-regel met waarschuwing/kick), **Anti Fly** en Papers **Anti X-Ray**. Het Runner-terugkeervenster is vast **60 minuten**. De nieuwere Smart Hunter Kit V3-schakelaar, Auto World Spawn-keuze, pauze/hervatten, Reset Settings-bevestiging en uitgebreide doel-/wereldhulpmiddelen hierboven horen bij 2.0.0 en zijn niet te verwachten in het oudere menu.
+
+Deze gids is afgeleid van metadata van de aangeleverde JARs, meegeleverde taal-/hulpteksten en statische disassemblage. De interface is tijdens deze inspectie niet uitgevoerd op een actieve Minecraft-server.
+
+### 3. Speel de achtervolging
+
+Runners ontsnappen tijdens de willekeurige voorsprong en werken toe naar het verslaan van de Ender Dragon. Hunters wachten op vrijlating en klikken dan met rechts op hun trackingkompas om een Runner te kiezen. Doelen kunnen tijdens het spelen veranderen, ook als de achtervolging dimensies doorkruist. Gebruik `/teammsg <message>` om alleen met je team te praten en `/mhhelp` voor de vertaalde rolgids in 2.0.0.
+
+Als een Runner sterft, spelen de overige Runners door en wordt de overleden speler Hunter. Een Hunter kan respawnen en verder volgen. De dood van de laatste Runner of het verlopen van een Runner-terugkeertijd kan de wedstrijd voor Hunters beëindigen; het verslaan van de Ender Dragon beëindigt haar voor Runners.
+
+### 4. Pauzeer, beëindig en bereid een volgende wedstrijd voor
+
+Pauzeer in 2.0.0 met `/mhpause` en ga verder met `/mhresume`. Gebruik `/mhrelease` als Hunters vóór het einde van de voorsprongaftelling vrij moeten komen. Gebruik voor een nieuwe wedstrijd de volledige reset in het controlecentrum of `/mhreset`; de reset wist tijdelijke wedstrijdstatus en items en brengt spelers naar de Overworld-spawn. Wijzigingen in Paper Anti-Xray vereisen een herstart.
+
+## Standaardinstellingen in het gecombineerde 2.0.0-pakket
+
+De geïnspecteerde terugvalwaarden voor een nieuwe configuratie zijn:
 
 ```yaml
 features:
@@ -172,44 +230,43 @@ features:
   custom-reconnect-minutes: 15
 ```
 
-`0` betekent dat automatische spawnverplaatsing uit staat. Reset Settings en Classic kiezen in plaats daarvan 15 minuten. Tijdens het herverbindingsvenster van een Runner blijft diens plek behouden; een tijdige terugkeer biedt tien seconden bescherming. Opgeslagen serveruitvaltijd wordt niet meegerekend. Na het verstrijken van de termijn kan de Runner een Hunter worden of kan de wedstrijd eindigen met winst voor de Hunters. Pause/Resume bevriest spelsystemen en past de tijdmeting van de actieve wedstrijd aan. Herstelbestanden worden door de plugin beheerd.
+`0` betekent dat automatische spawnverplaatsing uitstaat. De bevestigde instellingenreset in de GUI stelt het spawninterval in op 15 minuten. Gebruik de GUI of `/mhkit` en `/mhspawn` voor de bijbehorende instellingen.
 
-De instellingen van de Grim-bridge worden bewaard in `plugins/VexLandManhunt/grim-settings.yml`. De oorspronkelijke standaardwaarden zijn Master ON, alle vijf groepen ON, Admin Alerts ON en **Monitor mode OFF: handhaving is ingeschakeld**. Monitor mode zet bewijs/meldingen in een wachtrij en annuleert signaleringen die aan de voorwaarden voldoen. In de handhavingsmodus kan de bridge een Grim-kickcommando omzetten in een gelokaliseerde verbreking van de verbinding die opnieuw verbinden toestaat; er wordt geen beleid voor permanente bans ingesteld. De daadwerkelijke drempels hangen ook af van de configuratie van Grim. Bewijs wordt in een wachtrij geplaatst voor `plugins/VexLandManhunt/anticheat/grim-evidence.log`; begrensde wachtrijen kunnen bij belasting vermeldingen laten vallen. De bridge geeft uitzonderingen aan toeschouwers, gepauzeerd/bevroren spel en bepaalde voertuigsituaties, met een respijtperiode van drie seconden na verbinden, teleporteren en respawnen. Er worden geen benchmarks voor de nauwkeurigheid of prestaties van de anti-cheat geclaimd.
+## Overzicht van openbare opdrachten — gecombineerd 2.0.0
 
-## Overzicht van openbare commando's — 1.13.1
+Beheerdersopdrachten vereisen OP of `vexland.admin` (standaard OP). Teamchat, prullenbak en nachtzicht zijn spelershulpmiddelen; `/mhhelp` geeft de rolafhankelijke handleiding. De tabel vermeldt de 17 Manhunt/integratieopdrachten; ingebouwde Grim-opdrachten hebben hun eigen machtigingen. `/mhnone` is hier niet geregistreerd.
 
-Beheerderstoegang betekent OP of `vexland.admin` (standaard OP). De handler van `/mspectator <player>` controleert dit ondanks het ontbreken van een machtigingsregel in de descriptor. Directe rolcommando's worden onmiddellijk toegepast; het wijzigen van de laatste Runner tijdens RUNNING kan de wedstrijd beëindigen. De GUI biedt hiervoor een bevestiging.
+| Commando | Doel |
+| --- | --- |
+| `/vexintegration` | Meld de status van geïntegreerde Grim, VexAC, PacketEvents en de gedeelde Bukkit-eigenaar |
+| `/mhgui` | Controlecentrum openen |
+| `/mhstart` | Volledige startprocedure uitvoeren |
+| `/mhreset` | Huidige wedstrijd volledig resetten |
+| `/mhrelease` | Hunters eerder vrijlaten |
+| `/mrunner <player>` | Runner toewijzen |
+| `/mhunter <player>` | Hunter toewijzen |
+| `/teammsg <message>` | Privébericht naar teamgenoten sturen |
+| `/trash` | Wegwerpinventaris met 54 vakken openen |
+| `/nv` | Persoonlijk nachtzicht schakelen |
+| `/mhlang` | Globale taalkeuze openen |
+| `/mhhelp` | Vertaald gidsboek ontvangen |
+| `/mhkit <on\|off\|toggle\|status>` | Smart Hunter-kits instellen |
+| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Automatische spawnverplaatsing instellen |
+| `/mhpause` | Lopende wedstrijd pauzeren |
+| `/mhresume` | Gepauzeerde wedstrijd hervatten |
+| `/mhdebug` | Interne diagnostiek uitvoeren |
 
-| Commando | Doel | Toegang |
-|---|---|---|
-| `/mhgui` | Open het bedieningscentrum met categorieën | Beheerder |
-| `/mhstart` | Start de volledige wedstrijdreeks | Beheerder |
-| `/mhreset` | Reset de wedstrijd volledig | Beheerder |
-| `/mhrelease` | Laat wachtende Hunters vrij | Beheerder |
-| `/mrunner <player>` | Wijs Runner toe | Beheerder |
-| `/mhunter <player>` | Wijs Hunter toe | Beheerder |
-| `/mspectator <player>` | Wijs Spectator toe | Beheerder; nieuw |
-| `/mhspectate` | Open het menu voor teleportatie naar deelnemers | Huidige Spectator; nieuw |
-| `/teammsg <message>` | Stuur naar je eigen rol/team | Speler |
-| `/trash` | Wegwerpinventaris met 54 vakken; aliassen `/mhtrash`, `/vextrash` | Speler |
-| `/nv` | Schakel persoonlijk nachtzicht in of uit | Speler |
-| `/mhlang` | Open de globale taalkeuze | Beheerder |
-| `/mhkit <on\|off\|toggle\|status>` | Configureer adaptieve Hunter-kits | Beheerder |
-| `/mhspawn <off\|5\|10\|15\|20\|30\|status>` | Configureer spawnverplaatsing | Beheerder |
-| `/mhhelp` | Ontvang een gelokaliseerde rol-/beheerdershandleiding | Speler / beheerder |
-| `/mhpause` | Pauzeer de lopende wedstrijd | Beheerder |
-| `/mhresume` | Hervat een gepauzeerde wedstrijd | Beheerder |
-| `/mhdebug` | Interne diagnostiek | Beheerder |
+## Speltalen en documentatie
 
-`/mhnone` is niet geregistreerd in deze versie; gebruik de rol No Team in de GUI. Hunters klikken met de rechtermuisknop op hun volgkompas om een Runner te kiezen; dit staat los van teleportatie door toeschouwers en de doelwitkiezer van de beheerder. Runners winnen door de Ender Dragon te verslaan; Hunters winnen wanneer er geen Runner meer over is. Een gesneuvelde Runner wordt Hunter als er nog andere Runners over zijn.
+Dit pakket behoudt **10 speltalen**: Engels, Perzisch, Arabisch, Spaans, Frans, Duits, Russisch, Vereenvoudigd Chinees, Hindi en Portugees. Elke meegeleverde vertaling heeft **683 sleutels**, volgens 1.9.11. `/mhlang` stelt één taal voor de hele server in, opgeslagen in `language.txt`.
 
-## Talen, geschiedenis en erkenning van derden
+De projectdocumentatie heeft **18 talen**, zonder een Arabische documentatie-editie. Deze vertalingen voegen geen Japans of andere extra speltalen toe aan het ongewijzigde binaire bestand.
 
-De oorspronkelijke plugin biedt **10 speltalen**: Engels, Perzisch, Arabisch, Spaans, Frans, Duits, Russisch, Vereenvoudigd Chinees, Hindi en Portugees. `/mhlang` kiest één taal voor de hele server, opgeslagen in `language.txt`. De GitHub-handleiding heeft **18 talen**, zonder een Arabische documentatie-editie. Japans en andere extra README-talen voegen geen vertalingen in het spel toe aan de ongewijzigde JAR-bestanden.
+## Versiegeschiedenis, broncode en vermeldingen
 
-De [versiegeschiedenis](https://github.com/FarlandGame/Vexland_Manhunt/blob/main/CHANGELOG.md) beschrijft elke aangeleverde build. De volledige oudere handleiding voor 1.9.11 / 1.6.4 blijft bewaard in het [versiearchief](archive/1.9.11/README.nl.md). De speciale build voor toeschouwers is nu aangeleverd en gepubliceerd als 1.13.1; de functies ervan mogen niet aan de oudere downloads worden toegeschreven.
+[CHANGELOG.md](../CHANGELOG.md) legt elke geleverde versie vast. De volledige [1.13.1-toeschouwershandleiding](archive/1.13.1/README.nl.md) en [oudere 1.9.11 / 1.6.4-handleiding](archive/1.9.11/README.nl.md) blijven beschikbaar. Elke geleverde versie behoudt zijn eigen download en controlesom.
 
-**GrimAC is een onafhankelijk project van de GrimAC-bijdragers, verspreid onder GPL-3.0.** Bardiya en Ali hebben Vexland_Manhunt en de integratie ervan gemaakt; zij worden niet als auteurs van GrimAC genoemd. De aangeleverde Grim-JAR komt overeen met het officiële Bukkit-artifact van Modrinth 2.3.73 wat betreft SHA-512 en SHA-1. De ingebedde broncodecommit komt overeen met [upstream v2.3.73](https://github.com/GrimAnticheat/Grim/releases/tag/v2.3.73). De release bevat ongewijzigde binaire bestanden, controlesommen, de upstream-broncodesnapshot, de licentie en [kennisgevingen over derden](../THIRD_PARTY_NOTICES.md). Deze componentkennisgevingen kennen geen licentie toe aan het afzonderlijke Manhunt-project.
+**Manhunt is gezamenlijk gemaakt door Bardiya / Farland_game en Ali / Alivexor. GrimAC is een apart project van GrimAC / DefineOutside en bijdragers.** Dit geïntegreerde artefact wijzigt drie Grim-klassen; het is niet het ongewijzigde officiële Grim-binaire bestand uit de oudere versie met twee bestanden. Het bijbehorende [broncodepakket](https://github.com/FarlandGame/Vexland_Manhunt/releases/download/v2.0.0/VexLandManhunt-2.0.0-source.zip) behoudt de geleverde broncode, buildscripts, afhankelijkheidsinvoer en kennisgevingen, waarbij test-/uitvoeringsbewijs is weggelaten en de broncode ongewijzigd blijft. De versie bevat ook de GPLv3-tekst, controlesommen en [kennisgevingen van derden](../THIRD_PARTY_NOTICES.md). Tijdens deze publicatie is geen test op een actieve server of test van een reproduceerbare build uitgevoerd.
 
 ## Een speelse uitdaging aan Dream
 

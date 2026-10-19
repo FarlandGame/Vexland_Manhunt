@@ -1,5 +1,20 @@
 # Version history
 
+## 2.0.0 — supplied combined package
+
+The public release/file is 2.0.0; the unchanged embedded descriptor is **1.9.11-grim.1**. The provided integration deliberately uses Manhunt 1.9.11 as its gameplay foundation, not the spectator-enabled 1.13.1 branch.
+
+- One flattened JAR combines Manhunt, modified GrimAC 2.3.73 and bundled PacketEvents under a shared Bukkit plugin instance; the descriptor provides GrimAC. No separate GrimAC or PacketEvents installation is needed for this package. Three original Grim classes are modified; this is not the unchanged standalone upstream Grim artifact.
+- Adds administrator `/vexintegration`, reporting Grim ACTIVE/INACTIVE, Bukkit owner, VexAC status, PacketEvents status and tracked players. Native `/grim` and `/grimac` registration is verified by the integrated module.
+- Requires exact Minecraft 1.21.11 and Paper configuration API, Java 21, and a full normal startup. Hot loading with online players and a separately loaded GrimAC instance are rejected. Startup failure disables the integrated plugin and logs inactive protection while the server can remain online.
+- First-load migration backs up existing Manhunt and Grim data trees, copies old Grim data only if the integrated destination is absent, preserves original folders, warns rather than merging/overwriting when both destinations exist, and refuses symbolic links. Integrated Grim data lives under plugins/VexLandManhunt/grim/.
+- Movement correction ownership is controlled by plugins/VexLandManhunt/integration.properties: legacy by default, or grim. The latter suppresses VexAC setback/teleport paths while its checks, alerts and evidence remain; it does not disable all legacy punishments. Invalid ownership values abort startup.
+- Retains the flat five-row /mhgui, Runner/Hunter role cycling, VexAC menu, Smart Hunter Kit V3, spawn movement, pause/resume, reconnect/recovery, progress/rewards/results and utilities from the 1.9.11 foundation. The VexAC GUI controls the legacy engine, separately from integrated Grim.
+- Has 17 public Manhunt/integration command registrations and ten game languages with 683 translated keys per bundled translation.
+- Does **not** contain the dedicated Spectator role, /mspectator, /mhspectate, categorized control center, exact four-way role chooser, 30-second confirmation pages, preset/reconnect GUI selectors, new SmartKitPlanner or sealed recovery system from 1.13.1. That branch remains separately downloadable with its own manual and both required JARs.
+
+Fresh gameplay defaults remain Smart Kit ON, auto spawn OFF and reconnect 15 minutes; confirmed legacy Reset Settings selects ON / 15m / 15m. Original bytes are preserved. The source-only companion retains all supplied source code, build scripts, dependency inputs and notices; 50 local test/runtime evidence files were excluded without modifying source payloads. GPLv3 text and component notices accompany the artifact. No independent rebuild or live-server/anti-cheat performance test was run during publication.
+
 ## 1.13.1
 
 Compared with the supplied 1.9.11 build:

@@ -1,6 +1,6 @@
 # Vexland_Manhunt — 1.9.11 / 1.6.4
 
-> Guida delle versioni archiviate · [1.13.1 →](../../README.it.md)
+> Guida delle versioni archiviate · [2.0.0 →](../../README.it.md)
 
 [English](README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 

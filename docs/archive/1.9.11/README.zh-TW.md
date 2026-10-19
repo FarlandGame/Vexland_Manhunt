@@ -1,6 +1,6 @@
 # Vexland_Manhunt — 1.9.11 / 1.6.4
 
-> 舊版本封存指南 · [1.13.1 →](../../README.zh-TW.md)
+> 舊版本封存指南 · [2.0.0 →](../../README.zh-TW.md)
 
 [English](README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
