@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Łowcy przynoszą kompas. Uciekinierzy — plan… i wymówkę na wszelki wypadek. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Kompletna rozgrywka Minecraft: Uciekinierzy kontra Łowcy, współtworzona przez [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) i [Ali · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt łączy konfigurację meczu, role drużyn, początek pościgu, śledzenie, postęp, nagrody, wyniki i administrację w jednej wtyczce dla serwera Paper. Uciekinierzy próbują pokonać Ender Dragona, a Łowcy próbują wyeliminować ostatniego Uciekiniera. Wtyczka obsługuje wielu Uciekinierów i utrzymuje pościg mimo śmierci, odrodzeń, zmian wymiaru i ponownych połączeń. Centrum sterowania `/mhgui` pozwala administratorom zarządzać meczem przez menu, z przetłumaczonymi komunikatami i poradnikami dla graczy.

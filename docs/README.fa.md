@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> هانترها قطب‌نما می‌آورند؛ رانرها نقشه… و یک بهانه برای روز مبادا! 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **یک تجربهٔ کامل رانر در برابر هانتر در ماینکرافت، ساختهٔ مشترک [بردیا علیزاده، ملقب به کبیر · Farland_game](https://github.com/FarlandGame) و [علی · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt آماده‌سازی مسابقه، نقش‌های تیمی، شروع تعقیب‌وگریز، ردیابی، پیشرفت، پاداش‌ها، نتایج و مدیریت را در یک پلاگین سرور Paper گرد هم می‌آورد. رانرها تلاش می‌کنند اندر دراگون را شکست دهند و هانترها سعی می‌کنند آخرین رانر را حذف کنند. پلاگین از چند رانر پشتیبانی می‌کند و تعقیب‌وگریز را در جریان مرگ بازیکنان، بازگشت پس از مرگ، جابه‌جایی بین بُعدها و اتصال مجدد ادامه می‌دهد. مرکز کنترل `/mhgui` به مدیران اجازه می‌دهد مسابقه را از طریق منوها اداره کنند؛ بازیکنان نیز پیام‌ها و کتاب‌های راهنما را به زبان انتخاب‌شده دریافت می‌کنند.

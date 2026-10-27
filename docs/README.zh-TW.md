@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> 獵人帶上指南針，逃亡者帶上計畫……再備好一個藉口。🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **完整的 Minecraft 逃亡者對抗獵人體驗，由 [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) 與 [Ali · Alivexor](https://github.com/Alivexor) 共同開發。**
 
 Vexland_Manhunt 將比賽設定、隊伍角色、開場追逐、追蹤、進度、獎勵、結果與管理功能整合進一個 Paper 伺服器外掛。逃亡者試圖擊敗終界龍，獵人則試圖消滅最後一名逃亡者。外掛支援多名逃亡者，並在死亡、重生、切換維度和重新連線後繼續維持追逐。管理員可以透過 `/mhgui` 控制中心的選單管理比賽，玩家則可以使用本地化訊息與指南書。

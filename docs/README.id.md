@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Hunter membawa kompas. Runner membawa rencana… dan alasan cadangan untuk berjaga-jaga. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Pengalaman Minecraft Runner melawan Hunter yang lengkap, dibuat bersama oleh [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) dan [Ali · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt menyatukan persiapan pertandingan, peran tim, pengejaran awal, pelacakan, progres, hadiah, hasil, dan administrasi dalam satu plugin server Paper. Runner berusaha mengalahkan Ender Dragon, sedangkan Hunter berusaha mengeliminasi Runner terakhir. Plugin ini mendukung beberapa Runner dan menjaga pengejaran tetap berlangsung saat pemain mati, respawn, berpindah dimensi, dan terhubung kembali. Pusat kendali `/mhgui` memungkinkan administrator mengelola pertandingan melalui menu, dengan pesan dan buku panduan yang dilokalkan untuk pemain.

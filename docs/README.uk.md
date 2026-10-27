@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Мисливці беруть компас. Утікачі — план… і виправдання про всяк випадок. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Повноцінний досвід Minecraft із протистоянням Runner і Hunter, спільно створений [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) та [Ali · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt об’єднує налаштування матчу, ролі команд, початок погоні, відстеження, прогрес, нагороди, результати й адміністрування в одному плагіні для сервера Paper. Runner намагаються перемогти Ender Dragon, а Hunter — усунути останнього Runner. Плагін підтримує кількох Runner і зберігає перебіг погоні після смертей, відроджень, переходів між вимірами та повторних підключень. Центр керування `/mhgui` дає адміністраторам змогу керувати матчем через меню, а гравцям надає локалізовані повідомлення та посібники.

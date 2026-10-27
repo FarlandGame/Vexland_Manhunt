@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Avcılar pusula getirir. Kaçanlar ise bir plan… ve her ihtimale karşı bir bahane. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **[Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) ve [Ali · Alivexor](https://github.com/Alivexor) tarafından birlikte geliştirilen, eksiksiz bir Minecraft Kaçan–Avcı deneyimi.**
 
 Vexland_Manhunt; maç kurulumu, takım rolleri, ilk kovalamaca, takip, ilerleme, ödüller, sonuçlar ve yönetimi tek bir Paper sunucu eklentisinde birleştirir. Kaçanlar (Runner) Ender Dragon'u yenmeye çalışırken Avcılar (Hunter) son Kaçanı ortadan kaldırmaya çalışır. Eklenti birden fazla Kaçanı destekler; ölümler, yeniden doğmalar, boyut değişiklikleri ve yeniden bağlantılar sırasında kovalamacanın sürmesini sağlar. `/mhgui` kontrol merkezi, yöneticilerin menüler üzerinden maç yönetmesini sağlar; oyuncular için yerelleştirilmiş mesajlar ve rehber kitapları bulunur.

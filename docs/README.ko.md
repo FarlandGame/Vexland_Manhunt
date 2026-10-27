@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> 헌터는 나침반을 챙깁니다. 러너는 작전을… 그리고 혹시 모르니 변명도 하나 챙기죠. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **[Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame)과 [Ali · Alivexor](https://github.com/Alivexor)가 공동 제작한 완전한 Minecraft 러너 대 헌터 경험입니다.**
 
 Vexland_Manhunt는 경기 설정, 팀 역할, 시작 추격, 추적, 진행도, 보상, 결과, 관리 기능을 하나의 Paper 서버 플러그인에 담았습니다. 러너는 엔더 드래곤을 쓰러뜨리려 하고, 헌터는 마지막 러너를 제거하려 합니다. 플러그인은 여러 명의 러너를 지원하며 사망, 리스폰, 차원 이동, 재접속 이후에도 추격이 이어지도록 합니다. 관리자는 `/mhgui` 제어 센터의 메뉴로 경기를 관리할 수 있고, 플레이어는 현지화된 메시지와 안내서를 사용할 수 있습니다.

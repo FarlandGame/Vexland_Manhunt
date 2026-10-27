@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> हंटर कम्पास लाते हैं। रनर एक योजना… और ज़रूरत पड़ने पर काम आने वाला बहाना। 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Minecraft में Runner बनाम Hunter का एक संपूर्ण अनुभव, जिसे [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) और [Ali · Alivexor](https://github.com/Alivexor) ने मिलकर बनाया है।**
 
 Vexland_Manhunt मैच की तैयारी, टीम की भूमिकाएँ, शुरुआती पीछा, ट्रैकिंग, प्रगति, पुरस्कार, परिणाम और प्रशासन को एक ही Paper सर्वर प्लगइन में समेटता है। Runner का लक्ष्य Ender Dragon को हराना है, जबकि Hunter आखिरी Runner को खत्म करने की कोशिश करते हैं। प्लगइन एक से अधिक Runner का समर्थन करता है और मृत्यु, दोबारा स्पॉन होने, डाइमेंशन बदलने और फिर से जुड़ने के दौरान भी पीछा जारी रखता है। इसका `/mhgui` नियंत्रण केंद्र प्रशासकों को मेनू के माध्यम से मैच संभालने देता है और खिलाड़ियों के लिए स्थानीयकृत संदेश तथा गाइडबुक उपलब्ध कराता है।

@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Les chasseurs apportent une boussole. Les coureurs, un plan… et une excuse de secours. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Une expérience Minecraft complète opposant les Runner aux Hunter, créée conjointement par [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) et [Ali · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt réunit la préparation des parties, les rôles des équipes, le début de la poursuite, le suivi, la progression, les récompenses, les résultats et l'administration dans un seul plugin pour serveur Paper. Les Runner tentent de vaincre l'Ender Dragon, tandis que les Hunter cherchent à éliminer le dernier Runner. Le plugin prend en charge plusieurs Runner et maintient la poursuite malgré les morts, réapparitions, changements de dimension et reconnexions. Son centre de contrôle `/mhgui` permet aux administrateurs de gérer une partie par des menus, avec des messages et des guides traduits pour les joueurs.

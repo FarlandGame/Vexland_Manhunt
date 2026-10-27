@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> I cacciatori portano una bussola. I fuggitivi un piano… e una scusa di riserva. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Un’esperienza Minecraft completa con Corridori contro Cacciatori, creata insieme da [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) e [Ali · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt riunisce preparazione della partita, ruoli delle squadre, inseguimento iniziale, tracciamento, progressione, ricompense, risultati e amministrazione in un unico plugin per server Paper. I Corridori cercano di sconfiggere l’Ender Dragon, mentre i Cacciatori cercano di eliminare l’ultimo Corridore. Il plugin supporta più Corridori e mantiene l’inseguimento attraverso morti, rinascite, cambi di dimensione e riconnessioni. Il centro di controllo `/mhgui` permette agli amministratori di gestire la partita tramite menu, con messaggi e libri guida tradotti per i giocatori.

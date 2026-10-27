@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> 猎人带上指南针，逃亡者带上计划……再备好一个借口。🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **完整的 Minecraft 逃亡者对抗猎人体验，由 [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) 与 [Ali · Alivexor](https://github.com/Alivexor) 共同开发。**
 
 Vexland_Manhunt 将比赛设置、队伍角色、开场追逐、追踪、进度、奖励、结果与管理功能整合进一个 Paper 服务器插件。逃亡者试图击败末影龙，猎人则试图消灭最后一名逃亡者。插件支持多名逃亡者，并在死亡、重生、切换维度和重新连接后继续维持追逐。管理员可以通过 `/mhgui` 控制中心的菜单管理比赛，玩家则可以使用本地化消息与指南书。

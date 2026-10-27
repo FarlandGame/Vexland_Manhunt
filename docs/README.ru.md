@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> Охотники берут компас. Бегуны — план… и оправдание на всякий случай. 🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **Полноценный Minecraft Manhunt — противостояние бегунов и охотников, совместно созданное [Бардией Ализаде (Кабир) · Farland_game](https://github.com/FarlandGame) и [Али · Alivexor](https://github.com/Alivexor).**
 
 Vexland_Manhunt объединяет настройку матча, командные роли, начало погони, отслеживание, развитие, награды, результаты и администрирование в одном плагине сервера Paper. Бегуны (Runner) пытаются победить Дракона Края, а охотники (Hunter) — уничтожить последнего бегуна. Плагин поддерживает нескольких бегунов и продолжает погоню после смертей, возрождений, переходов между измерениями и повторных подключений. Центр управления `/mhgui` позволяет администраторам управлять матчем через меню; для игроков предусмотрены переведённые сообщения и книги-руководства.

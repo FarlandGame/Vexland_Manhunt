@@ -3,6 +3,12 @@
 
 [English](../README.md) | [日本語](README.ja.md) | [فارسی](README.fa.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português (Brasil)](README.pt-BR.md) | [Italiano](README.it.md) | [Nederlands](README.nl.md) | [Polski](README.pl.md) | [Українська](README.uk.md) | [Türkçe](README.tr.md) | [Русский](README.ru.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [한국어](README.ko.md) | [हिन्दी](README.hi.md) | [Bahasa Indonesia](README.id.md)
 
+<!-- PLAYFUL_INTRO_START -->
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
+
+> ハンターの持ち物はコンパス。ランナーの持ち物は作戦……と、念のための言い訳。🎮🧭
+<!-- PLAYFUL_INTRO_END -->
+
 **[Bardiya Alizadeh（Kabir）· Farland_game](https://github.com/FarlandGame) と [Ali · Alivexor](https://github.com/Alivexor) が共同制作した、Minecraftのランナー対ハンターを一通り楽しめるプラグインです。**
 
 Vexland_Manhuntは、試合の準備、チームの役割、追跡の開始、トラッキング、進行状況、報酬、結果表示、管理機能を1つのPaperサーバープラグインにまとめています。ランナーはエンダードラゴンの討伐を目指し、ハンターは最後のランナーを倒そうとします。複数のランナーに対応し、死亡、リスポーン、ディメンション間の移動、再接続があっても追跡を続けられるようにしています。管理者は`/mhgui`のコントロールセンターからメニューで試合を操作でき、プレイヤー向けのメッセージやガイドブックも選択した言語で表示されます。
