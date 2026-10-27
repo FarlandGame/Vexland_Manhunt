@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > I cacciatori portano una bussola. I fuggitivi un piano… e una scusa di riserva. 🎮🧭
+
+[Conosci Kabir: la mia storia, i miei inizi creativi e i progetti per il Giappone](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.it.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Un’esperienza Minecraft completa con Corridori contro Cacciatori, creata insieme da [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) e [Ali · Alivexor](https://github.com/Alivexor).**

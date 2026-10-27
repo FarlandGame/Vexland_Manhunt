@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > De jagers nemen een kompas mee. De runners een plan… en een smoes voor de zekerheid. 🎮🧭
+
+[Maak kennis met Kabir: mijn verhaal, creatieve begin en plannen voor Japan](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.nl.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Een complete Minecraft-ervaring met Runners tegen Hunters, samen gemaakt door [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) en [Ali · Alivexor](https://github.com/Alivexor).**

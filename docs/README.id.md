@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Hunter membawa kompas. Runner membawa rencana… dan alasan cadangan untuk berjaga-jaga. 🎮🧭
+
+[Kenalan dengan Kabir: kisahku, awal perjalanan kreatif, dan rencana ke Jepang](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.id.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Pengalaman Minecraft Runner melawan Hunter yang lengkap, dibuat bersama oleh [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) dan [Ali · Alivexor](https://github.com/Alivexor).**

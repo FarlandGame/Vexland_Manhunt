@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Los cazadores traen una brújula. Los corredores, un plan… y una excusa por si acaso. 🎮🧭
+
+[Conoce a Kabir: mi historia, mis comienzos creativos y mis planes para Japón](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.es.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Una experiencia completa de Minecraft que enfrenta a Runner y Hunter, creada conjuntamente por [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) y [Ali · Alivexor](https://github.com/Alivexor).**

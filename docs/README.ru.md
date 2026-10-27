@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Охотники берут компас. Бегуны — план… и оправдание на всякий случай. 🎮🧭
+
+[Знакомьтесь с Кабиром: моя история, творческие истоки и планы на Японию](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.ru.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Полноценный Minecraft Manhunt — противостояние бегунов и охотников, совместно созданное [Бардией Ализаде (Кабир) · Farland_game](https://github.com/FarlandGame) и [Али · Alivexor](https://github.com/Alivexor).**

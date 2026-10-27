@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Os caçadores trazem uma bússola. Os corredores, um plano… e uma desculpa de reserva. 🎮🧭
+
+[Conheça Kabir: minha história, meus primeiros passos criativos e meus planos para o Japão](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.pt-BR.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Uma experiência completa de Minecraft com Corredores contra Caçadores, criada em conjunto por [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) e [Ali · Alivexor](https://github.com/Alivexor).**

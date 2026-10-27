@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > ハンターの持ち物はコンパス。ランナーの持ち物は作戦……と、念のための言い訳。🎮🧭
+
+[Kabir の歩み：創作の始まりと日本でかなえたいこと](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.ja.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **[Bardiya Alizadeh（Kabir）· Farland_game](https://github.com/FarlandGame) と [Ali · Alivexor](https://github.com/Alivexor) が共同制作した、Minecraftのランナー対ハンターを一通り楽しめるプラグインです。**

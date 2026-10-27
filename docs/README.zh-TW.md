@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > 獵人帶上指南針，逃亡者帶上計畫……再備好一個藉口。🎮🧭
+
+[認識 Kabir：我的故事、創作起點與日本計畫](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.zh-TW.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **完整的 Minecraft 逃亡者對抗獵人體驗，由 [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) 與 [Ali · Alivexor](https://github.com/Alivexor) 共同開發。**

@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Hunters bring a compass. Runners bring a plan… and a backup excuse. 🎮🧭
+
+[Meet Kabir: my story, creative beginnings and plans for Japan](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.en.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **A complete Minecraft Runner-versus-Hunter experience, co-created by [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) and [Ali · Alivexor](https://github.com/Alivexor).**

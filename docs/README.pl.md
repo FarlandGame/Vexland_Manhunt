@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Łowcy przynoszą kompas. Uciekinierzy — plan… i wymówkę na wszelki wypadek. 🎮🧭
+
+[Poznaj Kabira: moja historia, twórcze początki i plany związane z Japonią](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.pl.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Kompletna rozgrywka Minecraft: Uciekinierzy kontra Łowcy, współtworzona przez [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) i [Ali · Alivexor](https://github.com/Alivexor).**

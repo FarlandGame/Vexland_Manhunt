@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > हंटर कम्पास लाते हैं। रनर एक योजना… और ज़रूरत पड़ने पर काम आने वाला बहाना। 🎮🧭
+
+[मिलिए Kabir से: मेरी कहानी, रचनात्मक शुरुआत और जापान की योजनाएँ](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.hi.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Minecraft में Runner बनाम Hunter का एक संपूर्ण अनुभव, जिसे [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) और [Ali · Alivexor](https://github.com/Alivexor) ने मिलकर बनाया है।**

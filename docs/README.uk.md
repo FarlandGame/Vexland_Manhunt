@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Мисливці беруть компас. Утікачі — план… і виправдання про всяк випадок. 🎮🧭
+
+[Знайомтеся з Кабіром: моя історія, творчі початки та плани щодо Японії](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.uk.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **Повноцінний досвід Minecraft із протистоянням Runner і Hunter, спільно створений [Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) та [Ali · Alivexor](https://github.com/Alivexor).**

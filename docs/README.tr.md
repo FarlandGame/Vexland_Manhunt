@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > Avcılar pusula getirir. Kaçanlar ise bir plan… ve her ihtimale karşı bir bahane. 🎮🧭
+
+[Kabir ile tanışın: hikâyem, yaratıcı başlangıcım ve Japonya planlarım](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.tr.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **[Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame) ve [Ali · Alivexor](https://github.com/Alivexor) tarafından birlikte geliştirilen, eksiksiz bir Minecraft Kaçan–Avcı deneyimi.**

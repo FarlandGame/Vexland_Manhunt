@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > هانترها قطب‌نما می‌آورند؛ رانرها نقشه… و یک بهانه برای روز مبادا! 🎮🧭
+
+[آشنایی با کبیر: داستان من، شروع کار و برنامه‌هایم برای ژاپن](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.fa.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **یک تجربهٔ کامل رانر در برابر هانتر در ماینکرافت، ساختهٔ مشترک [بردیا علیزاده، ملقب به کبیر · Farland_game](https://github.com/FarlandGame) و [علی · Alivexor](https://github.com/Alivexor).**

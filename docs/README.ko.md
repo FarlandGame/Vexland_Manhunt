@@ -7,6 +7,8 @@
 <p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/portfolio-sticker.svg" width="88" height="88" alt=""></p>
 
 > 헌터는 나침반을 챙깁니다. 러너는 작전을… 그리고 혹시 모르니 변명도 하나 챙기죠. 🎮🧭
+
+[Kabir를 소개합니다: 나의 이야기, 창작의 시작과 일본에서의 계획](https://github.com/FarlandGame/FarlandGame/blob/main/docs/story.ko.md)
 <!-- PLAYFUL_INTRO_END -->
 
 **[Bardiya Alizadeh (Kabir) · Farland_game](https://github.com/FarlandGame)과 [Ali · Alivexor](https://github.com/Alivexor)가 공동 제작한 완전한 Minecraft 러너 대 헌터 경험입니다.**
