@@ -1,9 +1,9 @@
 # Vexland_Manhunt
 
 <!-- PROJECT_VISUAL_HEADER -->
-<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/showcase-card.svg" width="600" alt="manhunt"><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/showcase-sticker.svg" width="90" alt="manhunt sticker"></p>
+<p><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/showcase-card.fa.svg" width="600" alt="پلاگین Vexland_Manhunt"><img src="https://raw.githubusercontent.com/FarlandGame/Vexland_Manhunt/main/assets/showcase-sticker.fa.svg" width="90" alt="پلاگین Vexland_Manhunt"></p>
 
-[← Farland_game / Portfolio](https://github.com/FarlandGame#portfolio-directory)
+[← Farland_game / رزومه](https://github.com/FarlandGame#portfolio-directory)
 <!-- PROJECT_VISUAL_HEADER_END -->
 
 
